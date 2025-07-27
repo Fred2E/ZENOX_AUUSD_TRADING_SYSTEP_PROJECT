@@ -1,0 +1,1256 @@
+Datetime,Close,bias,score,confluences,candle_pattern,num_confs,pattern_code,bias_bull,hour,dow,is_win
+2021-07-02,1787.446,bullish,0,[],,0,-1,1,0,4,1
+2021-07-04,1786.184,bullish,0,[],,0,-1,1,0,6,1
+2021-07-05,1791.224,bullish,2,"['structure', 'candle']",bullish_engulfing,2,1,1,0,0,1
+2021-07-06,1795.55,bullish,2,"['structure', 'psych_level']",,2,-1,1,0,1,1
+2021-07-07,1803.285,bullish,1,['psych_level'],,1,-1,1,0,2,1
+2021-07-08,1803.723,bullish,4,"['structure', 'bos_or_choch', 'psych_level', 'candle']",hammer,4,2,1,0,3,1
+2021-07-09,1808.222,bullish,0,[],,0,-1,1,0,4,1
+2021-07-11,1806.405,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2021-07-12,1807.082,bullish,3,"['structure', 'sr_zone', 'candle']",hammer,3,2,1,0,0,1
+2021-07-13,1805.994,bullish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,1,0,1,1
+2021-07-14,1826.375,bullish,1,['candle'],bullish_engulfing,1,1,1,0,2,1
+2021-07-15,1829.45,bullish,3,"['structure', 'bos_or_choch', 'candle']",hammer,3,2,1,0,3,1
+2021-07-16,1812.007,bullish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,1,0,4,1
+2021-07-18,1815.7,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2021-07-19,1811.304,bearish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,0,0,0,1
+2021-07-20,1809.737,bearish,2,"['structure', 'candle']",inverted_hammer,2,3,0,0,1,1
+2021-07-21,1802.54,bearish,1,['psych_level'],,1,-1,0,0,2,1
+2021-07-22,1807.081,bearish,2,"['sr_zone', 'candle']",hammer,2,2,0,0,3,1
+2021-07-23,1802.126,bearish,4,"['structure', 'bos_or_choch', 'psych_level', 'candle']",bearish_engulfing,4,0,0,0,4,1
+2021-07-25,1800.344,bearish,1,['psych_level'],,1,-1,0,0,6,1
+2021-07-26,1797.55,bullish,4,"['structure', 'bos_or_choch', 'psych_level', 'candle']",inverted_hammer,4,3,1,0,0,1
+2021-07-27,1799.856,bullish,2,"['psych_level', 'sr_zone']",,2,-1,1,0,1,1
+2021-07-28,1809.307,bullish,1,['structure'],,1,-1,1,0,2,1
+2021-07-29,1830.189,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,3,1
+2021-07-30,1813.934,bullish,1,['sr_zone'],,1,-1,1,0,4,1
+2021-08-01,1813.79,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2021-08-02,1812.447,bullish,3,"['structure', 'sr_zone', 'candle']",inverted_hammer,3,3,1,0,0,1
+2021-08-03,1811.071,bullish,1,['sr_zone'],,1,-1,1,0,1,1
+2021-08-04,1811.616,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",hammer,4,2,1,0,2,1
+2021-08-05,1803.396,bullish,2,"['psych_level', 'candle']",bearish_engulfing,2,0,1,0,3,1
+2021-08-06,1763.819,bullish,0,[],,0,-1,1,0,4,1
+2021-08-08,1719.053,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,6,1
+2021-08-09,1731.457,bearish,1,['sr_zone'],,1,-1,0,0,0,1
+2021-08-10,1726.89,bearish,1,['sr_zone'],,1,-1,0,0,1,1
+2021-08-11,1752.326,bearish,2,"['sr_zone', 'candle']",bullish_engulfing,2,1,0,0,2,1
+2021-08-12,1753.415,bearish,2,"['sr_zone', 'candle']",hammer,2,2,0,0,3,1
+2021-08-13,1779.509,bearish,0,[],,0,-1,0,0,4,1
+2021-08-15,1778.758,bearish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,0,0,6,1
+2021-08-16,1787.457,bearish,2,"['structure', 'candle']",bullish_engulfing,2,1,0,0,0,1
+2021-08-17,1786.126,bearish,3,"['structure', 'sr_zone', 'candle']",inverted_hammer,3,3,0,0,1,1
+2021-08-18,1787.381,bearish,2,"['sr_zone', 'candle']",hammer,2,2,0,0,2,1
+2021-08-19,1778.962,bearish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,0,0,3,1
+2021-08-20,1781.235,bearish,1,['sr_zone'],,1,-1,0,0,4,1
+2021-08-22,1778.626,bearish,1,['candle'],bearish_engulfing,1,0,0,0,6,1
+2021-08-23,1804.758,bearish,3,"['structure', 'psych_level', 'candle']",bullish_engulfing,3,1,0,0,0,1
+2021-08-24,1801.705,bullish,4,"['structure', 'bos_or_choch', 'psych_level', 'sr_zone']",,4,-1,1,0,1,1
+2021-08-25,1791.52,bullish,1,['sr_zone'],,1,-1,1,0,2,1
+2021-08-26,1793.451,bullish,3,"['structure', 'sr_zone', 'candle']",hammer,3,2,1,0,3,1
+2021-08-27,1816.778,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,4,1
+2021-08-29,1818.39,bullish,0,[],,0,-1,1,0,6,1
+2021-08-30,1810.386,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",bearish_engulfing,4,0,1,0,0,1
+2021-08-31,1814.435,bullish,3,"['structure', 'sr_zone', 'candle']",hammer,3,2,1,0,1,1
+2021-09-01,1813.02,bullish,3,"['structure', 'sr_zone', 'candle']",inverted_hammer,3,3,1,0,2,1
+2021-09-02,1809.364,bullish,1,['structure'],,1,-1,1,0,3,1
+2021-09-03,1827.573,bullish,3,"['structure', 'bos_or_choch', 'candle']",bullish_engulfing,3,1,1,0,4,1
+2021-09-05,1827.555,bullish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,1,0,6,1
+2021-09-06,1823.518,bullish,1,['sr_zone'],,1,-1,1,0,0,1
+2021-09-07,1795.591,bullish,1,['psych_level'],,1,-1,1,0,1,1
+2021-09-08,1790.691,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,2,1
+2021-09-09,1794.676,bearish,1,['sr_zone'],,1,-1,0,0,3,1
+2021-09-10,1787.614,bearish,2,"['structure', 'candle']",bearish_engulfing,2,0,0,0,4,1
+2021-09-12,1787.298,bearish,1,['candle'],hammer,1,2,0,0,6,1
+2021-09-13,1792.955,bearish,1,['sr_zone'],,1,-1,0,0,0,1
+2021-09-14,1803.691,bearish,3,"['structure', 'bos_or_choch', 'psych_level']",,3,-1,0,0,1,1
+2021-09-15,1795.002,bearish,2,"['psych_level', 'sr_zone']",,2,-1,0,0,2,1
+2021-09-16,1753.842,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,3,1
+2021-09-17,1754.536,bearish,2,"['sr_zone', 'candle']",hammer,2,2,0,0,4,1
+2021-09-19,1754.121,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2021-09-20,1764.948,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",bullish_engulfing,4,1,0,0,0,1
+2021-09-21,1774.882,bearish,1,['sr_zone'],,1,-1,0,0,1,1
+2021-09-22,1766.952,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,2,1
+2021-09-23,1746.198,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,3,1
+2021-09-24,1750.494,bearish,1,['sr_zone'],,1,-1,0,0,4,1
+2021-09-26,1749.495,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2021-09-27,1751.211,bearish,3,"['structure', 'sr_zone', 'candle']",hammer,3,2,0,0,0,1
+2021-09-28,1735.3,bearish,1,['candle'],bearish_engulfing,1,0,0,0,1,1
+2021-09-29,1728.823,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,2,1
+2021-09-30,1753.077,bearish,1,['candle'],bullish_engulfing,1,1,0,0,3,1
+2021-10-01,1760.453,bearish,0,[],,0,-1,0,0,4,1
+2021-10-03,1763.152,bearish,0,[],,0,-1,0,0,6,1
+2021-10-04,1768.073,bullish,3,"['structure', 'bos_or_choch', 'candle']",hammer,3,2,1,0,0,1
+2021-10-05,1759.287,bullish,2,"['sr_zone', 'candle']",bearish_engulfing,2,0,1,0,1,1
+2021-10-06,1763.946,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",hammer,4,2,0,0,2,1
+2021-10-07,1755.094,bearish,1,['candle'],bearish_engulfing,1,0,0,0,3,1
+2021-10-08,1757.212,bullish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,1,0,4,1
+2021-10-10,1753.953,bullish,1,['candle'],bearish_engulfing,1,0,1,0,6,1
+2021-10-11,1753.295,bullish,2,"['structure', 'candle']",inverted_hammer,2,3,1,0,0,1
+2021-10-12,1760.362,bullish,2,"['sr_zone', 'candle']",bullish_engulfing,2,1,1,0,1,1
+2021-10-13,1791.652,bullish,0,[],,0,-1,1,0,2,1
+2021-10-14,1795.329,bullish,3,"['structure', 'bos_or_choch', 'psych_level']",,3,-1,1,0,3,1
+2021-10-15,1767.427,bullish,2,"['sr_zone', 'candle']",bearish_engulfing,2,0,1,0,4,1
+2021-10-17,1770.952,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2021-10-18,1763.948,bullish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,1,0,0,1
+2021-10-19,1768.661,bullish,1,['sr_zone'],,1,-1,1,0,1,1
+2021-10-20,1781.408,bullish,1,['sr_zone'],,1,-1,1,0,2,1
+2021-10-21,1784.594,bullish,0,[],,0,-1,1,0,3,1
+2021-10-22,1792.853,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,4,1
+2021-10-24,1794.301,bullish,0,[],,0,-1,1,0,6,1
+2021-10-25,1807.792,bullish,1,['structure'],,1,-1,1,0,0,1
+2021-10-26,1793.554,bullish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,1,0,1,1
+2021-10-27,1796.583,bullish,3,"['psych_level', 'sr_zone', 'candle']",hammer,3,2,1,0,2,1
+2021-10-28,1799.575,bullish,4,"['structure', 'bos_or_choch', 'psych_level', 'sr_zone']",,4,-1,1,0,3,1
+2021-10-29,1783.296,bearish,3,"['structure', 'bos_or_choch', 'candle']",bearish_engulfing,3,0,0,0,4,1
+2021-10-31,1780.026,bearish,0,[],,0,-1,0,0,6,1
+2021-11-01,1792.047,bearish,2,"['sr_zone', 'candle']",bullish_engulfing,2,1,0,0,0,1
+2021-11-02,1787.125,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,1,1
+2021-11-03,1777.242,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,2,1
+2021-11-04,1791.317,bearish,2,"['sr_zone', 'candle']",bullish_engulfing,2,1,0,0,3,1
+2021-11-05,1818.124,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,4,1
+2021-11-07,1815.82,bullish,2,"['sr_zone', 'candle']",hammer,2,2,1,0,6,1
+2021-11-08,1824.501,bullish,1,['structure'],,1,-1,1,0,0,1
+2021-11-09,1829.861,bullish,0,[],,0,-1,1,0,1,1
+2021-11-10,1848.511,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,2,1
+2021-11-11,1862.286,bullish,0,[],,0,-1,1,0,3,1
+2021-11-12,1864.361,bullish,3,"['structure', 'bos_or_choch', 'candle']",hammer,3,2,1,0,4,1
+2021-11-14,1865.476,bullish,0,[],,0,-1,1,0,6,1
+2021-11-15,1862.387,bullish,1,['sr_zone'],,1,-1,1,0,0,1
+2021-11-16,1850.311,bullish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,1,0,1,1
+2021-11-17,1866.479,bullish,2,"['structure', 'candle']",bullish_engulfing,2,1,1,0,2,1
+2021-11-18,1859.578,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,3,1
+2021-11-19,1846.196,bullish,0,[],,0,-1,1,0,4,1
+2021-11-21,1844.89,bullish,0,[],,0,-1,1,0,6,1
+2021-11-22,1808.997,bullish,2,"['structure', 'candle']",bearish_engulfing,2,0,1,0,0,1
+2021-11-23,1790.875,bullish,0,[],,0,-1,1,0,1,1
+2021-11-24,1789.664,bearish,3,"['structure', 'bos_or_choch', 'candle']",inverted_hammer,3,3,0,0,2,1
+2021-11-25,1792.628,bearish,2,"['sr_zone', 'candle']",bullish_engulfing,2,1,0,0,3,1
+2021-11-26,1787.433,bearish,2,"['structure', 'candle']",inverted_hammer,2,3,0,0,4,1
+2021-11-28,1795.371,bearish,3,"['psych_level', 'sr_zone', 'candle']",bullish_engulfing,3,1,0,0,6,1
+2021-11-29,1786.826,bearish,1,['candle'],bearish_engulfing,1,0,0,0,0,1
+2021-11-30,1773.206,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,1,1
+2021-12-01,1781.825,bearish,1,['sr_zone'],,1,-1,0,0,2,1
+2021-12-02,1768.989,bearish,3,"['structure', 'bos_or_choch', 'candle']",bearish_engulfing,3,0,0,0,3,1
+2021-12-03,1783.414,bearish,3,"['structure', 'sr_zone', 'candle']",bullish_engulfing,3,1,0,0,4,1
+2021-12-05,1782.901,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2021-12-06,1780.931,bearish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,0,0,0,1
+2021-12-07,1784.719,bearish,2,"['structure', 'candle']",hammer,2,2,0,0,1,1
+2021-12-08,1783.494,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",inverted_hammer,4,3,1,0,2,1
+2021-12-09,1776.327,bullish,0,[],,0,-1,1,0,3,1
+2021-12-10,1782.805,bearish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,0,0,4,1
+2021-12-12,1783.216,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2021-12-13,1785.722,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,0,1
+2021-12-14,1772.453,bullish,1,['candle'],bearish_engulfing,1,0,1,0,1,1
+2021-12-15,1779.456,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",hammer,4,2,0,0,2,1
+2021-12-16,1798.708,bearish,1,['psych_level'],,1,-1,0,0,3,1
+2021-12-17,1798.064,bullish,5,"['structure', 'bos_or_choch', 'psych_level', 'sr_zone', 'candle']",inverted_hammer,5,3,1,0,4,1
+2021-12-19,1800.067,bullish,1,['psych_level'],,1,-1,1,0,6,1
+2021-12-20,1791.617,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,0,1
+2021-12-21,1790.466,bullish,3,"['structure', 'sr_zone', 'candle']",inverted_hammer,3,3,1,0,1,1
+2021-12-22,1803.662,bullish,2,"['psych_level', 'candle']",bullish_engulfing,2,1,1,0,2,1
+2021-12-23,1808.451,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,3,1
+2021-12-26,1807.259,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2021-12-27,1812.348,bullish,1,['structure'],,1,-1,1,0,0,1
+2021-12-28,1806.56,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",bearish_engulfing,4,0,1,0,1,1
+2021-12-29,1804.526,bearish,4,"['structure', 'bos_or_choch', 'psych_level', 'sr_zone']",,4,-1,0,0,2,1
+2021-12-30,1815.703,bearish,1,['candle'],bullish_engulfing,1,1,0,0,3,1
+2021-12-31,1827.615,bearish,0,[],,0,-1,0,0,4,1
+2022-01-02,1828.452,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,6,1
+2022-01-03,1804.101,bullish,2,"['structure', 'psych_level']",,2,-1,1,0,0,1
+2022-01-04,1813.873,bullish,1,['sr_zone'],,1,-1,1,0,1,1
+2022-01-05,1810.244,bullish,3,"['structure', 'sr_zone', 'candle']",inverted_hammer,3,3,1,0,2,1
+2022-01-06,1791.365,bullish,0,[],,0,-1,1,0,3,1
+2022-01-07,1796.899,bearish,4,"['structure', 'bos_or_choch', 'psych_level', 'sr_zone']",,4,-1,0,0,4,1
+2022-01-09,1795.145,bearish,2,"['psych_level', 'sr_zone']",,2,-1,0,0,6,1
+2022-01-10,1801.225,bearish,3,"['structure', 'psych_level', 'sr_zone']",,3,-1,0,0,0,1
+2022-01-11,1820.722,bearish,0,[],,0,-1,0,0,1,1
+2022-01-12,1825.277,bearish,0,[],,0,-1,0,0,2,1
+2022-01-13,1820.818,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,3,1
+2022-01-14,1817.639,bearish,3,"['structure', 'sr_zone', 'candle']",inverted_hammer,3,3,0,0,4,1
+2022-01-16,1816.379,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2022-01-17,1819.029,bearish,3,"['structure', 'sr_zone', 'candle']",bullish_engulfing,3,1,0,0,0,1
+2022-01-18,1814.21,bearish,3,"['structure', 'bos_or_choch', 'candle']",bearish_engulfing,3,0,0,0,1,1
+2022-01-19,1838.495,bearish,1,['candle'],bullish_engulfing,1,1,0,0,2,1
+2022-01-20,1838.889,bullish,3,"['structure', 'bos_or_choch', 'candle']",hammer,3,2,1,0,3,1
+2022-01-21,1834.664,bullish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,1,0,4,1
+2022-01-23,1834.669,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2022-01-24,1843.521,bullish,1,['structure'],,1,-1,1,0,0,1
+2022-01-25,1849.526,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,1,1
+2022-01-26,1821.928,bullish,1,['candle'],bearish_engulfing,1,0,1,0,2,1
+2022-01-27,1797.205,bullish,1,['psych_level'],,1,-1,1,0,3,1
+2022-01-28,1791.634,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,4,1
+2022-01-30,1789.464,bearish,1,['candle'],hammer,1,2,0,0,6,1
+2022-01-31,1797.738,bearish,3,"['structure', 'psych_level', 'sr_zone']",,3,-1,0,0,0,1
+2022-02-01,1800.694,bearish,2,"['psych_level', 'sr_zone']",,2,-1,0,0,1,1
+2022-02-02,1807.83,bearish,1,['structure'],,1,-1,0,0,2,1
+2022-02-03,1805.719,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,3,1
+2022-02-04,1807.732,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",hammer,4,2,1,0,4,1
+2022-02-06,1810.028,bullish,0,[],,0,-1,1,0,6,1
+2022-02-07,1822.004,bullish,0,[],,0,-1,1,0,0,1
+2022-02-08,1826.134,bullish,0,[],,0,-1,1,0,1,1
+2022-02-09,1832.541,bullish,0,[],,0,-1,1,0,2,1
+2022-02-10,1826.796,bullish,1,['sr_zone'],,1,-1,1,0,3,1
+2022-02-11,1858.955,bullish,3,"['structure', 'bos_or_choch', 'candle']",bullish_engulfing,3,1,1,0,4,1
+2022-02-13,1859.538,bullish,0,[],,0,-1,1,0,6,1
+2022-02-14,1871.048,bullish,0,[],,0,-1,1,0,0,1
+2022-02-15,1852.964,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",bearish_engulfing,4,0,1,0,1,1
+2022-02-16,1869.906,bullish,1,['sr_zone'],,1,-1,1,0,2,1
+2022-02-17,1899.944,bullish,1,['psych_level'],,1,-1,1,0,3,1
+2022-02-18,1897.807,bullish,2,"['psych_level', 'sr_zone']",,2,-1,1,0,4,1
+2022-02-20,1904.863,bullish,2,"['psych_level', 'candle']",bullish_engulfing,2,1,1,0,6,1
+2022-02-21,1909.377,bullish,3,"['structure', 'bos_or_choch', 'candle']",hammer,3,2,1,0,0,1
+2022-02-22,1898.158,bullish,3,"['psych_level', 'sr_zone', 'candle']",bearish_engulfing,3,0,1,0,1,1
+2022-02-23,1910.758,bullish,1,['candle'],bullish_engulfing,1,1,1,0,2,1
+2022-02-24,1906.531,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",inverted_hammer,4,3,0,0,3,1
+2022-02-25,1889.003,bearish,0,[],,0,-1,0,0,4,1
+2022-02-27,1910.211,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,6,1
+2022-02-28,1906.268,bearish,3,"['structure', 'sr_zone', 'candle']",inverted_hammer,3,3,0,0,0,1
+2022-03-01,1942.269,bullish,3,"['structure', 'bos_or_choch', 'candle']",bullish_engulfing,3,1,1,0,1,1
+2022-03-02,1928.805,bullish,1,['sr_zone'],,1,-1,1,0,2,1
+2022-03-03,1934.87,bullish,1,['sr_zone'],,1,-1,1,0,3,1
+2022-03-04,1970.317,bullish,0,[],,0,-1,1,0,4,1
+2022-03-06,1988.583,bullish,0,[],,0,-1,1,0,6,1
+2022-03-07,1998.736,bullish,3,"['structure', 'psych_level', 'candle']",hammer,3,2,1,0,0,1
+2022-03-08,2043.828,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,1,1
+2022-03-09,1989.867,bullish,2,"['sr_zone', 'candle']",bearish_engulfing,2,0,1,0,2,1
+2022-03-10,1995.387,bullish,3,"['psych_level', 'sr_zone', 'candle']",hammer,3,2,1,0,3,1
+2022-03-11,1988.147,bearish,3,"['structure', 'bos_or_choch', 'candle']",bearish_engulfing,3,0,0,0,4,1
+2022-03-13,1974.302,bearish,0,[],,0,-1,0,0,6,1
+2022-03-14,1952.184,bearish,0,[],,0,-1,0,0,0,1
+2022-03-15,1918.085,bearish,0,[],,0,-1,0,0,1,1
+2022-03-16,1927.034,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",hammer,4,2,0,0,2,1
+2022-03-17,1943.947,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,3,1
+2022-03-18,1921.271,bearish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,0,0,4,1
+2022-03-20,1918.985,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2022-03-21,1935.579,bearish,3,"['structure', 'sr_zone', 'candle']",bullish_engulfing,3,1,0,0,0,1
+2022-03-22,1919.665,bearish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,0,0,1,1
+2022-03-23,1946.106,bearish,1,['candle'],bullish_engulfing,1,1,0,0,2,1
+2022-03-24,1959.217,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,3,1
+2022-03-25,1958.243,bullish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,1,0,4,1
+2022-03-27,1957.209,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2022-03-28,1924.041,bullish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,1,0,0,1
+2022-03-29,1916.354,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,1,1
+2022-03-30,1934.044,bearish,2,"['sr_zone', 'candle']",bullish_engulfing,2,1,0,0,2,1
+2022-03-31,1936.702,bearish,3,"['structure', 'sr_zone', 'candle']",hammer,3,2,0,0,3,1
+2022-04-01,1924.495,bearish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,0,0,4,1
+2022-04-03,1924.674,bearish,2,"['sr_zone', 'candle']",hammer,2,2,0,0,6,1
+2022-04-04,1931.493,bearish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,0,0,0,1
+2022-04-05,1920.618,bearish,2,"['structure', 'candle']",bearish_engulfing,2,0,0,0,1,1
+2022-04-06,1923.806,bearish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,0,0,2,1
+2022-04-07,1932.938,bearish,0,[],,0,-1,0,0,3,1
+2022-04-08,1947.868,bearish,0,[],,0,-1,0,0,4,1
+2022-04-10,1944.606,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2022-04-11,1952.799,bearish,2,"['structure', 'candle']",bullish_engulfing,2,1,0,0,0,1
+2022-04-12,1965.899,bearish,0,[],,0,-1,0,0,1,1
+2022-04-13,1977.082,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,2,1
+2022-04-14,1973.111,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,3,1
+2022-04-17,1986.463,bullish,1,['candle'],bullish_engulfing,1,1,1,0,6,1
+2022-04-18,1977.161,bullish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,1,0,0,1
+2022-04-19,1949.718,bullish,0,[],,0,-1,1,0,1,1
+2022-04-20,1956.797,bullish,1,['sr_zone'],,1,-1,1,0,2,1
+2022-04-21,1950.897,bullish,1,['sr_zone'],,1,-1,1,0,3,1
+2022-04-22,1931.5,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,4,1
+2022-04-24,1932.663,bearish,2,"['sr_zone', 'candle']",hammer,2,2,0,0,6,1
+2022-04-25,1899.375,bearish,4,"['structure', 'bos_or_choch', 'psych_level', 'candle']",bearish_engulfing,4,0,0,0,0,1
+2022-04-26,1906.529,bearish,1,['sr_zone'],,1,-1,0,0,1,1
+2022-04-27,1885.633,bearish,1,['candle'],bearish_engulfing,1,0,0,0,2,1
+2022-04-28,1895.515,bearish,4,"['structure', 'bos_or_choch', 'psych_level', 'sr_zone']",,4,-1,0,0,3,1
+2022-04-29,1896.72,bearish,3,"['structure', 'psych_level', 'sr_zone']",,3,-1,0,0,4,1
+2022-05-01,1897.236,bearish,2,"['psych_level', 'sr_zone']",,2,-1,0,0,6,1
+2022-05-02,1863.15,bearish,0,[],,0,-1,0,0,0,1
+2022-05-03,1868.33,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",hammer,4,2,0,0,1,1
+2022-05-04,1893.932,bearish,1,['sr_zone'],,1,-1,0,0,2,1
+2022-05-05,1874.231,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,3,1
+2022-05-06,1883.631,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,4,1
+2022-05-08,1881.256,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2022-05-09,1854.636,bearish,0,[],,0,-1,0,0,0,1
+2022-05-10,1833.584,bearish,0,[],,0,-1,0,0,1,1
+2022-05-11,1854.064,bearish,1,['sr_zone'],,1,-1,0,0,2,1
+2022-05-12,1821.379,bearish,2,"['structure', 'candle']",bearish_engulfing,2,0,0,0,3,1
+2022-05-13,1811.491,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,4,1
+2022-05-15,1813.161,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2022-05-16,1826.353,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",hammer,4,2,0,0,0,1
+2022-05-17,1814.521,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,1,1
+2022-05-18,1816.015,bearish,3,"['structure', 'sr_zone', 'candle']",hammer,3,2,0,0,2,1
+2022-05-19,1842.072,bearish,0,[],,0,-1,0,0,3,1
+2022-05-20,1846.487,bearish,1,['candle'],hammer,1,2,0,0,4,1
+2022-05-22,1846.283,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2022-05-23,1853.883,bearish,1,['candle'],bullish_engulfing,1,1,0,0,0,1
+2022-05-24,1867.329,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,1,1
+2022-05-25,1853.974,bullish,1,['sr_zone'],,1,-1,1,0,2,1
+2022-05-26,1852.799,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,3,1
+2022-05-27,1853.024,bullish,3,"['structure', 'sr_zone', 'candle']",hammer,3,2,1,0,4,1
+2022-05-29,1849.849,bullish,1,['candle'],bearish_engulfing,1,0,1,0,6,1
+2022-05-30,1852.384,bullish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,1,0,0,1
+2022-05-31,1836.404,bullish,1,['candle'],bearish_engulfing,1,0,1,0,1,1
+2022-06-01,1845.949,bearish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,0,0,2,1
+2022-06-02,1869.855,bearish,0,[],,0,-1,0,0,3,1
+2022-06-03,1850.96,bullish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,1,0,4,1
+2022-06-05,1851.478,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2022-06-06,1839.385,bullish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,1,0,0,1
+2022-06-07,1853.566,bullish,3,"['structure', 'sr_zone', 'candle']",bullish_engulfing,3,1,1,0,1,1
+2022-06-08,1852.692,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",inverted_hammer,4,3,1,0,2,1
+2022-06-09,1846.918,bullish,1,['sr_zone'],,1,-1,1,0,3,1
+2022-06-10,1871.532,bearish,3,"['structure', 'bos_or_choch', 'candle']",bullish_engulfing,3,1,0,0,4,1
+2022-06-12,1876.949,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,6,1
+2022-06-13,1821.013,bullish,0,[],,0,-1,1,0,0,1
+2022-06-14,1810.902,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,1,1
+2022-06-15,1833.827,bearish,2,"['sr_zone', 'candle']",bullish_engulfing,2,1,0,0,2,1
+2022-06-16,1850.809,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,3,1
+2022-06-17,1840.248,bearish,1,['sr_zone'],,1,-1,0,0,4,1
+2022-06-19,1838.432,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2022-06-20,1839.076,bearish,3,"['structure', 'sr_zone', 'candle']",hammer,3,2,0,0,0,1
+2022-06-21,1831.32,bearish,1,['candle'],bearish_engulfing,1,0,0,0,1,1
+2022-06-22,1836.562,bullish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,1,0,2,1
+2022-06-23,1824.582,bullish,1,['candle'],bearish_engulfing,1,0,1,0,3,1
+2022-06-24,1827.1,bullish,3,"['structure', 'sr_zone', 'candle']",hammer,3,2,1,0,4,1
+2022-06-26,1831.024,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2022-06-27,1823.494,bullish,1,['structure'],,1,-1,1,0,0,1
+2022-06-28,1818.377,bullish,0,[],,0,-1,1,0,1,1
+2022-06-29,1818.883,bullish,3,"['structure', 'sr_zone', 'candle']",hammer,3,2,1,0,2,1
+2022-06-30,1806.548,bullish,1,['candle'],bearish_engulfing,1,0,1,0,3,1
+2022-07-01,1809.341,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",hammer,4,2,0,0,4,1
+2022-07-03,1808.071,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2022-07-04,1809.254,bearish,3,"['structure', 'sr_zone', 'candle']",hammer,3,2,0,0,0,1
+2022-07-05,1769.527,bearish,1,['candle'],bearish_engulfing,1,0,0,0,1,1
+2022-07-06,1739.958,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,2,1
+2022-07-07,1741.722,bearish,2,"['sr_zone', 'candle']",hammer,2,2,0,0,3,1
+2022-07-08,1742.249,bearish,3,"['structure', 'sr_zone', 'candle']",hammer,3,2,0,0,4,1
+2022-07-10,1741.965,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2022-07-11,1733.238,bearish,1,['candle'],bearish_engulfing,1,0,0,0,0,1
+2022-07-12,1725.287,bearish,0,[],,0,-1,0,0,1,1
+2022-07-13,1731.99,bearish,3,"['structure', 'sr_zone', 'candle']",hammer,3,2,0,0,2,1
+2022-07-14,1711.655,bearish,3,"['structure', 'bos_or_choch', 'candle']",bearish_engulfing,3,0,0,0,3,1
+2022-07-15,1707.44,bearish,0,[],,0,-1,0,0,4,1
+2022-07-17,1710.297,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2022-07-18,1708.215,bearish,3,"['structure', 'sr_zone', 'candle']",inverted_hammer,3,3,0,0,0,1
+2022-07-19,1709.954,bearish,1,['sr_zone'],,1,-1,0,0,1,1
+2022-07-20,1695.406,bearish,2,"['psych_level', 'candle']",bearish_engulfing,2,0,0,0,2,1
+2022-07-21,1718.076,bearish,3,"['structure', 'bos_or_choch', 'candle']",bullish_engulfing,3,1,0,0,3,1
+2022-07-22,1727.469,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,4,1
+2022-07-24,1724.673,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2022-07-25,1718.99,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,0,1
+2022-07-26,1717.9,bullish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,1,0,1,1
+2022-07-27,1738.769,bullish,2,"['structure', 'candle']",bullish_engulfing,2,1,1,0,2,1
+2022-07-28,1754.908,bullish,0,[],,0,-1,1,0,3,1
+2022-07-29,1766.178,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,4,1
+2022-07-31,1762.141,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2022-08-01,1772.228,bullish,1,['candle'],bullish_engulfing,1,1,1,0,0,1
+2022-08-02,1756.675,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",bearish_engulfing,4,0,1,0,1,1
+2022-08-03,1763.586,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,2,1
+2022-08-04,1793.38,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,3,1
+2022-08-05,1775.628,bullish,1,['sr_zone'],,1,-1,1,0,4,1
+2022-08-07,1774.558,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2022-08-08,1789.192,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,0,1
+2022-08-09,1794.082,bullish,0,[],,0,-1,1,0,1,1
+2022-08-10,1791.66,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",inverted_hammer,4,3,1,0,2,1
+2022-08-11,1788.95,bullish,3,"['structure', 'sr_zone', 'candle']",inverted_hammer,3,3,1,0,3,1
+2022-08-12,1801.884,bullish,3,"['structure', 'psych_level', 'candle']",bullish_engulfing,3,1,1,0,4,1
+2022-08-14,1799.103,bullish,2,"['psych_level', 'sr_zone']",,2,-1,1,0,6,1
+2022-08-15,1778.509,bullish,0,[],,0,-1,1,0,0,1
+2022-08-16,1775.556,bullish,0,[],,0,-1,1,0,1,1
+2022-08-17,1764.909,bullish,0,[],,0,-1,1,0,2,1
+2022-08-18,1758.387,bullish,0,[],,0,-1,1,0,3,1
+2022-08-19,1747.376,bullish,0,[],,0,-1,1,0,4,1
+2022-08-21,1745.664,bullish,1,['candle'],hammer,1,2,1,0,6,1
+2022-08-22,1735.22,bearish,3,"['structure', 'bos_or_choch', 'candle']",bearish_engulfing,3,0,0,0,0,1
+2022-08-23,1745.97,bearish,2,"['sr_zone', 'candle']",bullish_engulfing,2,1,0,0,1,1
+2022-08-24,1750.98,bearish,1,['sr_zone'],,1,-1,0,0,2,1
+2022-08-25,1756.384,bearish,1,['structure'],,1,-1,0,0,3,1
+2022-08-26,1737.998,bearish,2,"['sr_zone', 'candle']",bearish_engulfing,2,0,0,0,4,1
+2022-08-28,1734.735,bearish,1,['candle'],inverted_hammer,1,3,0,0,6,1
+2022-08-29,1739.526,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",hammer,4,2,0,0,0,1
+2022-08-30,1723.304,bearish,1,['candle'],bearish_engulfing,1,0,0,0,1,1
+2022-08-31,1708.952,bearish,0,[],,0,-1,0,0,2,1
+2022-09-01,1697.207,bearish,3,"['structure', 'bos_or_choch', 'psych_level']",,3,-1,0,0,3,1
+2022-09-02,1712.532,bearish,3,"['structure', 'sr_zone', 'candle']",bullish_engulfing,3,1,0,0,4,1
+2022-09-04,1707.958,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2022-09-05,1713.927,bearish,2,"['sr_zone', 'candle']",bullish_engulfing,2,1,0,0,0,1
+2022-09-06,1703.478,bullish,5,"['structure', 'bos_or_choch', 'psych_level', 'sr_zone', 'candle']",bearish_engulfing,5,0,1,0,1,1
+2022-09-07,1716.553,bullish,2,"['structure', 'candle']",bullish_engulfing,2,1,1,0,2,1
+2022-09-08,1710.648,bullish,1,['sr_zone'],,1,-1,1,0,3,1
+2022-09-09,1717.186,bullish,3,"['structure', 'bos_or_choch', 'candle']",bullish_engulfing,3,1,1,0,4,1
+2022-09-11,1718.396,bullish,1,['candle'],inverted_hammer,1,3,1,0,6,1
+2022-09-12,1725.246,bullish,3,"['structure', 'bos_or_choch', 'candle']",bullish_engulfing,3,1,1,0,0,1
+2022-09-13,1702.097,bullish,2,"['psych_level', 'candle']",bearish_engulfing,2,0,1,0,1,1
+2022-09-14,1697.512,bullish,1,['psych_level'],,1,-1,1,0,2,1
+2022-09-15,1662.357,bullish,0,[],,0,-1,1,0,3,1
+2022-09-16,1675.286,bearish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,0,0,4,1
+2022-09-18,1677.946,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2022-09-19,1675.752,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,0,1
+2022-09-20,1666.4,bearish,1,['sr_zone'],,1,-1,0,0,1,1
+2022-09-21,1667.043,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",hammer,4,2,0,0,2,1
+2022-09-22,1672.724,bearish,2,"['sr_zone', 'candle']",hammer,2,2,0,0,3,1
+2022-09-23,1643.877,bearish,3,"['structure', 'bos_or_choch', 'candle']",bearish_engulfing,3,0,0,0,4,1
+2022-09-25,1644.054,bearish,2,"['sr_zone', 'candle']",hammer,2,2,0,0,6,1
+2022-09-26,1627.669,bearish,3,"['structure', 'bos_or_choch', 'candle']",bearish_engulfing,3,0,0,0,0,1
+2022-09-27,1628.797,bearish,1,['sr_zone'],,1,-1,0,0,1,1
+2022-09-28,1656.115,bearish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,0,0,2,1
+2022-09-29,1664.567,bearish,0,[],,0,-1,0,0,3,1
+2022-09-30,1660.963,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",inverted_hammer,4,3,1,0,4,1
+2022-10-02,1664.152,bullish,2,"['sr_zone', 'candle']",hammer,2,2,1,0,6,1
+2022-10-03,1700.996,bullish,2,"['structure', 'psych_level']",,2,-1,1,0,0,1
+2022-10-04,1725.563,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,1,1
+2022-10-05,1718.379,bullish,1,['sr_zone'],,1,-1,1,0,2,1
+2022-10-06,1711.893,bullish,1,['sr_zone'],,1,-1,1,0,3,1
+2022-10-07,1695.001,bullish,3,"['structure', 'psych_level', 'sr_zone']",,3,-1,1,0,4,1
+2022-10-09,1696.694,bullish,2,"['psych_level', 'sr_zone']",,2,-1,1,0,6,1
+2022-10-10,1670.131,bullish,1,['candle'],bearish_engulfing,1,0,1,0,0,1
+2022-10-11,1664.037,bearish,3,"['structure', 'bos_or_choch', 'candle']",inverted_hammer,3,3,0,0,1,1
+2022-10-12,1674.483,bearish,2,"['sr_zone', 'candle']",bullish_engulfing,2,1,0,0,2,1
+2022-10-13,1663.441,bearish,2,"['structure', 'candle']",bearish_engulfing,2,0,0,0,3,1
+2022-10-14,1644.267,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,4,1
+2022-10-16,1647.47,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2022-10-17,1650.698,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,0,1
+2022-10-18,1652.305,bearish,2,"['sr_zone', 'candle']",hammer,2,2,0,0,1,1
+2022-10-19,1627.097,bearish,1,['candle'],bearish_engulfing,1,0,0,0,2,1
+2022-10-20,1626.98,bearish,1,['candle'],inverted_hammer,1,3,0,0,3,1
+2022-10-21,1657.806,bearish,3,"['structure', 'bos_or_choch', 'candle']",bullish_engulfing,3,1,0,0,4,1
+2022-10-23,1661.251,bullish,3,"['structure', 'bos_or_choch', 'candle']",hammer,3,2,1,0,6,1
+2022-10-24,1651.742,bullish,2,"['sr_zone', 'candle']",bearish_engulfing,2,0,1,0,0,1
+2022-10-25,1652.755,bullish,3,"['structure', 'sr_zone', 'candle']",hammer,3,2,1,0,1,1
+2022-10-26,1667.513,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,2,1
+2022-10-27,1661.862,bullish,1,['sr_zone'],,1,-1,1,0,3,1
+2022-10-28,1644.448,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,4,1
+2022-10-30,1643.446,bearish,1,['candle'],inverted_hammer,1,3,0,0,6,1
+2022-10-31,1632.416,bearish,0,[],,0,-1,0,0,0,1
+2022-11-01,1646.772,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",bullish_engulfing,4,1,0,0,1,1
+2022-11-02,1633.721,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,2,1
+2022-11-03,1629.737,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,3,1
+2022-11-04,1680.966,bullish,3,"['structure', 'bos_or_choch', 'candle']",bullish_engulfing,3,1,1,0,4,1
+2022-11-06,1672.66,bullish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,1,0,6,1
+2022-11-07,1674.072,bullish,2,"['sr_zone', 'candle']",hammer,2,2,1,0,0,1
+2022-11-08,1711.587,bullish,1,['structure'],,1,-1,1,0,1,1
+2022-11-09,1706.45,bullish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,1,0,2,1
+2022-11-10,1752.196,bullish,1,['candle'],bullish_engulfing,1,1,1,0,3,1
+2022-11-11,1770.992,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,4,1
+2022-11-13,1763.439,bullish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,1,0,6,1
+2022-11-14,1769.481,bullish,3,"['structure', 'sr_zone', 'candle']",bullish_engulfing,3,1,1,0,0,1
+2022-11-15,1780.746,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,1,1
+2022-11-16,1773.843,bullish,1,['sr_zone'],,1,-1,1,0,2,1
+2022-11-17,1760.058,bullish,0,[],,0,-1,1,0,3,1
+2022-11-18,1750.852,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,4,1
+2022-11-20,1752.261,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2022-11-21,1738.506,bearish,3,"['structure', 'bos_or_choch', 'candle']",bearish_engulfing,3,0,0,0,0,1
+2022-11-22,1741.139,bearish,1,['sr_zone'],,1,-1,0,0,1,1
+2022-11-23,1752.271,bearish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,0,0,2,1
+2022-11-24,1755.189,bearish,0,[],,0,-1,0,0,3,1
+2022-11-25,1755.969,bullish,3,"['structure', 'bos_or_choch', 'candle']",hammer,3,2,1,0,4,1
+2022-11-27,1750.9,bullish,2,"['sr_zone', 'candle']",bearish_engulfing,2,0,1,0,6,1
+2022-11-28,1741.231,bearish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,0,0,0,1
+2022-11-29,1748.884,bearish,1,['sr_zone'],,1,-1,0,0,1,1
+2022-11-30,1773.332,bearish,0,[],,0,-1,0,0,2,1
+2022-12-01,1802.253,bullish,3,"['structure', 'bos_or_choch', 'psych_level']",,3,-1,1,0,3,1
+2022-12-02,1797.945,bullish,2,"['psych_level', 'sr_zone']",,2,-1,1,0,4,1
+2022-12-04,1798.946,bullish,2,"['psych_level', 'sr_zone']",,2,-1,1,0,6,1
+2022-12-05,1769.348,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",bearish_engulfing,4,0,1,0,0,1
+2022-12-06,1770.915,bullish,1,['sr_zone'],,1,-1,1,0,1,1
+2022-12-07,1786.964,bullish,1,['sr_zone'],,1,-1,1,0,2,1
+2022-12-08,1789.207,bullish,2,"['sr_zone', 'candle']",hammer,2,2,1,0,3,1
+2022-12-09,1797.455,bullish,3,"['structure', 'psych_level', 'sr_zone']",,3,-1,1,0,4,1
+2022-12-11,1794.954,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2022-12-12,1781.893,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,0,1
+2022-12-13,1809.588,bullish,3,"['structure', 'bos_or_choch', 'candle']",bullish_engulfing,3,1,1,0,1,1
+2022-12-14,1807.616,bullish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,1,0,2,1
+2022-12-15,1776.49,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,3,1
+2022-12-16,1793.062,bearish,1,['sr_zone'],,1,-1,0,0,4,1
+2022-12-18,1791.017,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2022-12-19,1787.255,bearish,3,"['structure', 'sr_zone', 'candle']",inverted_hammer,3,3,0,0,0,1
+2022-12-20,1817.199,bearish,1,['candle'],bullish_engulfing,1,1,0,0,1,1
+2022-12-21,1814.892,bearish,3,"['structure', 'sr_zone', 'candle']",inverted_hammer,3,3,0,0,2,1
+2022-12-22,1793.44,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,3,1
+2022-12-23,1798.469,bearish,2,"['psych_level', 'sr_zone']",,2,-1,0,0,4,1
+2022-12-26,1800.842,bearish,2,"['psych_level', 'sr_zone']",,2,-1,0,0,0,1
+2022-12-27,1812.353,bullish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,1,0,1,1
+2022-12-28,1805.765,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,2,1
+2022-12-29,1815.096,bullish,1,['candle'],bullish_engulfing,1,1,1,0,3,1
+2022-12-30,1823.51,bullish,0,[],,0,-1,1,0,4,1
+2023-01-02,1829.131,bullish,0,[],,0,-1,1,0,0,1
+2023-01-03,1836.522,bullish,0,[],,0,-1,1,0,1,1
+2023-01-04,1854.827,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,2,1
+2023-01-05,1832.799,bullish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,1,0,3,1
+2023-01-06,1865.989,bullish,1,['candle'],bullish_engulfing,1,1,1,0,4,1
+2023-01-08,1869.602,bullish,0,[],,0,-1,1,0,6,1
+2023-01-09,1870.49,bullish,3,"['structure', 'bos_or_choch', 'candle']",hammer,3,2,1,0,0,1
+2023-01-10,1877.167,bullish,0,[],,0,-1,1,0,1,1
+2023-01-11,1876.939,bullish,3,"['structure', 'sr_zone', 'candle']",inverted_hammer,3,3,1,0,2,1
+2023-01-12,1898.022,bullish,2,"['psych_level', 'candle']",bullish_engulfing,2,1,1,0,3,1
+2023-01-13,1920.251,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,4,1
+2023-01-15,1916.893,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2023-01-16,1917.856,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",hammer,4,2,1,0,0,1
+2023-01-17,1908.691,bullish,2,"['sr_zone', 'candle']",bearish_engulfing,2,0,1,0,1,1
+2023-01-18,1906.818,bullish,3,"['structure', 'sr_zone', 'candle']",inverted_hammer,3,3,1,0,2,1
+2023-01-19,1931.68,bullish,1,['candle'],bullish_engulfing,1,1,1,0,3,1
+2023-01-20,1925.916,bullish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,1,0,4,1
+2023-01-22,1927.258,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2023-01-23,1931.325,bullish,3,"['structure', 'sr_zone', 'candle']",hammer,3,2,1,0,0,1
+2023-01-24,1936.963,bullish,1,['candle'],hammer,1,2,1,0,1,1
+2023-01-25,1948.321,bullish,0,[],,0,-1,1,0,2,1
+2023-01-26,1930.718,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",bearish_engulfing,4,0,1,0,3,1
+2023-01-27,1928.265,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,4,1
+2023-01-29,1928.854,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2023-01-30,1922.089,bullish,2,"['structure', 'candle']",bearish_engulfing,2,0,1,0,0,1
+2023-01-31,1927.336,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",hammer,4,2,0,0,1,1
+2023-02-01,1953.043,bearish,0,[],,0,-1,0,0,2,1
+2023-02-02,1915.002,bullish,3,"['structure', 'bos_or_choch', 'candle']",bearish_engulfing,3,0,1,0,3,1
+2023-02-03,1865.805,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,4,1
+2023-02-05,1865.462,bearish,0,[],,0,-1,0,0,6,1
+2023-02-06,1868.476,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,0,1
+2023-02-07,1872.894,bearish,1,['sr_zone'],,1,-1,0,0,1,1
+2023-02-08,1874.989,bearish,1,['sr_zone'],,1,-1,0,0,2,1
+2023-02-09,1862.322,bearish,2,"['structure', 'candle']",bearish_engulfing,2,0,0,0,3,1
+2023-02-10,1865.314,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",hammer,4,2,0,0,4,1
+2023-02-12,1862.705,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2023-02-13,1854.376,bearish,0,[],,0,-1,0,0,0,1
+2023-02-14,1854.865,bearish,3,"['structure', 'sr_zone', 'candle']",hammer,3,2,0,0,1,1
+2023-02-15,1836.361,bearish,1,['candle'],bearish_engulfing,1,0,0,0,2,1
+2023-02-16,1834.272,bearish,1,['candle'],inverted_hammer,1,3,0,0,3,1
+2023-02-17,1842.499,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",bullish_engulfing,4,1,0,0,4,1
+2023-02-19,1838.659,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2023-02-20,1841.674,bearish,3,"['structure', 'sr_zone', 'candle']",bullish_engulfing,3,1,0,0,0,1
+2023-02-21,1835.548,bearish,2,"['sr_zone', 'candle']",bearish_engulfing,2,0,0,0,1,1
+2023-02-22,1825.075,bearish,1,['structure'],,1,-1,0,0,2,1
+2023-02-23,1823.166,bearish,1,['candle'],inverted_hammer,1,3,0,0,3,1
+2023-02-24,1810.778,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,4,1
+2023-02-26,1811.74,bearish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,0,0,6,1
+2023-02-27,1817.137,bearish,2,"['sr_zone', 'candle']",bullish_engulfing,2,1,0,0,0,1
+2023-02-28,1825.551,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,1,1
+2023-03-01,1836.554,bearish,1,['structure'],,1,-1,0,0,2,1
+2023-03-02,1837.818,bearish,1,['candle'],hammer,1,2,0,0,3,1
+2023-03-03,1855.265,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,4,1
+2023-03-05,1852.294,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2023-03-06,1846.323,bullish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,1,0,0,1
+2023-03-07,1813.936,bullish,0,[],,0,-1,1,0,1,1
+2023-03-08,1815.196,bullish,3,"['structure', 'sr_zone', 'candle']",hammer,3,2,1,0,2,1
+2023-03-09,1831.569,bullish,1,['sr_zone'],,1,-1,1,0,3,1
+2023-03-10,1867.109,bullish,0,[],,0,-1,1,0,4,1
+2023-03-12,1877.746,bullish,1,['candle'],inverted_hammer,1,3,1,0,6,1
+2023-03-13,1912.025,bullish,3,"['structure', 'bos_or_choch', 'candle']",bullish_engulfing,3,1,1,0,0,1
+2023-03-14,1903.064,bullish,2,"['psych_level', 'sr_zone']",,2,-1,1,0,1,1
+2023-03-15,1921.155,bullish,3,"['structure', 'bos_or_choch', 'candle']",bullish_engulfing,3,1,1,0,2,1
+2023-03-16,1921.294,bullish,1,['candle'],hammer,1,2,1,0,3,1
+2023-03-17,1988.129,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,4,1
+2023-03-19,1976.936,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2023-03-20,1976.585,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",inverted_hammer,4,3,1,0,0,1
+2023-03-21,1943.106,bullish,1,['sr_zone'],,1,-1,1,0,1,1
+2023-03-22,1969.706,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,2,1
+2023-03-23,1991.324,bullish,1,['structure'],,1,-1,1,0,3,1
+2023-03-24,1978.777,bullish,1,['sr_zone'],,1,-1,1,0,4,1
+2023-03-26,1975.691,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2023-03-27,1958.071,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,0,1
+2023-03-28,1971.867,bullish,1,['sr_zone'],,1,-1,1,0,1,1
+2023-03-29,1963.197,bullish,1,['sr_zone'],,1,-1,1,0,2,1
+2023-03-30,1978.386,bullish,3,"['structure', 'sr_zone', 'candle']",bullish_engulfing,3,1,1,0,3,1
+2023-03-31,1969.376,bullish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,1,0,4,1
+2023-04-02,1957.027,bullish,0,[],,0,-1,1,0,6,1
+2023-04-03,1984.935,bearish,3,"['structure', 'bos_or_choch', 'candle']",bullish_engulfing,3,1,0,0,0,1
+2023-04-04,2021.734,bearish,0,[],,0,-1,0,0,1,1
+2023-04-05,2020.287,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",inverted_hammer,4,3,1,0,2,1
+2023-04-06,2007.761,bullish,1,['sr_zone'],,1,-1,1,0,3,1
+2023-04-09,2005.497,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2023-04-10,1992.389,bullish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,1,0,0,1
+2023-04-11,2004.659,bullish,2,"['psych_level', 'sr_zone']",,2,-1,1,0,1,1
+2023-04-12,2018.149,bullish,1,['sr_zone'],,1,-1,1,0,2,1
+2023-04-13,2040.487,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,3,1
+2023-04-14,2004.252,bullish,4,"['structure', 'psych_level', 'sr_zone', 'candle']",bearish_engulfing,4,0,1,0,4,1
+2023-04-16,2002.848,bullish,2,"['psych_level', 'sr_zone']",,2,-1,1,0,6,1
+2023-04-17,1993.905,bearish,3,"['structure', 'bos_or_choch', 'candle']",bearish_engulfing,3,0,0,0,0,1
+2023-04-18,2005.717,bearish,2,"['sr_zone', 'candle']",bullish_engulfing,2,1,0,0,1,1
+2023-04-19,1993.616,bearish,3,"['structure', 'bos_or_choch', 'candle']",bearish_engulfing,3,0,0,0,2,1
+2023-04-20,2005.313,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,3,1
+2023-04-21,1982.886,bearish,2,"['structure', 'candle']",bearish_engulfing,2,0,0,0,4,1
+2023-04-23,1984.62,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2023-04-24,1995.016,bearish,3,"['structure', 'psych_level', 'sr_zone']",,3,-1,0,0,0,1
+2023-04-25,2000.172,bearish,3,"['psych_level', 'sr_zone', 'candle']",hammer,3,2,0,0,1,1
+2023-04-26,1991.647,bearish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,0,0,2,1
+2023-04-27,1986.914,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",inverted_hammer,4,3,0,0,3,1
+2023-04-28,1989.376,bearish,2,"['sr_zone', 'candle']",hammer,2,2,0,0,4,1
+2023-04-30,1986.895,bearish,0,[],,0,-1,0,0,6,1
+2023-05-01,1981.373,bearish,2,"['structure', 'candle']",inverted_hammer,2,3,0,0,0,1
+2023-05-02,2015.905,bearish,1,['candle'],bullish_engulfing,1,1,0,0,1,1
+2023-05-03,2051.957,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,2,1
+2023-05-04,2049.922,bullish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,1,0,3,1
+2023-05-05,2016.65,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,4,1
+2023-05-07,2016.006,bullish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,1,0,6,1
+2023-05-08,2021.237,bullish,2,"['sr_zone', 'candle']",bullish_engulfing,2,1,1,0,0,1
+2023-05-09,2036.27,bullish,1,['sr_zone'],,1,-1,1,0,1,1
+2023-05-10,2031.436,bullish,3,"['structure', 'sr_zone', 'candle']",inverted_hammer,3,3,1,0,2,1
+2023-05-11,2016.346,bullish,1,['sr_zone'],,1,-1,1,0,3,1
+2023-05-12,2010.912,bullish,1,['structure'],,1,-1,1,0,4,1
+2023-05-14,2009.558,bullish,0,[],,0,-1,1,0,6,1
+2023-05-15,2014.4,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,0,1
+2023-05-16,1989.63,bullish,1,['candle'],bearish_engulfing,1,0,1,0,1,1
+2023-05-17,1982.714,bullish,0,[],,0,-1,1,0,2,1
+2023-05-18,1958.356,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,3,1
+2023-05-19,1977.703,bearish,1,['sr_zone'],,1,-1,0,0,4,1
+2023-05-21,1980.829,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2023-05-22,1969.784,bearish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,0,0,0,1
+2023-05-23,1974.98,bearish,3,"['structure', 'sr_zone', 'candle']",hammer,3,2,0,0,1,1
+2023-05-24,1959.752,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",bearish_engulfing,4,0,1,0,2,1
+2023-05-25,1940.515,bullish,0,[],,0,-1,1,0,3,1
+2023-05-26,1946.834,bearish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,0,0,4,1
+2023-05-28,1943.654,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2023-05-29,1941.683,bearish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,0,0,0,1
+2023-05-30,1958.535,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",bullish_engulfing,4,1,0,0,1,1
+2023-05-31,1966.244,bearish,0,[],,0,-1,0,0,2,1
+2023-06-01,1977.03,bearish,0,[],,0,-1,0,0,3,1
+2023-06-02,1947.992,bearish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,0,0,4,1
+2023-06-04,1949.33,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2023-06-05,1961.224,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,0,1
+2023-06-06,1963.345,bearish,2,"['sr_zone', 'candle']",hammer,2,2,0,0,1,1
+2023-06-07,1944.436,bearish,2,"['structure', 'candle']",bearish_engulfing,2,0,0,0,2,1
+2023-06-08,1965.316,bearish,1,['candle'],bullish_engulfing,1,1,0,0,3,1
+2023-06-09,1960.64,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,4,1
+2023-06-11,1959.933,bearish,2,"['sr_zone', 'candle']",hammer,2,2,0,0,6,1
+2023-06-12,1959.94,bearish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,0,0,0,1
+2023-06-13,1943.884,bearish,1,['structure'],,1,-1,0,0,1,1
+2023-06-14,1945.188,bearish,2,"['sr_zone', 'candle']",hammer,2,2,0,0,2,1
+2023-06-15,1958.223,bearish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,0,0,3,1
+2023-06-16,1957.441,bearish,3,"['structure', 'sr_zone', 'candle']",inverted_hammer,3,3,0,0,4,1
+2023-06-18,1957.038,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2023-06-19,1952.197,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,0,1
+2023-06-20,1937.231,bearish,0,[],,0,-1,0,0,1,1
+2023-06-21,1933.839,bearish,0,[],,0,-1,0,0,2,1
+2023-06-22,1914.439,bearish,0,[],,0,-1,0,0,3,1
+2023-06-23,1921.192,bearish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,0,0,4,1
+2023-06-25,1925.294,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2023-06-26,1922.485,bearish,3,"['structure', 'sr_zone', 'candle']",inverted_hammer,3,3,0,0,0,1
+2023-06-27,1915.385,bearish,1,['sr_zone'],,1,-1,0,0,1,1
+2023-06-28,1909.681,bearish,0,[],,0,-1,0,0,2,1
+2023-06-29,1908.661,bearish,3,"['structure', 'bos_or_choch', 'candle']",inverted_hammer,3,3,0,0,3,1
+2023-06-30,1919.333,bearish,3,"['structure', 'sr_zone', 'candle']",bullish_engulfing,3,1,0,0,4,1
+2023-07-02,1918.169,bearish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,0,0,6,1
+2023-07-03,1921.181,bearish,2,"['structure', 'candle']",hammer,2,2,0,0,0,1
+2023-07-04,1926.176,bearish,0,[],,0,-1,0,0,1,1
+2023-07-05,1916.772,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",bearish_engulfing,4,0,1,0,2,1
+2023-07-06,1911.516,bearish,3,"['structure', 'bos_or_choch', 'candle']",inverted_hammer,3,3,0,0,3,1
+2023-07-07,1925.339,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",bullish_engulfing,4,1,1,0,4,1
+2023-07-09,1924.848,bullish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,1,0,6,1
+2023-07-10,1924.821,bullish,3,"['structure', 'sr_zone', 'candle']",inverted_hammer,3,3,1,0,0,1
+2023-07-11,1933.24,bullish,1,['candle'],bullish_engulfing,1,1,1,0,1,1
+2023-07-12,1957.713,bullish,0,[],,0,-1,1,0,2,1
+2023-07-13,1960.134,bullish,1,['candle'],hammer,1,2,1,0,3,1
+2023-07-14,1955.223,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",bearish_engulfing,4,0,1,0,4,1
+2023-07-16,1953.281,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2023-07-17,1955.398,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",hammer,4,2,0,0,0,1
+2023-07-18,1977.481,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,1,1
+2023-07-19,1977.683,bullish,1,['candle'],hammer,1,2,1,0,2,1
+2023-07-20,1972.197,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",bearish_engulfing,4,0,1,0,3,1
+2023-07-21,1961.851,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,4,1
+2023-07-23,1961.177,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2023-07-24,1954.393,bullish,1,['structure'],,1,-1,1,0,0,1
+2023-07-25,1965.284,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",bullish_engulfing,4,1,0,0,1,1
+2023-07-26,1972.009,bearish,1,['sr_zone'],,1,-1,0,0,2,1
+2023-07-27,1947.443,bearish,3,"['structure', 'bos_or_choch', 'candle']",bearish_engulfing,3,0,0,0,3,1
+2023-07-28,1959.184,bearish,1,['sr_zone'],,1,-1,0,0,4,1
+2023-07-30,1958.063,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2023-07-31,1963.907,bearish,3,"['structure', 'sr_zone', 'candle']",bullish_engulfing,3,1,0,0,0,1
+2023-08-01,1952.146,bearish,2,"['sr_zone', 'candle']",bearish_engulfing,2,0,0,0,1,1
+2023-08-02,1936.0,bearish,0,[],,0,-1,0,0,2,1
+2023-08-03,1935.774,bearish,1,['candle'],inverted_hammer,1,3,0,0,3,1
+2023-08-04,1942.483,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",bullish_engulfing,4,1,0,0,4,1
+2023-08-06,1943.79,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2023-08-07,1936.732,bearish,2,"['sr_zone', 'candle']",bearish_engulfing,2,0,0,0,0,1
+2023-08-08,1925.569,bearish,0,[],,0,-1,0,0,1,1
+2023-08-09,1916.688,bearish,0,[],,0,-1,0,0,2,1
+2023-08-10,1912.358,bearish,3,"['structure', 'bos_or_choch', 'candle']",inverted_hammer,3,3,0,0,3,1
+2023-08-11,1913.786,bearish,1,['sr_zone'],,1,-1,0,0,4,1
+2023-08-13,1913.62,bearish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,0,0,6,1
+2023-08-14,1907.557,bearish,1,['structure'],,1,-1,0,0,0,1
+2023-08-15,1901.419,bearish,1,['psych_level'],,1,-1,0,0,1,1
+2023-08-16,1893.295,bearish,0,[],,0,-1,0,0,2,1
+2023-08-17,1891.227,bearish,3,"['structure', 'bos_or_choch', 'candle']",inverted_hammer,3,3,0,0,3,1
+2023-08-18,1889.529,bearish,1,['candle'],inverted_hammer,1,3,0,0,4,1
+2023-08-20,1889.919,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2023-08-21,1894.664,bearish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,0,0,0,1
+2023-08-22,1898.478,bearish,1,['psych_level'],,1,-1,0,0,1,1
+2023-08-23,1917.849,bearish,0,[],,0,-1,0,0,2,1
+2023-08-24,1915.847,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",inverted_hammer,4,3,1,0,3,1
+2023-08-25,1914.321,bullish,3,"['structure', 'sr_zone', 'candle']",inverted_hammer,3,3,1,0,4,1
+2023-08-27,1915.028,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2023-08-28,1921.186,bullish,2,"['structure', 'candle']",bullish_engulfing,2,1,1,0,0,1
+2023-08-29,1936.168,bullish,0,[],,0,-1,1,0,1,1
+2023-08-30,1944.185,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,2,1
+2023-08-31,1939.824,bullish,1,['sr_zone'],,1,-1,1,0,3,1
+2023-09-01,1939.704,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",inverted_hammer,4,3,1,0,4,1
+2023-09-03,1940.558,bullish,2,"['sr_zone', 'candle']",bullish_engulfing,2,1,1,0,6,1
+2023-09-04,1937.659,bullish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,1,0,0,1
+2023-09-05,1926.559,bullish,0,[],,0,-1,1,0,1,1
+2023-09-06,1917.091,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,2,1
+2023-09-07,1920.247,bearish,1,['sr_zone'],,1,-1,0,0,3,1
+2023-09-08,1918.973,bearish,3,"['structure', 'sr_zone', 'candle']",inverted_hammer,3,3,0,0,4,1
+2023-09-10,1918.801,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,6,1
+2023-09-11,1921.624,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",bullish_engulfing,4,1,1,0,0,1
+2023-09-12,1912.858,bullish,1,['candle'],bearish_engulfing,1,0,1,0,1,1
+2023-09-13,1909.176,bullish,0,[],,0,-1,1,0,2,1
+2023-09-14,1909.735,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",hammer,4,2,0,0,3,1
+2023-09-15,1923.831,bearish,1,['structure'],,1,-1,0,0,4,1
+2023-09-17,1923.227,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2023-09-18,1934.04,bearish,1,['candle'],bullish_engulfing,1,1,0,0,0,1
+2023-09-19,1931.319,bearish,1,['sr_zone'],,1,-1,0,0,1,1
+2023-09-20,1929.424,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",inverted_hammer,4,3,1,0,2,1
+2023-09-21,1921.353,bullish,1,['structure'],,1,-1,1,0,3,1
+2023-09-22,1925.231,bullish,1,['sr_zone'],,1,-1,1,0,4,1
+2023-09-24,1924.717,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2023-09-25,1916.207,bullish,1,['structure'],,1,-1,1,0,0,1
+2023-09-26,1901.529,bullish,1,['psych_level'],,1,-1,1,0,1,1
+2023-09-27,1877.562,bullish,0,[],,0,-1,1,0,2,1
+2023-09-28,1866.7,bullish,0,[],,0,-1,1,0,3,1
+2023-09-29,1848.796,bullish,1,['structure'],,1,-1,1,0,4,1
+2023-10-01,1848.314,bullish,0,[],,0,-1,1,0,6,1
+2023-10-02,1824.944,bullish,2,"['structure', 'candle']",bearish_engulfing,2,0,1,0,0,1
+2023-10-03,1823.303,bearish,3,"['structure', 'bos_or_choch', 'candle']",inverted_hammer,3,3,0,0,1,1
+2023-10-04,1822.524,bearish,1,['candle'],inverted_hammer,1,3,0,0,2,1
+2023-10-05,1821.272,bearish,1,['candle'],inverted_hammer,1,3,0,0,3,1
+2023-10-06,1831.9,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",bullish_engulfing,4,1,0,0,4,1
+2023-10-08,1847.965,bearish,0,[],,0,-1,0,0,6,1
+2023-10-09,1862.536,bearish,2,"['structure', 'candle']",bullish_engulfing,2,1,0,0,0,1
+2023-10-10,1859.647,bearish,1,['sr_zone'],,1,-1,0,0,1,1
+2023-10-11,1875.25,bearish,1,['candle'],bullish_engulfing,1,1,0,0,2,1
+2023-10-12,1870.555,bearish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,0,0,3,1
+2023-10-13,1932.217,bullish,3,"['structure', 'bos_or_choch', 'candle']",bullish_engulfing,3,1,1,0,4,1
+2023-10-15,1925.836,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2023-10-16,1919.386,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,0,1
+2023-10-17,1924.715,bullish,1,['sr_zone'],,1,-1,1,0,1,1
+2023-10-18,1950.867,bullish,0,[],,0,-1,1,0,2,1
+2023-10-19,1977.103,bullish,0,[],,0,-1,1,0,3,1
+2023-10-20,1980.769,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,4,1
+2023-10-22,1971.554,bullish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,1,0,6,1
+2023-10-23,1973.522,bullish,3,"['structure', 'sr_zone', 'candle']",hammer,3,2,1,0,0,1
+2023-10-24,1972.844,bullish,3,"['structure', 'sr_zone', 'candle']",inverted_hammer,3,3,1,0,1,1
+2023-10-25,1982.92,bullish,1,['candle'],bullish_engulfing,1,1,1,0,2,1
+2023-10-26,1984.345,bullish,1,['candle'],hammer,1,2,1,0,3,1
+2023-10-27,2006.083,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,4,1
+2023-10-29,2002.621,bullish,3,"['psych_level', 'sr_zone', 'candle']",inverted_hammer,3,3,1,0,6,1
+2023-10-30,1995.513,bullish,2,"['psych_level', 'sr_zone']",,2,-1,1,0,0,1
+2023-10-31,1983.667,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,1,1
+2023-11-01,1985.01,bullish,3,"['structure', 'sr_zone', 'candle']",hammer,3,2,1,0,2,1
+2023-11-02,1984.961,bullish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,1,0,3,1
+2023-11-03,1992.516,bullish,3,"['structure', 'sr_zone', 'candle']",bullish_engulfing,3,1,1,0,4,1
+2023-11-05,1988.47,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2023-11-06,1976.677,bullish,1,['structure'],,1,-1,1,0,0,1
+2023-11-07,1968.902,bullish,0,[],,0,-1,1,0,1,1
+2023-11-08,1950.812,bullish,0,[],,0,-1,1,0,2,1
+2023-11-09,1959.058,bullish,1,['sr_zone'],,1,-1,1,0,3,1
+2023-11-10,1938.353,bullish,1,['candle'],bearish_engulfing,1,0,1,0,4,1
+2023-11-12,1940.344,bearish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,0,0,6,1
+2023-11-13,1946.4,bearish,2,"['sr_zone', 'candle']",bullish_engulfing,2,1,0,0,0,1
+2023-11-14,1962.493,bearish,0,[],,0,-1,0,0,1,1
+2023-11-15,1960.331,bearish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,0,0,2,1
+2023-11-16,1982.599,bearish,1,['candle'],bullish_engulfing,1,1,0,0,3,1
+2023-11-17,1980.635,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",inverted_hammer,4,3,1,0,4,1
+2023-11-19,1974.471,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2023-11-20,1981.169,bullish,3,"['structure', 'sr_zone', 'candle']",bullish_engulfing,3,1,1,0,0,1
+2023-11-21,1999.339,bullish,3,"['structure', 'bos_or_choch', 'psych_level']",,3,-1,1,0,1,1
+2023-11-22,1990.506,bullish,1,['sr_zone'],,1,-1,1,0,2,1
+2023-11-23,1993.983,bullish,1,['sr_zone'],,1,-1,1,0,3,1
+2023-11-24,2002.19,bullish,2,"['structure', 'psych_level']",,2,-1,1,0,4,1
+2023-11-26,2002.25,bullish,1,['psych_level'],,1,-1,1,0,6,1
+2023-11-27,2015.215,bullish,0,[],,0,-1,1,0,0,1
+2023-11-28,2044.406,bullish,0,[],,0,-1,1,0,1,1
+2023-11-29,2044.643,bullish,3,"['structure', 'bos_or_choch', 'candle']",hammer,3,2,1,0,2,1
+2023-11-30,2039.918,bullish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,1,0,3,1
+2023-12-01,2071.554,bullish,1,['candle'],bullish_engulfing,1,1,1,0,4,1
+2023-12-03,2117.509,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,6,1
+2023-12-04,2034.087,bullish,1,['candle'],bearish_engulfing,1,0,1,0,0,1
+2023-12-05,2018.903,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,1,1
+2023-12-06,2027.006,bearish,1,['sr_zone'],,1,-1,0,0,2,1
+2023-12-07,2027.916,bearish,3,"['structure', 'sr_zone', 'candle']",hammer,3,2,0,0,3,1
+2023-12-08,2004.34,bearish,4,"['structure', 'bos_or_choch', 'psych_level', 'candle']",bearish_engulfing,4,0,0,0,4,1
+2023-12-10,2007.054,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2023-12-11,1982.96,bearish,3,"['structure', 'bos_or_choch', 'candle']",bearish_engulfing,3,0,0,0,0,1
+2023-12-12,1982.453,bearish,1,['candle'],inverted_hammer,1,3,0,0,1,1
+2023-12-13,2032.813,bearish,3,"['structure', 'bos_or_choch', 'candle']",bullish_engulfing,3,1,0,0,2,1
+2023-12-14,2035.552,bullish,3,"['structure', 'bos_or_choch', 'candle']",hammer,3,2,1,0,3,1
+2023-12-15,2019.491,bullish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,1,0,4,1
+2023-12-17,2017.415,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2023-12-18,2027.604,bullish,2,"['sr_zone', 'candle']",bullish_engulfing,2,1,1,0,0,1
+2023-12-19,2040.932,bullish,1,['structure'],,1,-1,1,0,1,1
+2023-12-20,2032.128,bullish,1,['sr_zone'],,1,-1,1,0,2,1
+2023-12-21,2052.778,bullish,1,['candle'],bullish_engulfing,1,1,1,0,3,1
+2023-12-22,2053.095,bullish,3,"['structure', 'bos_or_choch', 'candle']",hammer,3,2,1,0,4,1
+2023-12-25,2054.497,bullish,0,[],,0,-1,1,0,0,1
+2023-12-26,2065.502,bullish,1,['candle'],bullish_engulfing,1,1,1,0,1,1
+2023-12-27,2079.169,bullish,0,[],,0,-1,1,0,2,1
+2023-12-28,2066.564,bullish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,1,0,3,1
+2023-12-29,2062.838,bullish,3,"['structure', 'sr_zone', 'candle']",inverted_hammer,3,3,1,0,4,1
+2024-01-01,2063.543,bullish,1,['sr_zone'],,1,-1,1,0,0,1
+2024-01-02,2059.476,bullish,2,"['structure', 'candle']",inverted_hammer,2,3,1,0,1,1
+2024-01-03,2042.666,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,2,1
+2024-01-04,2043.865,bearish,2,"['sr_zone', 'candle']",hammer,2,2,0,0,3,1
+2024-01-05,2045.479,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",hammer,4,2,0,0,4,1
+2024-01-07,2044.208,bearish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,0,0,6,1
+2024-01-08,2030.439,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,0,1
+2024-01-09,2030.401,bearish,1,['candle'],inverted_hammer,1,3,0,0,1,1
+2024-01-10,2026.358,bearish,1,['candle'],inverted_hammer,1,3,0,0,2,1
+2024-01-11,2034.954,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",bullish_engulfing,4,1,0,0,3,1
+2024-01-12,2049.032,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,4,1
+2024-01-14,2047.612,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2024-01-15,2053.841,bullish,2,"['structure', 'candle']",bullish_engulfing,2,1,1,0,0,1
+2024-01-16,2027.826,bullish,2,"['sr_zone', 'candle']",bearish_engulfing,2,0,1,0,1,1
+2024-01-17,2009.243,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,2,1
+2024-01-18,2023.423,bearish,1,['sr_zone'],,1,-1,0,0,3,1
+2024-01-19,2029.452,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,4,1
+2024-01-21,2027.504,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2024-01-22,2020.552,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,0,1
+2024-01-23,2029.137,bearish,3,"['structure', 'sr_zone', 'candle']",bullish_engulfing,3,1,0,0,1,1
+2024-01-24,2016.101,bearish,1,['candle'],bearish_engulfing,1,0,0,0,2,1
+2024-01-25,2020.248,bearish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,0,0,3,1
+2024-01-26,2018.469,bearish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,0,0,4,1
+2024-01-28,2021.831,bearish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,0,0,6,1
+2024-01-29,2030.73,bearish,2,"['structure', 'candle']",bullish_engulfing,2,1,0,0,0,1
+2024-01-30,2036.231,bearish,0,[],,0,-1,0,0,1,1
+2024-01-31,2039.784,bearish,0,[],,0,-1,0,0,2,1
+2024-02-01,2054.627,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,3,1
+2024-02-02,2039.607,bullish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,1,0,4,1
+2024-02-04,2039.716,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2024-02-05,2024.859,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,0,1
+2024-02-06,2035.069,bearish,1,['sr_zone'],,1,-1,0,0,1,1
+2024-02-07,2036.227,bearish,3,"['structure', 'sr_zone', 'candle']",hammer,3,2,0,0,2,1
+2024-02-08,2034.123,bearish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,0,0,3,1
+2024-02-09,2024.24,bearish,0,[],,0,-1,0,0,4,1
+2024-02-11,2025.266,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2024-02-12,2018.65,bearish,0,[],,0,-1,0,0,0,1
+2024-02-13,1991.193,bearish,1,['structure'],,1,-1,0,0,1,1
+2024-02-14,1993.452,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",hammer,4,2,0,0,2,1
+2024-02-15,2003.157,bearish,2,"['psych_level', 'sr_zone']",,2,-1,0,0,3,1
+2024-02-16,2013.269,bearish,1,['sr_zone'],,1,-1,0,0,4,1
+2024-02-18,2010.603,bearish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,0,0,6,1
+2024-02-19,2016.203,bearish,1,['candle'],bullish_engulfing,1,1,0,0,0,1
+2024-02-20,2024.128,bearish,0,[],,0,-1,0,0,1,1
+2024-02-21,2025.568,bearish,1,['candle'],hammer,1,2,0,0,2,1
+2024-02-22,2024.677,bearish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,0,0,3,1
+2024-02-23,2035.524,bullish,3,"['structure', 'bos_or_choch', 'candle']",bullish_engulfing,3,1,1,0,4,1
+2024-02-25,2034.224,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2024-02-26,2031.073,bullish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,1,0,0,1
+2024-02-27,2030.09,bullish,3,"['structure', 'sr_zone', 'candle']",inverted_hammer,3,3,1,0,1,1
+2024-02-28,2034.303,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",bullish_engulfing,4,1,0,0,2,1
+2024-02-29,2043.981,bearish,0,[],,0,-1,0,0,3,1
+2024-03-01,2083.315,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,4,1
+2024-03-03,2083.44,bullish,0,[],,0,-1,1,0,6,1
+2024-03-04,2114.48,bullish,1,['structure'],,1,-1,1,0,0,1
+2024-03-05,2128.162,bullish,0,[],,0,-1,1,0,1,1
+2024-03-06,2147.192,bullish,0,[],,0,-1,1,0,2,1
+2024-03-07,2161.467,bullish,0,[],,0,-1,1,0,3,1
+2024-03-08,2178.502,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,4,1
+2024-03-10,2181.567,bullish,0,[],,0,-1,1,0,6,1
+2024-03-11,2183.552,bullish,2,"['structure', 'candle']",hammer,2,2,1,0,0,1
+2024-03-12,2156.915,bullish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,1,0,1,1
+2024-03-13,2175.361,bullish,1,['sr_zone'],,1,-1,1,0,2,1
+2024-03-14,2161.62,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,3,1
+2024-03-15,2155.697,bullish,0,[],,0,-1,1,0,4,1
+2024-03-17,2156.516,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2024-03-18,2161.65,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",hammer,4,2,0,0,0,1
+2024-03-19,2157.009,bearish,1,['sr_zone'],,1,-1,0,0,1,1
+2024-03-20,2203.501,bearish,2,"['psych_level', 'candle']",bullish_engulfing,2,1,0,0,2,1
+2024-03-21,2181.491,bullish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,1,0,3,1
+2024-03-22,2165.338,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,4,1
+2024-03-24,2168.337,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2024-03-25,2172.878,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,0,1
+2024-03-26,2179.466,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,1,1
+2024-03-27,2190.969,bullish,0,[],,0,-1,1,0,2,1
+2024-03-28,2232.587,bullish,0,[],,0,-1,1,0,3,1
+2024-03-31,2244.928,bullish,0,[],,0,-1,1,0,6,1
+2024-04-01,2248.935,bullish,2,"['structure', 'candle']",hammer,2,2,1,0,0,1
+2024-04-02,2280.206,bullish,0,[],,0,-1,1,0,1,1
+2024-04-03,2297.448,bullish,1,['psych_level'],,1,-1,1,0,2,1
+2024-04-04,2288.891,bullish,1,['sr_zone'],,1,-1,1,0,3,1
+2024-04-05,2329.355,bullish,3,"['structure', 'bos_or_choch', 'candle']",bullish_engulfing,3,1,1,0,4,1
+2024-04-07,2311.647,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2024-04-08,2338.788,bullish,2,"['structure', 'candle']",bullish_engulfing,2,1,1,0,0,1
+2024-04-09,2354.776,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,1,1
+2024-04-10,2335.429,bullish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,1,0,2,1
+2024-04-11,2377.0,bullish,1,['candle'],bullish_engulfing,1,1,1,0,3,1
+2024-04-12,2344.382,bullish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,1,0,4,1
+2024-04-14,2364.486,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2024-04-15,2381.833,bullish,2,"['structure', 'candle']",hammer,2,2,1,0,0,1
+2024-04-16,2382.843,bullish,2,"['structure', 'candle']",hammer,2,2,1,0,1,1
+2024-04-17,2367.839,bullish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,1,0,2,1
+2024-04-18,2380.003,bullish,1,['sr_zone'],,1,-1,1,0,3,1
+2024-04-19,2390.677,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,4,1
+2024-04-21,2386.483,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2024-04-22,2333.738,bullish,1,['candle'],bearish_engulfing,1,0,1,0,0,1
+2024-04-23,2323.21,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,1,1
+2024-04-24,2316.219,bearish,1,['candle'],inverted_hammer,1,3,0,0,2,1
+2024-04-25,2330.621,bearish,3,"['structure', 'sr_zone', 'candle']",bullish_engulfing,3,1,0,0,3,1
+2024-04-26,2337.792,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,4,1
+2024-04-28,2335.985,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2024-04-29,2333.173,bearish,3,"['structure', 'sr_zone', 'candle']",inverted_hammer,3,3,0,0,0,1
+2024-04-30,2291.244,bearish,0,[],,0,-1,0,0,1,1
+2024-05-01,2323.809,bearish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,0,0,2,1
+2024-05-02,2304.247,bearish,2,"['psych_level', 'sr_zone']",,2,-1,0,0,3,1
+2024-05-03,2301.627,bearish,5,"['structure', 'bos_or_choch', 'psych_level', 'sr_zone', 'candle']",inverted_hammer,5,3,0,0,4,1
+2024-05-05,2293.968,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2024-05-06,2325.943,bearish,2,"['structure', 'candle']",bullish_engulfing,2,1,0,0,0,1
+2024-05-07,2315.118,bearish,1,['sr_zone'],,1,-1,0,0,1,1
+2024-05-08,2308.74,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,2,1
+2024-05-09,2346.516,bearish,1,['candle'],bullish_engulfing,1,1,0,0,3,1
+2024-05-10,2360.449,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,4,1
+2024-05-12,2360.41,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2024-05-13,2338.408,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,0,1
+2024-05-14,2355.772,bullish,1,['sr_zone'],,1,-1,1,0,1,1
+2024-05-15,2391.769,bullish,0,[],,0,-1,1,0,2,1
+2024-05-16,2377.726,bullish,1,['sr_zone'],,1,-1,1,0,3,1
+2024-05-17,2413.933,bullish,1,['candle'],bullish_engulfing,1,1,1,0,4,1
+2024-05-19,2420.194,bullish,0,[],,0,-1,1,0,6,1
+2024-05-20,2426.133,bullish,3,"['structure', 'bos_or_choch', 'candle']",hammer,3,2,1,0,0,1
+2024-05-21,2421.654,bullish,1,['sr_zone'],,1,-1,1,0,1,1
+2024-05-22,2382.124,bullish,1,['sr_zone'],,1,-1,1,0,2,1
+2024-05-23,2332.012,bullish,0,[],,0,-1,1,0,3,1
+2024-05-24,2333.781,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",hammer,4,2,0,0,4,1
+2024-05-26,2337.175,bearish,2,"['sr_zone', 'candle']",hammer,2,2,0,0,6,1
+2024-05-27,2352.372,bearish,1,['sr_zone'],,1,-1,0,0,0,1
+2024-05-28,2359.685,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,1,1
+2024-05-29,2338.364,bearish,2,"['sr_zone', 'candle']",bearish_engulfing,2,0,0,0,2,1
+2024-05-30,2343.907,bearish,2,"['sr_zone', 'candle']",hammer,2,2,0,0,3,1
+2024-05-31,2327.191,bearish,3,"['structure', 'bos_or_choch', 'candle']",bearish_engulfing,3,0,0,0,4,1
+2024-06-02,2325.937,bearish,0,[],,0,-1,0,0,6,1
+2024-06-03,2350.629,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",bullish_engulfing,4,1,0,0,0,1
+2024-06-04,2328.786,bearish,1,['sr_zone'],,1,-1,0,0,1,1
+2024-06-05,2355.012,bearish,1,['candle'],bullish_engulfing,1,1,0,0,2,1
+2024-06-06,2376.73,bearish,0,[],,0,-1,0,0,3,1
+2024-06-07,2293.799,bearish,3,"['structure', 'bos_or_choch', 'candle']",bearish_engulfing,3,0,0,0,4,1
+2024-06-09,2298.478,bearish,2,"['psych_level', 'sr_zone']",,2,-1,0,0,6,1
+2024-06-10,2309.931,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,0,1
+2024-06-11,2315.071,bearish,2,"['sr_zone', 'candle']",hammer,2,2,0,0,1,1
+2024-06-12,2320.549,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,2,1
+2024-06-13,2302.335,bearish,4,"['structure', 'psych_level', 'sr_zone', 'candle']",bearish_engulfing,4,0,0,0,3,1
+2024-06-14,2332.824,bearish,2,"['structure', 'candle']",bullish_engulfing,2,1,0,0,4,1
+2024-06-16,2328.874,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2024-06-17,2320.645,bearish,1,['sr_zone'],,1,-1,0,0,0,1
+2024-06-18,2328.255,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,1,1
+2024-06-19,2329.342,bearish,2,"['sr_zone', 'candle']",hammer,2,2,0,0,2,1
+2024-06-20,2360.747,bearish,0,[],,0,-1,0,0,3,1
+2024-06-21,2321.503,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",bearish_engulfing,4,0,1,0,4,1
+2024-06-23,2319.187,bullish,0,[],,0,-1,1,0,6,1
+2024-06-24,2330.877,bullish,2,"['sr_zone', 'candle']",bullish_engulfing,2,1,1,0,0,1
+2024-06-25,2320.027,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,1,1
+2024-06-26,2298.401,bearish,3,"['structure', 'bos_or_choch', 'psych_level']",,3,-1,0,0,2,1
+2024-06-27,2327.72,bearish,2,"['sr_zone', 'candle']",bullish_engulfing,2,1,0,0,3,1
+2024-06-28,2326.638,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",inverted_hammer,4,3,1,0,4,1
+2024-06-30,2324.933,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2024-07-01,2332.222,bullish,1,['structure'],,1,-1,1,0,0,1
+2024-07-02,2330.18,bullish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,1,0,1,1
+2024-07-03,2358.699,bullish,3,"['structure', 'bos_or_choch', 'candle']",bullish_engulfing,3,1,1,0,2,1
+2024-07-04,2356.721,bullish,1,['sr_zone'],,1,-1,1,0,3,1
+2024-07-05,2391.557,bullish,3,"['structure', 'bos_or_choch', 'candle']",bullish_engulfing,3,1,1,0,4,1
+2024-07-07,2386.117,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2024-07-08,2361.711,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,0,1
+2024-07-09,2364.966,bullish,3,"['structure', 'sr_zone', 'candle']",hammer,3,2,1,0,1,1
+2024-07-10,2372.852,bullish,1,['sr_zone'],,1,-1,1,0,2,1
+2024-07-11,2415.854,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,3,1
+2024-07-12,2411.399,bullish,1,['sr_zone'],,1,-1,1,0,4,1
+2024-07-14,2408.657,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2024-07-15,2422.496,bullish,2,"['structure', 'candle']",bullish_engulfing,2,1,1,0,0,1
+2024-07-16,2468.278,bullish,0,[],,0,-1,1,0,1,1
+2024-07-17,2461.296,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",inverted_hammer,4,3,1,0,2,1
+2024-07-18,2441.25,bullish,1,['sr_zone'],,1,-1,1,0,3,1
+2024-07-19,2400.451,bearish,3,"['structure', 'bos_or_choch', 'psych_level']",,3,-1,0,0,4,1
+2024-07-21,2411.528,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2024-07-22,2395.783,bearish,4,"['structure', 'bos_or_choch', 'psych_level', 'candle']",bearish_engulfing,4,0,0,0,0,1
+2024-07-23,2408.513,bearish,1,['sr_zone'],,1,-1,0,0,1,1
+2024-07-24,2398.669,bullish,5,"['structure', 'bos_or_choch', 'psych_level', 'sr_zone', 'candle']",inverted_hammer,5,3,1,0,2,1
+2024-07-25,2363.801,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,3,1
+2024-07-26,2387.114,bearish,1,['sr_zone'],,1,-1,0,0,4,1
+2024-07-28,2397.091,bearish,3,"['structure', 'psych_level', 'sr_zone']",,3,-1,0,0,6,1
+2024-07-29,2381.143,bearish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,0,0,0,1
+2024-07-30,2409.807,bearish,1,['candle'],bullish_engulfing,1,1,0,0,1,1
+2024-07-31,2445.743,bearish,0,[],,0,-1,0,0,2,1
+2024-08-01,2445.844,bearish,1,['candle'],hammer,1,2,0,0,3,1
+2024-08-02,2441.892,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",inverted_hammer,4,3,1,0,4,1
+2024-08-04,2440.952,bullish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,1,0,6,1
+2024-08-05,2404.837,bearish,3,"['structure', 'bos_or_choch', 'psych_level']",,3,-1,0,0,0,1
+2024-08-06,2383.787,bearish,0,[],,0,-1,0,0,1,1
+2024-08-07,2384.791,bearish,3,"['structure', 'sr_zone', 'candle']",hammer,3,2,0,0,2,1
+2024-08-08,2424.595,bearish,1,['sr_zone'],,1,-1,0,0,3,1
+2024-08-09,2430.805,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,4,1
+2024-08-11,2427.927,bearish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,0,0,6,1
+2024-08-12,2475.536,bearish,2,"['structure', 'candle']",bullish_engulfing,2,1,0,0,0,1
+2024-08-13,2464.06,bearish,1,['sr_zone'],,1,-1,0,0,1,1
+2024-08-14,2449.408,bullish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,1,0,2,1
+2024-08-15,2457.298,bullish,3,"['structure', 'sr_zone', 'candle']",hammer,3,2,1,0,3,1
+2024-08-16,2507.82,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,4,1
+2024-08-18,2506.414,bullish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,1,0,6,1
+2024-08-19,2503.544,bullish,3,"['structure', 'psych_level', 'sr_zone']",,3,-1,1,0,0,1
+2024-08-20,2512.964,bullish,3,"['structure', 'bos_or_choch', 'candle']",bullish_engulfing,3,1,1,0,1,1
+2024-08-21,2512.783,bullish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,1,0,2,1
+2024-08-22,2487.564,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,3,1
+2024-08-23,2512.357,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,4,1
+2024-08-25,2515.917,bearish,0,[],,0,-1,0,0,6,1
+2024-08-26,2515.511,bearish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,0,0,0,1
+2024-08-27,2525.269,bullish,3,"['structure', 'bos_or_choch', 'candle']",bullish_engulfing,3,1,1,0,1,1
+2024-08-28,2508.11,bullish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,1,0,2,1
+2024-08-29,2519.615,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,3,1
+2024-08-30,2503.342,bullish,3,"['structure', 'psych_level', 'candle']",bearish_engulfing,3,0,1,0,4,1
+2024-09-01,2502.98,bullish,1,['psych_level'],,1,-1,1,0,6,1
+2024-09-02,2497.242,bullish,3,"['structure', 'psych_level', 'candle']",bearish_engulfing,3,0,1,0,0,1
+2024-09-03,2493.223,bullish,1,['candle'],inverted_hammer,1,3,1,0,1,1
+2024-09-04,2495.829,bearish,5,"['structure', 'bos_or_choch', 'psych_level', 'sr_zone', 'candle']",hammer,5,2,0,0,2,1
+2024-09-05,2517.282,bearish,0,[],,0,-1,0,0,3,1
+2024-09-06,2497.54,bullish,4,"['structure', 'bos_or_choch', 'psych_level', 'sr_zone']",,4,-1,1,0,4,1
+2024-09-08,2496.869,bullish,3,"['psych_level', 'sr_zone', 'candle']",inverted_hammer,3,3,1,0,6,1
+2024-09-09,2506.813,bullish,3,"['structure', 'sr_zone', 'candle']",bullish_engulfing,3,1,1,0,0,1
+2024-09-10,2518.678,bullish,0,[],,0,-1,1,0,1,1
+2024-09-11,2511.901,bullish,1,['sr_zone'],,1,-1,1,0,2,1
+2024-09-12,2558.422,bullish,1,['candle'],bullish_engulfing,1,1,1,0,3,1
+2024-09-13,2579.067,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,4,1
+2024-09-15,2579.163,bullish,0,[],,0,-1,1,0,6,1
+2024-09-16,2583.659,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,0,1
+2024-09-17,2574.05,bullish,2,"['sr_zone', 'candle']",bearish_engulfing,2,0,1,0,1,1
+2024-09-18,2559.239,bullish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,1,0,2,1
+2024-09-19,2587.282,bullish,1,['candle'],bullish_engulfing,1,1,1,0,3,1
+2024-09-20,2622.098,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,4,1
+2024-09-22,2620.234,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2024-09-23,2626.3,bullish,2,"['structure', 'candle']",bullish_engulfing,2,1,1,0,0,1
+2024-09-24,2658.204,bullish,0,[],,0,-1,1,0,1,1
+2024-09-25,2656.256,bullish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,1,0,2,1
+2024-09-26,2672.601,bullish,3,"['structure', 'bos_or_choch', 'candle']",bullish_engulfing,3,1,1,0,3,1
+2024-09-27,2657.983,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,4,1
+2024-09-29,2663.543,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2024-09-30,2635.634,bearish,3,"['structure', 'bos_or_choch', 'candle']",bearish_engulfing,3,0,0,0,0,1
+2024-10-01,2660.361,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,1,1
+2024-10-02,2660.328,bearish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,0,0,2,1
+2024-10-03,2655.804,bearish,1,['sr_zone'],,1,-1,0,0,3,1
+2024-10-04,2653.519,bearish,3,"['structure', 'sr_zone', 'candle']",inverted_hammer,3,3,0,0,4,1
+2024-10-06,2650.128,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2024-10-07,2642.944,bearish,1,['structure'],,1,-1,0,0,0,1
+2024-10-08,2621.868,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,1,1
+2024-10-09,2608.476,bearish,0,[],,0,-1,0,0,2,1
+2024-10-10,2633.149,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",bullish_engulfing,4,1,0,0,3,1
+2024-10-11,2656.864,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,4,1
+2024-10-13,2648.091,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2024-10-14,2649.357,bullish,2,"['sr_zone', 'candle']",hammer,2,2,1,0,0,1
+2024-10-15,2660.5,bullish,1,['structure'],,1,-1,1,0,1,1
+2024-10-16,2674.087,bullish,0,[],,0,-1,1,0,2,1
+2024-10-17,2693.706,bullish,0,[],,0,-1,1,0,3,1
+2024-10-18,2721.778,bullish,0,[],,0,-1,1,0,4,1
+2024-10-20,2723.416,bullish,1,['candle'],hammer,1,2,1,0,6,1
+2024-10-21,2721.483,bullish,3,"['structure', 'sr_zone', 'candle']",inverted_hammer,3,3,1,0,0,1
+2024-10-22,2746.553,bullish,1,['candle'],bullish_engulfing,1,1,1,0,1,1
+2024-10-23,2721.258,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",bearish_engulfing,4,0,0,0,2,1
+2024-10-24,2733.844,bearish,1,['sr_zone'],,1,-1,0,0,3,1
+2024-10-25,2747.023,bearish,1,['structure'],,1,-1,0,0,4,1
+2024-10-27,2735.815,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2024-10-28,2744.427,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,0,1
+2024-10-29,2774.915,bearish,0,[],,0,-1,0,0,1,1
+2024-10-30,2785.49,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,2,1
+2024-10-31,2746.691,bullish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,1,0,3,1
+2024-11-01,2736.69,bullish,1,['sr_zone'],,1,-1,1,0,4,1
+2024-11-03,2738.352,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2024-11-04,2736.003,bullish,1,['candle'],inverted_hammer,1,3,1,0,0,1
+2024-11-05,2745.707,bullish,3,"['structure', 'sr_zone', 'candle']",bullish_engulfing,3,1,1,0,1,1
+2024-11-06,2664.048,bullish,1,['candle'],bearish_engulfing,1,0,1,0,2,1
+2024-11-07,2706.866,bearish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,0,0,3,1
+2024-11-08,2684.758,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,4,1
+2024-11-10,2685.605,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2024-11-11,2624.038,bearish,2,"['structure', 'candle']",bearish_engulfing,2,0,0,0,0,1
+2024-11-12,2598.955,bearish,1,['psych_level'],,1,-1,0,0,1,1
+2024-11-13,2570.989,bearish,0,[],,0,-1,0,0,2,1
+2024-11-14,2566.899,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,3,1
+2024-11-15,2562.969,bearish,1,['candle'],inverted_hammer,1,3,0,0,4,1
+2024-11-17,2571.477,bearish,2,"['sr_zone', 'candle']",bullish_engulfing,2,1,0,0,6,1
+2024-11-18,2612.704,bearish,0,[],,0,-1,0,0,0,1
+2024-11-19,2635.166,bearish,0,[],,0,-1,0,0,1,1
+2024-11-20,2652.124,bearish,0,[],,0,-1,0,0,2,1
+2024-11-21,2669.159,bearish,0,[],,0,-1,0,0,3,1
+2024-11-22,2715.573,bearish,0,[],,0,-1,0,0,4,1
+2024-11-24,2719.756,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,6,1
+2024-11-25,2610.46,bullish,2,"['structure', 'candle']",bearish_engulfing,2,0,1,0,0,1
+2024-11-26,2632.254,bullish,1,['sr_zone'],,1,-1,1,0,1,1
+2024-11-27,2637.168,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,2,1
+2024-11-28,2638.769,bullish,3,"['structure', 'sr_zone', 'candle']",hammer,3,2,1,0,3,1
+2024-11-29,2655.23,bullish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,1,0,4,1
+2024-12-01,2645.659,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2024-12-02,2642.211,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,0,1
+2024-12-03,2642.721,bullish,2,"['sr_zone', 'candle']",hammer,2,2,1,0,1,1
+2024-12-04,2650.397,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,2,1
+2024-12-05,2633.713,bullish,1,['candle'],bearish_engulfing,1,0,1,0,3,1
+2024-12-06,2632.88,bearish,3,"['structure', 'bos_or_choch', 'candle']",inverted_hammer,3,3,0,0,4,1
+2024-12-08,2640.064,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2024-12-09,2660.449,bearish,2,"['structure', 'candle']",bullish_engulfing,2,1,0,0,0,1
+2024-12-10,2695.991,bearish,1,['psych_level'],,1,-1,0,0,1,1
+2024-12-11,2719.922,bearish,0,[],,0,-1,0,0,2,1
+2024-12-12,2680.623,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",bearish_engulfing,4,0,1,0,3,1
+2024-12-13,2648.392,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,4,1
+2024-12-15,2651.479,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2024-12-16,2651.744,bullish,3,"['structure', 'sr_zone', 'candle']",hammer,3,2,1,0,0,1
+2024-12-17,2647.378,bullish,1,['candle'],bearish_engulfing,1,0,1,0,1,1
+2024-12-18,2588.225,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,2,1
+2024-12-19,2593.519,bearish,1,['sr_zone'],,1,-1,0,0,3,1
+2024-12-20,2622.643,bearish,2,"['structure', 'sr_zone']",,2,-1,0,0,4,1
+2024-12-22,2624.293,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2024-12-23,2615.492,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",bearish_engulfing,4,0,1,0,0,1
+2024-12-24,2616.713,bullish,2,"['sr_zone', 'candle']",hammer,2,2,1,0,1,1
+2024-12-25,2618.656,bullish,1,['sr_zone'],,1,-1,1,0,2,1
+2024-12-26,2632.684,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,3,1
+2024-12-27,2621.623,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,4,1
+2024-12-29,2624.035,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2024-12-30,2606.677,bearish,3,"['structure', 'bos_or_choch', 'candle']",bearish_engulfing,3,0,0,0,0,1
+2024-12-31,2624.381,bearish,2,"['sr_zone', 'candle']",bullish_engulfing,2,1,0,0,1,1
+2025-01-01,2623.766,bearish,1,['sr_zone'],,1,-1,0,0,2,1
+2025-01-02,2658.327,bearish,1,['candle'],bullish_engulfing,1,1,0,0,3,1
+2025-01-03,2640.37,bullish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,1,0,4,1
+2025-01-05,2641.063,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2025-01-06,2634.681,bullish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,1,0,0,1
+2025-01-07,2649.807,bullish,2,"['sr_zone', 'candle']",bullish_engulfing,2,1,1,0,1,1
+2025-01-08,2662.507,bullish,0,[],,0,-1,1,0,2,1
+2025-01-09,2669.952,bullish,0,[],,0,-1,1,0,3,1
+2025-01-10,2689.551,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,4,1
+2025-01-12,2691.105,bullish,0,[],,0,-1,1,0,6,1
+2025-01-13,2668.058,bullish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,1,0,0,1
+2025-01-14,2675.589,bullish,1,['sr_zone'],,1,-1,1,0,1,1
+2025-01-15,2694.965,bullish,0,[],,0,-1,1,0,2,1
+2025-01-16,2714.578,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,3,1
+2025-01-17,2702.879,bullish,2,"['psych_level', 'sr_zone']",,2,-1,1,0,4,1
+2025-01-19,2696.424,bullish,2,"['psych_level', 'sr_zone']",,2,-1,1,0,6,1
+2025-01-20,2710.445,bullish,3,"['structure', 'sr_zone', 'candle']",bullish_engulfing,3,1,1,0,0,1
+2025-01-21,2744.259,bullish,0,[],,0,-1,1,0,1,1
+2025-01-22,2755.583,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,2,1
+2025-01-23,2754.543,bullish,3,"['structure', 'sr_zone', 'candle']",inverted_hammer,3,3,1,0,3,1
+2025-01-24,2771.079,bullish,3,"['structure', 'bos_or_choch', 'candle']",bullish_engulfing,3,1,1,0,4,1
+2025-01-26,2767.553,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2025-01-27,2741.71,bearish,3,"['structure', 'bos_or_choch', 'candle']",bearish_engulfing,3,0,0,0,0,1
+2025-01-28,2762.702,bearish,1,['sr_zone'],,1,-1,0,0,1,1
+2025-01-29,2760.303,bearish,1,['sr_zone'],,1,-1,0,0,2,1
+2025-01-30,2796.146,bearish,2,"['psych_level', 'candle']",bullish_engulfing,2,1,0,0,3,1
+2025-01-31,2799.348,bullish,3,"['structure', 'bos_or_choch', 'psych_level']",,3,-1,1,0,4,1
+2025-02-02,2793.709,bullish,2,"['sr_zone', 'candle']",bearish_engulfing,2,0,1,0,6,1
+2025-02-03,2814.023,bullish,2,"['structure', 'candle']",bullish_engulfing,2,1,1,0,0,1
+2025-02-04,2841.206,bullish,0,[],,0,-1,1,0,1,1
+2025-02-05,2869.279,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,2,1
+2025-02-06,2858.0,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,3,1
+2025-02-07,2861.006,bullish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,1,0,4,1
+2025-02-09,2867.495,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2025-02-10,2917.847,bullish,0,[],,0,-1,1,0,0,1
+2025-02-11,2898.536,bullish,4,"['structure', 'bos_or_choch', 'psych_level', 'sr_zone']",,4,-1,1,0,1,1
+2025-02-12,2905.781,bullish,3,"['structure', 'sr_zone', 'candle']",hammer,3,2,1,0,2,1
+2025-02-13,2931.217,bullish,0,[],,0,-1,1,0,3,1
+2025-02-14,2882.772,bullish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,1,0,4,1
+2025-02-16,2879.221,bullish,0,[],,0,-1,1,0,6,1
+2025-02-17,2899.373,bullish,3,"['psych_level', 'sr_zone', 'candle']",bullish_engulfing,3,1,1,0,0,1
+2025-02-18,2934.061,bullish,0,[],,0,-1,1,0,1,1
+2025-02-19,2935.384,bullish,1,['candle'],hammer,1,2,1,0,2,1
+2025-02-20,2941.53,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,3,1
+2025-02-21,2936.453,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,4,1
+2025-02-23,2936.867,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2025-02-24,2949.996,bullish,3,"['structure', 'bos_or_choch', 'candle']",bullish_engulfing,3,1,1,0,0,1
+2025-02-25,2918.604,bearish,3,"['structure', 'bos_or_choch', 'candle']",bearish_engulfing,3,0,0,0,1,1
+2025-02-26,2919.118,bearish,2,"['sr_zone', 'candle']",hammer,2,2,0,0,2,1
+2025-02-27,2876.063,bearish,1,['candle'],bearish_engulfing,1,0,0,0,3,1
+2025-02-28,2858.314,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,4,1
+2025-03-02,2870.799,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2025-03-03,2890.886,bearish,3,"['structure', 'sr_zone', 'candle']",bullish_engulfing,3,1,0,0,0,1
+2025-03-04,2914.363,bearish,1,['sr_zone'],,1,-1,0,0,1,1
+2025-03-05,2918.236,bearish,2,"['structure', 'candle']",hammer,2,2,0,0,2,1
+2025-03-06,2910.359,bearish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,0,0,3,1
+2025-03-07,2911.256,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",hammer,4,2,1,0,4,1
+2025-03-09,2916.187,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2025-03-10,2884.685,bullish,1,['candle'],bearish_engulfing,1,0,1,0,0,1
+2025-03-11,2915.551,bearish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,0,0,1,1
+2025-03-12,2938.039,bearish,0,[],,0,-1,0,0,2,1
+2025-03-13,2986.435,bearish,0,[],,0,-1,0,0,3,1
+2025-03-14,2986.37,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",inverted_hammer,4,3,1,0,4,1
+2025-03-16,2990.061,bullish,1,['candle'],bullish_engulfing,1,1,1,0,6,1
+2025-03-17,2999.831,bullish,2,"['structure', 'psych_level']",,2,-1,1,0,0,1
+2025-03-18,3031.774,bullish,0,[],,0,-1,1,0,1,1
+2025-03-19,3050.026,bullish,0,[],,0,-1,1,0,2,1
+2025-03-20,3046.409,bullish,4,"['structure', 'bos_or_choch', 'sr_zone', 'candle']",inverted_hammer,4,3,1,0,3,1
+2025-03-21,3023.493,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,4,1
+2025-03-23,3024.721,bullish,1,['sr_zone'],,1,-1,1,0,6,1
+2025-03-24,3009.91,bullish,2,"['structure', 'candle']",bearish_engulfing,2,0,1,0,0,1
+2025-03-25,3021.041,bullish,2,"['structure', 'sr_zone']",,2,-1,1,0,1,1
+2025-03-26,3021.623,bullish,2,"['sr_zone', 'candle']",hammer,2,2,1,0,2,1
+2025-03-27,3055.71,bullish,0,[],,0,-1,1,0,3,1
+2025-03-28,3085.002,bullish,0,[],,0,-1,1,0,4,1
+2025-03-30,3089.213,bullish,0,[],,0,-1,1,0,6,1
+2025-03-31,3120.581,bullish,2,"['structure', 'candle']",bullish_engulfing,2,1,1,0,0,1
+2025-04-01,3115.168,bullish,2,"['sr_zone', 'candle']",inverted_hammer,2,3,1,0,1,1
+2025-04-02,3162.709,bullish,3,"['structure', 'bos_or_choch', 'candle']",bullish_engulfing,3,1,1,0,2,1
+2025-04-03,3112.884,bullish,2,"['sr_zone', 'candle']",bearish_engulfing,2,0,1,0,3,1
+2025-04-04,3038.506,bullish,0,[],,0,-1,1,0,4,1
+2025-04-06,2999.944,bullish,1,['psych_level'],,1,-1,1,0,6,1
+2025-04-07,2981.328,bearish,3,"['structure', 'bos_or_choch', 'candle']",inverted_hammer,3,3,0,0,0,1
+2025-04-08,2978.321,bearish,1,['candle'],inverted_hammer,1,3,0,0,1,1
+2025-04-09,3086.784,bearish,2,"['sr_zone', 'candle']",bullish_engulfing,2,1,0,0,2,1
+2025-04-10,3188.972,bearish,0,[],,0,-1,0,0,3,1
+2025-04-11,3237.519,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,4,1
+2025-04-13,3223.733,bullish,2,"['sr_zone', 'candle']",hammer,2,2,1,0,6,1
+2025-04-14,3212.626,bullish,3,"['structure', 'sr_zone', 'candle']",bearish_engulfing,3,0,1,0,0,1
+2025-04-15,3251.78,bullish,1,['candle'],bullish_engulfing,1,1,1,0,1,1
+2025-04-16,3350.133,bullish,4,"['structure', 'bos_or_choch', 'fib_zone', 'fib_zone']",,4,-1,1,0,2,1
+2025-04-17,3327.671,bullish,2,"['sr_zone', 'fib_zone']",,2,-1,1,0,3,1
+2025-04-20,3348.078,bullish,3,"['sr_zone', 'fib_zone', 'fib_zone']",,3,-1,1,0,6,1
+2025-04-21,3434.548,bullish,0,[],,0,-1,1,0,0,1
+2025-04-22,3336.561,bullish,5,"['structure', 'bos_or_choch', 'sr_zone', 'fib_zone', 'candle']",bearish_engulfing,5,0,1,0,1,1
+2025-04-23,3316.383,bullish,3,"['structure', 'fib_zone', 'candle']",inverted_hammer,3,3,1,0,2,1
+2025-04-24,3348.976,bullish,4,"['sr_zone', 'fib_zone', 'fib_zone', 'candle']",bullish_engulfing,4,1,1,0,3,1
+2025-04-25,3318.798,bullish,3,"['structure', 'sr_zone', 'fib_zone']",,3,-1,1,0,4,1
+2025-04-27,3302.739,bullish,1,['psych_level'],,1,-1,1,0,6,1
+2025-04-28,3337.682,bullish,4,"['structure', 'sr_zone', 'fib_zone', 'candle']",bullish_engulfing,4,1,1,0,0,1
+2025-04-29,3317.122,bullish,2,"['sr_zone', 'fib_zone']",,2,-1,1,0,1,1
+2025-04-30,3272.887,bullish,0,[],,0,-1,1,0,2,1
+2025-05-01,3237.253,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,3,1
+2025-05-02,3240.947,bearish,2,"['sr_zone', 'candle']",hammer,2,2,0,0,4,1
+2025-05-04,3247.931,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2025-05-05,3334.031,bearish,1,['fib_zone'],,1,-1,0,0,0,1
+2025-05-06,3400.68,bullish,4,"['structure', 'bos_or_choch', 'psych_level', 'fib_zone']",,4,-1,1,0,1,1
+2025-05-07,3376.488,bullish,2,"['sr_zone', 'fib_zone']",,2,-1,1,0,2,1
+2025-05-08,3316.412,bullish,3,"['structure', 'sr_zone', 'fib_zone']",,3,-1,1,0,3,1
+2025-05-09,3326.805,bullish,3,"['sr_zone', 'fib_zone', 'candle']",hammer,3,2,1,0,4,1
+2025-05-11,3287.534,bullish,1,['candle'],hammer,1,2,1,0,6,1
+2025-05-12,3236.88,bullish,2,"['structure', 'candle']",bearish_engulfing,2,0,1,0,0,1
+2025-05-13,3254.414,bullish,1,['sr_zone'],,1,-1,1,0,1,1
+2025-05-14,3186.128,bullish,1,['candle'],bearish_engulfing,1,0,1,0,2,1
+2025-05-15,3237.15,bearish,3,"['structure', 'bos_or_choch', 'sr_zone']",,3,-1,0,0,3,1
+2025-05-16,3202.214,bearish,2,"['psych_level', 'sr_zone']",,2,-1,0,0,4,1
+2025-05-18,3234.91,bearish,1,['sr_zone'],,1,-1,0,0,6,1
+2025-05-19,3222.532,bearish,1,['sr_zone'],,1,-1,0,0,0,1
+2025-05-20,3290.695,bearish,2,"['structure', 'candle']",bullish_engulfing,2,1,0,0,1,1
+2025-05-21,3320.085,bearish,1,['fib_zone'],,1,-1,0,0,2,1
+2025-05-22,3300.146,bearish,3,"['structure', 'psych_level', 'sr_zone']",,3,-1,0,0,3,1
+2025-05-23,3356.306,bearish,4,"['structure', 'fib_zone', 'fib_zone', 'candle']",bullish_engulfing,4,1,0,0,4,1
+2025-05-25,3342.713,bearish,3,"['sr_zone', 'fib_zone', 'fib_zone']",,3,-1,0,0,6,1
+2025-05-26,3346.139,bearish,5,"['structure', 'sr_zone', 'fib_zone', 'fib_zone', 'candle']",hammer,5,2,0,0,0,1
+2025-05-27,3309.411,bearish,3,"['sr_zone', 'fib_zone', 'candle']",bearish_engulfing,3,0,0,0,1,1
+2025-05-28,3259.895,bearish,0,[],,0,-1,0,0,2,1
+2025-05-29,3315.503,bearish,5,"['structure', 'bos_or_choch', 'sr_zone', 'fib_zone', 'candle']",bullish_engulfing,5,1,0,0,3,1
+2025-05-30,3289.665,bearish,1,['sr_zone'],,1,-1,0,0,4,1
+2025-06-01,3310.255,bearish,2,"['sr_zone', 'fib_zone']",,2,-1,0,0,6,1
+2025-06-02,3387.456,bullish,3,"['structure', 'bos_or_choch', 'fib_zone']",,3,-1,1,0,0,1
+2025-06-03,3359.996,bullish,3,"['sr_zone', 'fib_zone', 'fib_zone']",,3,-1,1,0,1,1
+2025-06-04,3378.042,bullish,2,"['sr_zone', 'fib_zone']",,2,-1,1,0,2,1
+2025-06-05,3361.81,bullish,5,"['structure', 'bos_or_choch', 'sr_zone', 'fib_zone', 'fib_zone']",,5,-1,1,0,3,1
+2025-06-06,3311.702,bullish,3,"['structure', 'sr_zone', 'fib_zone']",,3,-1,1,0,4,1
+2025-06-08,3318.038,bullish,3,"['sr_zone', 'fib_zone', 'candle']",hammer,3,2,1,0,6,1
+2025-06-09,3326.766,bearish,5,"['structure', 'bos_or_choch', 'sr_zone', 'fib_zone', 'candle']",hammer,5,2,0,0,0,1
+2025-06-10,3327.862,bearish,3,"['sr_zone', 'fib_zone', 'candle']",hammer,3,2,0,0,1,1
+2025-06-11,3365.376,bearish,2,"['fib_zone', 'fib_zone']",,2,-1,0,0,2,1
+2025-06-12,3395.882,bearish,2,"['psych_level', 'fib_zone']",,2,-1,0,0,3,1
+2025-06-13,3433.449,bearish,0,[],,0,-1,0,0,4,1
+2025-06-15,3444.141,bullish,2,"['structure', 'bos_or_choch']",,2,-1,1,0,6,1
+2025-06-16,3402.769,bullish,4,"['psych_level', 'sr_zone', 'fib_zone', 'candle']",bearish_engulfing,4,0,1,0,0,1
+2025-06-17,3387.369,bullish,2,"['sr_zone', 'fib_zone']",,2,-1,1,0,1,1
+2025-06-18,3375.023,bullish,1,['fib_zone'],,1,-1,1,0,2,1
+2025-06-19,3368.739,bullish,3,"['fib_zone', 'fib_zone', 'candle']",inverted_hammer,3,3,1,0,3,1
+2025-06-20,3368.546,bullish,4,"['structure', 'fib_zone', 'fib_zone', 'candle']",inverted_hammer,4,3,1,0,4,1
+2025-06-22,3372.755,bullish,3,"['sr_zone', 'fib_zone', 'fib_zone']",,3,-1,1,0,6,1
+2025-06-23,3344.235,bullish,3,"['structure', 'fib_zone', 'fib_zone']",,3,-1,1,0,0,1
+2025-06-24,3324.142,bearish,3,"['structure', 'bos_or_choch', 'fib_zone']",,3,-1,0,0,1,1
+2025-06-25,3339.028,bearish,2,"['sr_zone', 'fib_zone']",,2,-1,0,0,2,1
+2025-06-26,3318.758,bearish,3,"['structure', 'fib_zone', 'candle']",bearish_engulfing,3,0,0,0,3,1
+2025-06-27,3274.598,bearish,0,[],,0,-1,0,0,4,1
+2025-06-29,3263.806,bearish,2,"['structure', 'bos_or_choch']",,2,-1,0,0,6,1
+2025-06-30,3312.441,bearish,3,"['sr_zone', 'fib_zone', 'candle']",bullish_engulfing,3,1,0,0,0,1
+2025-07-01,3338.152,bearish,2,"['sr_zone', 'fib_zone']",,2,-1,0,0,1,1
+2025-07-02,3349.395,bullish,4,"['structure', 'bos_or_choch', 'fib_zone', 'fib_zone']",,4,-1,1,0,2,1
+2025-07-03,3330.871,bullish,4,"['structure', 'sr_zone', 'fib_zone', 'candle']",bearish_engulfing,4,0,1,0,3,1
+2025-07-04,3335.07,bullish,2,"['sr_zone', 'fib_zone']",,2,-1,1,0,4,1
+2025-07-06,3328.853,bullish,3,"['sr_zone', 'fib_zone', 'candle']",bearish_engulfing,3,0,1,0,6,1
+2025-07-07,3334.653,bullish,4,"['structure', 'sr_zone', 'fib_zone', 'candle']",hammer,4,2,1,0,0,1
+2025-07-08,3302.277,bullish,2,"['psych_level', 'candle']",bearish_engulfing,2,0,1,0,1,1
+2025-07-09,3317.639,bearish,4,"['structure', 'bos_or_choch', 'sr_zone', 'fib_zone']",,4,-1,0,0,2,1
+2025-07-10,3323.808,bearish,2,"['sr_zone', 'fib_zone']",,2,-1,0,0,3,1
+2025-07-11,3355.105,bearish,2,"['fib_zone', 'fib_zone']",,2,-1,0,0,4,1
+2025-07-13,3367.772,bearish,2,"['fib_zone', 'fib_zone']",,2,-1,0,0,6,1
+2025-07-14,3345.337,bullish,6,"['structure', 'bos_or_choch', 'sr_zone', 'fib_zone', 'fib_zone', 'candle']",bearish_engulfing,6,0,1,0,0,1
+2025-07-15,3364.474,bullish,3,"['sr_zone', 'fib_zone', 'fib_zone']",,3,-1,1,0,1,1
