@@ -19,3 +19,4 @@ Phase,Step,Status,Date,Details
 4,Validation/Stress Test,INCOMPLETE,,"Robustness, OOS, Monte Carlo, parameter sweeps"
 5,Continuous Monitoring,INCOMPLETE,,"Circuit breaker, error handling, logging, kill switch"
 5,Production Rollout,INCOMPLETE,,"CI/CD, code freeze, prod deployment"
+6,RL Training,Started,2025-07-28,"Kicked off RL training for all timeframes. All config/features versioned, logs enabled."
