@@ -1,0 +1,21 @@
+Phase,Step,Status,Date,Details
+5,Journaling,Complete,2025-07-14,ZENO trade log outputs operational
+5,Telegram Bot,Complete,2025-07-15,Token and chat_id set; live alerts tested
+5,Dashboard,Complete,2025-07-16,"Streamlit dashboard running, real-time signals"
+4,Backtesting Engine,Complete,2025-07-16,Script in place
+1,Research/Design,Complete,2025-07-19,Final system spec and architecture saved
+2,Data Download,Complete,2025-07-21,All raw files acquired for every TF
+2,Data Cleaning,Complete,2025-07-21,"All TFs cleaned, logs checked"
+6,Automated Scheduling,Complete,2025-07-22,"Windows Task Scheduler, every 5min + post-bar delay, tested"
+4,Walk-Forward Backtest,Complete,2025-07-22,M5: MeanReward=1.90/499 trades; M15: 1.20/499; H1: 1.77/499; H4: 7.45/499; D1: 23.02/499
+3,Candle Pattern Encoding Fix,Complete,2025-07-22,Fixed bug causing NaNs in pattern_code
+3,ML Prep,Complete,2025-07-22,ML features and normalization pipeline successful
+3,Signal Labeling,Complete,2025-07-22,Signal labeling logic validated in pipeline output
+3,Feature Engineering,Complete,2025-07-22,"All live features present; required columns: num_confs, pattern_code, bias_bull"
+2,Data Locking,Complete,2025-07-22,Cleaned files now canonical; all future work locked to these
+2,Gap Report,Complete,2025-07-22,"Gaps logged: M5=48,776; M15=46,530; H1=11,599; H4=2,403; D1=221; W1=0; MN=0"
+7,Live Pipeline,Complete,2025-07-22,"E2E live pipeline: MT5 pull, feature eng, ML pred, RL action, full auto"
+8,Risk Logic Baseline,Complete,2025-07-28,"Min 2 primary confs, pass rate checks enforced, repo pushed"
+4,Validation/Stress Test,INCOMPLETE,,"Robustness, OOS, Monte Carlo, parameter sweeps"
+5,Continuous Monitoring,INCOMPLETE,,"Circuit breaker, error handling, logging, kill switch"
+5,Production Rollout,INCOMPLETE,,"CI/CD, code freeze, prod deployment"
