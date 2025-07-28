@@ -1,0 +1,6 @@
+timeframe,bars,allowed_trades,pass_rate,violations
+M5,500,238,0.476,0
+M15,500,240,0.48,0
+H1,500,225,0.45,0
+H4,500,259,0.518,0
+D1,500,234,0.468,0

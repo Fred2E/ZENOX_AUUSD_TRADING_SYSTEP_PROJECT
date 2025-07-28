@@ -1,0 +1,2 @@
+from sklearn.ensemble import GradientBoostingClassifier as GBC
+model = GBC(n_estimators=400, learning_rate=0.03, random_state=42)

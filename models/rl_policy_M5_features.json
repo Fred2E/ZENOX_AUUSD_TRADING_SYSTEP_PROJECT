@@ -1,0 +1,18 @@
+[
+  "score",
+  "num_confs",
+  "pattern_code",
+  "bias_bull",
+  "hour",
+  "dow",
+  "atr",
+  "conf_structure",
+  "conf_bos_or_choch",
+  "conf_candle",
+  "conf_sr_zone",
+  "conf_psych_level",
+  "conf_fib_zone",
+  "conf_volume",
+  "conf_liquidity",
+  "conf_spread"
+]

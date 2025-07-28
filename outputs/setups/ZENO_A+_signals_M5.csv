@@ -1,0 +1,2 @@
+Datetime,Close,bias,BOS,CHoCH,confluences,score,candle_pattern
+1970-01-01 00:00:00.000097656,3356.239,bullish,BOS ↑,,"['structure', 'bos_or_choch', 'sr_zone', 'fib_zone', 'candle_pattern']",5,hammer

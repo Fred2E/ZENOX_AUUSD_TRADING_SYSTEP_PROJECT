@@ -1,0 +1,38 @@
+import pandas as pd
+import joblib
+import lightgbm as lgb
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import roc_auc_score, classification_report, confusion_matrix
+
+CSV = r"C:\Users\open\Documents\ZENO_XAUUSD\outputs\setups\ZENO_A+_signals_ALL.csv"
+MODEL_OUT = r"C:\Users\open\Documents\ZENO_XAUUSD\outputs\ml_data\zeno_lgbm.pkl"
+
+# 1. Load Data
+df = pd.read_csv(CSV)
+print(f"Loaded {len(df)} rows from {CSV}")
+
+# 2. Clean and Prep
+df = df.dropna(subset=['bias', 'score', 'Close'])
+df['bias_bull'] = (df['bias'].str.lower() == 'bullish').astype(int)
+df['pattern_encoded'] = df['candle_pattern'].astype('category').cat.codes if 'candle_pattern' in df.columns else 0
+df['num_confluences'] = df['confluences'].apply(lambda c: len(eval(c)) if isinstance(c, str) else (len(c) if hasattr(c, '__len__') else 0)) if 'confluences' in df.columns else 0
+
+features = ['Close', 'score', 'num_confluences', 'pattern_encoded', 'bias_bull']
+target = 'bias_bull'
+
+# 3. Split
+X_train, X_test, y_train, y_test = train_test_split(df[features], df[target], test_size=0.2, random_state=42, stratify=df[target])
+print(f"Train: {X_train.shape}, Test: {X_test.shape}")
+
+# 4. Train
+clf = lgb.LGBMClassifier(n_estimators=150, learning_rate=0.06, class_weight='balanced', random_state=42)
+clf.fit(X_train, y_train)
+joblib.dump(clf, MODEL_OUT)
+print(f"[SUCCESS] LightGBM model saved to {MODEL_OUT}")
+
+# 5. Validate
+y_pred = clf.predict(X_test)
+y_prob = clf.predict_proba(X_test)[:, 1]
+print("AUC:", roc_auc_score(y_test, y_prob))
+print(classification_report(y_test, y_pred, digits=4))
+print(confusion_matrix(y_test, y_pred))

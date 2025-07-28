@@ -1,0 +1,6 @@
+Datetime,Close,bias,BOS,CHoCH,confluences,score,candle_pattern
+1970-01-01 00:00:00.000024378,3337.296,bearish,BOS ↓,,"['structure', 'bos_or_choch', 'sr_zone', 'fib_zone', 'candle_pattern']",5,hammer
+1970-01-01 00:00:00.000024661,3338.267,bullish,BOS ↑,,"['structure', 'bos_or_choch', 'sr_zone', 'fib_zone', 'candle_pattern']",5,bullish_engulfing
+1970-01-01 00:00:00.000024925,3339.471,bullish,BOS ↑,,"['structure', 'bos_or_choch', 'sr_zone', 'fib_zone', 'candle_pattern']",5,bullish_engulfing
+1970-01-01 00:00:00.000025003,3339.525,bullish,BOS ↑,,"['structure', 'bos_or_choch', 'sr_zone', 'fib_zone', 'candle_pattern']",5,doji
+1970-01-01 00:00:00.000025070,3338.35,bullish,BOS ↑,CHoCH ↑,"['structure', 'bos_or_choch', 'sr_zone', 'fib_zone', 'candle_pattern']",5,bullish_engulfing

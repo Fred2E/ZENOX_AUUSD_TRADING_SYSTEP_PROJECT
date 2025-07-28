@@ -1,0 +1,67 @@
+[M5] Original columns: ['<DATE>', '<TIME>', '<OPEN>', '<HIGH>', '<LOW>', '<CLOSE>', '<TICKVOL>', '<VOL>', '<SPREAD>']
+[M5] Dropped 0 rows with bad datetime.
+[M5] Dropped 0 duplicate rows.
+[M5] Dropped 0 non-positive Open rows.
+[M5] Dropped 0 non-positive High rows.
+[M5] Dropped 0 non-positive Low rows.
+[M5] Dropped 0 non-positive Close rows.
+[M5] Dropped 0 non-positive Volume rows.
+[M5] 48776 missing bars (gaps) detected. Filling with NaN, dropping after.
+[M5] Dropped 48776 gap-filled rows (NaN after reindex).
+[M15] Original columns: ['<DATE>', '<TIME>', '<OPEN>', '<HIGH>', '<LOW>', '<CLOSE>', '<TICKVOL>', '<VOL>', '<SPREAD>']
+[M15] Dropped 0 rows with bad datetime.
+[M15] Dropped 0 duplicate rows.
+[M15] Dropped 0 non-positive Open rows.
+[M15] Dropped 0 non-positive High rows.
+[M15] Dropped 0 non-positive Low rows.
+[M15] Dropped 0 non-positive Close rows.
+[M15] Dropped 0 non-positive Volume rows.
+[M15] 46530 missing bars (gaps) detected. Filling with NaN, dropping after.
+[M15] Dropped 46530 gap-filled rows (NaN after reindex).
+[H1] Original columns: ['<DATE>', '<TIME>', '<OPEN>', '<HIGH>', '<LOW>', '<CLOSE>', '<TICKVOL>', '<VOL>', '<SPREAD>']
+[H1] Dropped 0 rows with bad datetime.
+[H1] Dropped 0 duplicate rows.
+[H1] Dropped 0 non-positive Open rows.
+[H1] Dropped 0 non-positive High rows.
+[H1] Dropped 0 non-positive Low rows.
+[H1] Dropped 0 non-positive Close rows.
+[H1] Dropped 0 non-positive Volume rows.
+[H1] 11599 missing bars (gaps) detected. Filling with NaN, dropping after.
+[H1] Dropped 11599 gap-filled rows (NaN after reindex).
+[H4] Original columns: ['<DATE>', '<TIME>', '<OPEN>', '<HIGH>', '<LOW>', '<CLOSE>', '<TICKVOL>', '<VOL>', '<SPREAD>']
+[H4] Dropped 0 rows with bad datetime.
+[H4] Dropped 0 duplicate rows.
+[H4] Dropped 0 non-positive Open rows.
+[H4] Dropped 0 non-positive High rows.
+[H4] Dropped 0 non-positive Low rows.
+[H4] Dropped 0 non-positive Close rows.
+[H4] Dropped 0 non-positive Volume rows.
+[H4] 2403 missing bars (gaps) detected. Filling with NaN, dropping after.
+[H4] Dropped 2403 gap-filled rows (NaN after reindex).
+[D1] Original columns: ['<DATE>', '<OPEN>', '<HIGH>', '<LOW>', '<CLOSE>', '<TICKVOL>', '<VOL>', '<SPREAD>']
+[D1] Dropped 0 rows with bad datetime.
+[D1] Dropped 0 duplicate rows.
+[D1] Dropped 0 non-positive Open rows.
+[D1] Dropped 0 non-positive High rows.
+[D1] Dropped 0 non-positive Low rows.
+[D1] Dropped 0 non-positive Close rows.
+[D1] Dropped 0 non-positive Volume rows.
+[D1] Skipped gap-filling for non-intraday TF.
+[W1] Original columns: ['<DATE>', '<OPEN>', '<HIGH>', '<LOW>', '<CLOSE>', '<TICKVOL>', '<VOL>', '<SPREAD>']
+[W1] Dropped 0 rows with bad datetime.
+[W1] Dropped 0 duplicate rows.
+[W1] Dropped 0 non-positive Open rows.
+[W1] Dropped 0 non-positive High rows.
+[W1] Dropped 0 non-positive Low rows.
+[W1] Dropped 0 non-positive Close rows.
+[W1] Dropped 0 non-positive Volume rows.
+[W1] Skipped gap-filling for non-intraday TF.
+[MN] Original columns: ['<DATE>', '<OPEN>', '<HIGH>', '<LOW>', '<CLOSE>', '<TICKVOL>', '<VOL>', '<SPREAD>']
+[MN] Dropped 0 rows with bad datetime.
+[MN] Dropped 0 duplicate rows.
+[MN] Dropped 0 non-positive Open rows.
+[MN] Dropped 0 non-positive High rows.
+[MN] Dropped 0 non-positive Low rows.
+[MN] Dropped 0 non-positive Close rows.
+[MN] Dropped 0 non-positive Volume rows.
+[MN] Skipped gap-filling for non-intraday TF.

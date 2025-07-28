@@ -1,0 +1,15 @@
+Datetime,Timeframe,bias,Close,StopLoss,TakeProfit,score,candle_pattern,confluences,High,Low
+2025-04-16 04:00:00,H4,bullish,3300.482,3211.627,3478.192,4,,"['structure', 'bos_or_choch', 'sr_zone', 'psych_level']",3300.663,3269.333
+2025-04-16 12:00:00,H4,bullish,3325.328,3211.627,3552.73,4,,"['structure', 'bos_or_choch', 'sr_zone', 'fib_zone']",3328.128,3296.838
+2025-04-28 12:00:00,H4,bullish,3325.005,3273.284,3428.447,4,,"['structure', 'bos_or_choch', 'sr_zone', 'fib_zone']",3336.044,3286.823
+2025-05-05 16:00:00,H4,bullish,3328.793,3305.577,3375.225,4,bullish_engulfing,"['structure', 'bos_or_choch', 'sr_zone', 'candle_pattern']",3337.673,3305.577
+2025-05-08 08:00:00,H4,bearish,3344.381,3414.851,3203.441,4,hammer,"['structure', 'bos_or_choch', 'sr_zone', 'candle_pattern']",3346.695,3330.39
+2025-05-21 12:00:00,H4,bullish,3311.978,3290.693,3354.548,4,hammer,"['structure', 'bos_or_choch', 'sr_zone', 'candle_pattern']",3315.21,3290.693
+2025-06-10 12:00:00,H4,bearish,3326.692,3349.153,3281.7700000000004,4,bearish_engulfing,"['structure', 'sr_zone', 'fib_zone', 'candle_pattern']",3349.153,3323.165
+2025-06-24 20:00:00,H4,bearish,3324.142,3325.184,3322.057999999999,4,hammer,"['structure', 'sr_zone', 'fib_zone', 'candle_pattern']",3324.881,3320.842
+2025-06-25 12:00:00,H4,bearish,3325.627,3337.096,3302.689,4,hammer,"['structure', 'sr_zone', 'fib_zone', 'candle_pattern']",3329.47,3311.894
+2025-06-26 20:00:00,H4,bearish,3318.758,3350.37,3255.534,4,bearish_engulfing,"['structure', 'bos_or_choch', 'sr_zone', 'candle_pattern']",3332.327,3316.234
+2025-07-02 16:00:00,H4,bullish,3358.258,3327.563,3419.6479999999992,4,bullish_engulfing,"['structure', 'bos_or_choch', 'sr_zone', 'candle_pattern']",3359.519,3340.943
+2025-07-10 16:00:00,H4,bearish,3324.826,3330.337,3313.804,4,bullish_engulfing,"['structure', 'sr_zone', 'fib_zone', 'candle_pattern']",3325.91,3312.108
+2025-07-11 00:00:00,H4,bullish,3333.765,3310.064,3381.167,4,bullish_engulfing,"['structure', 'bos_or_choch', 'sr_zone', 'candle_pattern']",3336.154,3323.637
+2024-01-09 00:00:00,D1,bullish,108999.0,2042.666,322911.668,4,,"['structure', 'bos_or_choch', 'psych_level', 'fib_zone']",2042.004,2026.021

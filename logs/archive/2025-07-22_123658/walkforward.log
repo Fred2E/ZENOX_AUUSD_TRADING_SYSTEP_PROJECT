@@ -1,0 +1,54 @@
+2025-07-22 10:41:31.324589 M5: Walk-forward finished. Total reward: 13679.379999999908
+2025-07-22 10:41:31.654599 M15: Walk-forward finished. Total reward: 5399.103999999994
+2025-07-22 10:41:31.951181 H1: Walk-forward finished. Total reward: 20500.21999999993
+2025-07-22 10:41:32.264662 H4: Walk-forward finished. Total reward: 2115.982000000001
+2025-07-22 10:41:32.576391 D1: Walk-forward finished. Total reward: 295963.3290000001
+2025-07-22 10:41:32.588185 Walk-forward backtest complete. Results saved to C:\Users\open\Documents\ZENO_XAUUSD\logs\walkforward_results.csv
+2025-07-22 11:08:37.039324 M5: Walk-forward finished. Total reward: 13679.379999999908
+2025-07-22 11:08:37.355044 M15: Walk-forward finished. Total reward: 5399.103999999994
+2025-07-22 11:08:37.662461 H1: Walk-forward finished. Total reward: 20500.21999999993
+2025-07-22 11:08:37.997070 H4: Walk-forward finished. Total reward: 2115.982000000001
+2025-07-22 11:08:38.310182 D1: Walk-forward finished. Total reward: 295963.3290000001
+2025-07-22 11:08:38.315972 Walk-forward backtest complete. Results saved to C:\Users\open\Documents\ZENO_XAUUSD\logs\walkforward_results.csv
+2025-07-22 11:13:16.562713 M5: Walk-forward finished. Total reward: 13679.379999999908
+2025-07-22 11:13:16.979590 M15: Walk-forward finished. Total reward: 5399.103999999994
+2025-07-22 11:13:17.339262 H1: Walk-forward finished. Total reward: 20500.21999999993
+2025-07-22 11:13:17.719185 H4: Walk-forward finished. Total reward: 2115.982000000001
+2025-07-22 11:13:18.099316 D1: Walk-forward finished. Total reward: 295963.3290000001
+2025-07-22 11:13:18.099316 Walk-forward backtest complete. Results saved to C:\Users\open\Documents\ZENO_XAUUSD\logs\walkforward_results.csv
+2025-07-22 11:20:32.969440 M5: Walk-forward finished. Total reward: 13679.379999999908
+2025-07-22 11:20:33.260030 M15: Walk-forward finished. Total reward: 5399.103999999994
+2025-07-22 11:20:33.530963 H1: Walk-forward finished. Total reward: 20500.21999999993
+2025-07-22 11:20:33.819560 H4: Walk-forward finished. Total reward: 2115.982000000001
+2025-07-22 11:20:34.102515 D1: Walk-forward finished. Total reward: 295963.3290000001
+2025-07-22 11:20:34.110574 Walk-forward backtest complete. Results saved to C:\Users\open\Documents\ZENO_XAUUSD\logs\walkforward_results.csv
+2025-07-22 11:22:56.240876 M5: Walk-forward finished. Total reward: 13679.379999999908
+2025-07-22 11:22:56.530800 M15: Walk-forward finished. Total reward: 5399.103999999994
+2025-07-22 11:22:56.844918 H1: Walk-forward finished. Total reward: 20500.21999999993
+2025-07-22 11:22:57.133300 H4: Walk-forward finished. Total reward: 2115.982000000001
+2025-07-22 11:22:57.429343 D1: Walk-forward finished. Total reward: 295963.3290000001
+2025-07-22 11:22:57.433619 Walk-forward backtest complete. Results saved to C:\Users\open\Documents\ZENO_XAUUSD\logs\walkforward_results.csv
+2025-07-22 11:29:04.473494 M5: Walk-forward finished. Total reward: 13679.379999999908
+2025-07-22 11:29:04.833379 M15: Walk-forward finished. Total reward: 5399.103999999994
+2025-07-22 11:29:05.230278 H1: Walk-forward finished. Total reward: 20500.21999999993
+2025-07-22 11:29:05.659767 H4: Walk-forward finished. Total reward: 2115.982000000001
+2025-07-22 11:29:06.004956 D1: Walk-forward finished. Total reward: 295963.3290000001
+2025-07-22 11:29:06.020609 Walk-forward backtest complete. Results saved to C:\Users\open\Documents\ZENO_XAUUSD\logs\walkforward_results.csv
+2025-07-22 12:21:27.770688 M5: Walk-forward failed: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part.
+2025-07-22 12:21:27.799802 M15: Walk-forward failed: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part.
+2025-07-22 12:21:27.815120 H1: Walk-forward failed: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part.
+2025-07-22 12:21:27.832130 H4: Walk-forward failed: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part.
+2025-07-22 12:21:27.845253 D1: Walk-forward failed: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part.
+2025-07-22 12:21:27.849447 Walk-forward backtest complete. Results saved to C:\Users\open\Documents\ZENO_XAUUSD\logs\walkforward_results.csv
+2025-07-22 12:26:44.983065 M5: Walk-forward failed: Observation spaces do not match: Box(-inf, inf, (6,), float32) != Box(-inf, inf, (7,), float32)
+2025-07-22 12:26:44.989618 M15: Walk-forward failed: Observation spaces do not match: Box(-inf, inf, (6,), float32) != Box(-inf, inf, (7,), float32)
+2025-07-22 12:26:44.999361 H1: Walk-forward failed: Observation spaces do not match: Box(-inf, inf, (6,), float32) != Box(-inf, inf, (7,), float32)
+2025-07-22 12:26:45.004410 H4: Walk-forward failed: Observation spaces do not match: Box(-inf, inf, (6,), float32) != Box(-inf, inf, (7,), float32)
+2025-07-22 12:26:45.009422 D1: Walk-forward failed: Observation spaces do not match: Box(-inf, inf, (6,), float32) != Box(-inf, inf, (7,), float32)
+2025-07-22 12:26:45.020303 Walk-forward backtest complete. Results saved to C:\Users\open\Documents\ZENO_XAUUSD\logs\walkforward_results.csv
+2025-07-22 12:36:57.304203 M5: Walk-forward finished. Total reward: 13679.379999999908
+2025-07-22 12:36:57.610137 M15: Walk-forward finished. Total reward: 5399.103999999994
+2025-07-22 12:36:57.933394 H1: Walk-forward finished. Total reward: 20500.21999999993
+2025-07-22 12:36:58.260744 H4: Walk-forward finished. Total reward: 2115.982000000001
+2025-07-22 12:36:58.590268 D1: Walk-forward finished. Total reward: 295963.3290000001
+2025-07-22 12:36:58.606284 Walk-forward backtest complete. Results saved to C:\Users\open\Documents\ZENO_XAUUSD\logs\walkforward_results.csv

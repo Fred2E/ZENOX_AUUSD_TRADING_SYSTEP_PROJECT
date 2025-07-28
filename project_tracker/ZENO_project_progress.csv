@@ -1,0 +1,22 @@
+Phase,Step,Status,Date,Details
+1,Research/Design,Complete,2025-07-19,Final system spec saved
+2,Data Download,Complete,2025-07-21,All raw files acquired for every TF
+2,Data Cleaning,Complete,2025-07-21,"All TFs cleaned, logs checked"
+2,Gap Report,Complete,2025-07-22,"M5: 48,776 gaps; M15: 46,530; H1: 11,599; H4: 2,403; D1: 221; W1: 0; MN: 0 (see gap_report.csv)"
+2,Data Locking,Complete,2025-07-22,"Cleaned files now canonical, all future research locked to these only"
+3,Feature Engineering,Complete,2025-07-22,"All live features present, required columns: num_confs, pattern_code, bias_bull"
+3,Signal Labeling,Complete,2025-07-22,Signal labeling logic validated in pipeline output.
+3,ML Prep,Complete,2025-07-22,ML features and normalization pipeline successful.
+4,Backtesting Engine,Complete,2025-07-16,Script in place
+4,Validation/Stress Test,INCOMPLETE,,"Robustness, OOS, Monte Carlo, etc."
+5,Telegram Bot,Complete,2025-07-15,"Token: set, chat_id: set, live alerts tested"
+5,Dashboard,Complete,2025-07-16,"Streamlit dashboard running, real-time signals"
+5,Journaling,Complete,2025-07-14,"ZENO trade log, outputs operational"
+5,Continuous Monitoring,INCOMPLETE,,"Circuit breaker, error handling, logging, kill switch"
+5,Production Rollout,INCOMPLETE,,"CI/CD, code freeze, prod deployment"
+98,Automated Scheduling,Complete,2025-07-22,"Windows Task Scheduler, every 5min + post-bar delay, fully tested in CMD and production."
+99,Live Pipeline,Complete,2025-07-22,"End-to-end live pipeline success: MT5 data pull, feature engineering, ML prediction, RL action, fully automated via Task Scheduler (see logs and latest CSVs)."
+3,Fixed candle pattern encoding bug in feature pipeline,Complete,2025-07-22,"Bug caused NaNs in pattern_code, fixed encoding logic. All ML runs now clean."
+4,Validation/Stress Test,INCOMPLETE,,"Robustness, OOS, Monte Carlo, parameter sweeps."
+4,Walk-Forward Backtest,Complete,2025-07-22,M5: MeanReward=1.90 over 499 trades; M15: MeanReward=1.20 over 499 trades; H1: MeanReward=1.77 over 499 trades; H4: MeanReward=7.45 over 499 trades; D1: MeanReward=23.02 over 499 trades
+4,Validation/Stress Test,INCOMPLETE,,"Robustness, OOS, Monte Carlo, parameter sweeps."
