@@ -1,0 +1,9 @@
+{
+  "phase": "B_grade_H1_H4_blocked",
+  "timestamp": "2025-07-29 02:08:53",
+  "reason": "Insufficient sample size (<10 trades). RL and regime promotion blocked until \u226530 realistic trades. No edge demonstrated.",
+  "counts": {
+    "H1": 5,
+    "H4": 3
+  }
+}

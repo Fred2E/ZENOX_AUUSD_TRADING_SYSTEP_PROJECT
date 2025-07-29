@@ -1,92 +1,87 @@
 import numpy as np
 import pandas as pd
 
-def detect_structure(df, swing_window=2):
+SWING_PARAMS = {
+    'M5':  {'swing_window': 3,  'min_swing_dist': 3},
+    'M15': {'swing_window': 4,  'min_swing_dist': 4},
+    'H1':  {'swing_window': 5,  'min_swing_dist': 5},
+    'H4':  {'swing_window': 7,  'min_swing_dist': 7},
+    'D1':  {'swing_window': 10, 'min_swing_dist': 10}
+}
+
+def detect_structure_logic(df, tf='M5'):
     """
-    Institutional-level swing structure, bias, BOS, and CHoCH detection for XAUUSD.
-    Returns a DataFrame with columns: [swing_high, swing_low, bos, choch, bias, bias_label].
-    Output is fully lowercase for pipeline consistency.
-
-    Args:
-        df (pd.DataFrame): DataFrame with at least 'high', 'low', and (optional) 'datetime' columns.
-        swing_window (int): Number of bars to look back/forward for swing detection.
-
-    Returns:
-        pd.DataFrame: With new structure/logic columns added.
+    Adaptive institutional swing structure, bias, BOS, and CHoCH detection for XAUUSD.
+    Applies different swing/structure logic by timeframe as per institutional best practice.
     """
+    params = SWING_PARAMS.get(tf, {'swing_window': 5, 'min_swing_dist': 5})
+    swing_window = params['swing_window']
+    min_swing_dist = params['min_swing_dist']
 
-    # --- Preprocess and preserve datetime ---
+    df = df.copy()
     df.columns = [c.lower() for c in df.columns]
-    datetime_series = df['datetime'].copy() if 'datetime' in df.columns else None
+    n = len(df)
 
-    # --- Initialize structure/logic columns ---
-    df['swing_high'] = np.nan      # Price at confirmed swing high
-    df['swing_low'] = np.nan       # Price at confirmed swing low
-    df['bos'] = 0                  # Break of structure: 1 (bull), -1 (bear), 0 (none)
-    df['choch'] = 0                # Change of character: 1 (bullish reversal), -1 (bearish reversal), 0 (none)
-    df['bias'] = 1                 # Market regime: 1=bullish, -1=bearish (tracks real flow, not just local swing)
-    df['bias_label'] = 'bullish'   # Human-readable bias
+    # Initialize structure columns
+    df['swing_high'] = np.nan
+    df['swing_low'] = np.nan
+    df['bos'] = ''
+    df['choch'] = ''
+    df['bias'] = 1
+    df['bias_label'] = 'bullish'
 
-    # --- State variables for tracking last swings and regime ---
-    last_high = last_low = None
-    bias = 1  # Start with bullish context by default
+    swing_highs, swing_lows = [], []
 
-    # --- Main loop: Institutional swing logic ---
-    for i in range(swing_window, len(df) - swing_window):
-        # Get local window of highs/lows for swing detection
+    # === Find adaptive swing highs/lows ===
+    for i in range(swing_window, n - swing_window):
         window = df.iloc[i - swing_window:i + swing_window + 1]
-        high = df['high'].iloc[i]
-        low = df['low'].iloc[i]
+        hi = df['high'].iloc[i]
+        lo = df['low'].iloc[i]
+        if hi == window['high'].max() and (not swing_highs or i - swing_highs[-1] >= min_swing_dist):
+            df.at[df.index[i], 'swing_high'] = hi
+            swing_highs.append(i)
+        if lo == window['low'].min() and (not swing_lows or i - swing_lows[-1] >= min_swing_dist):
+            df.at[df.index[i], 'swing_low'] = lo
+            swing_lows.append(i)
 
-        # --- Identify new swing high ---
-        if high == window['high'].max():
-            df.at[df.index[i], 'swing_high'] = high
+    # === BOS/CHoCH and rolling bias ===
+    bias = 1  # 1=bull, 0=bear
+    last_swing_high_idx, last_swing_low_idx = None, None
 
-        # --- Identify new swing low ---
-        if low == window['low'].min():
-            df.at[df.index[i], 'swing_low'] = low
-
-        # --- BOS/CHoCH strict logic ---
-        # On new swing high:
-        if not pd.isna(df.at[df.index[i], 'swing_high']):
-            if bias == -1 and last_high is not None and high > last_high:
-                # Bearish → Bullish reversal (CHoCH up)
-                df.at[df.index[i], 'choch'] = 1
-                bias = 1
-                df.at[df.index[i], 'bias_label'] = 'bullish'
-            elif bias == 1 and last_high is not None and high > last_high:
-                # Bullish continuation (BOS up)
-                df.at[df.index[i], 'bos'] = 1
-            last_high = high
-
-        # On new swing low:
-        if not pd.isna(df.at[df.index[i], 'swing_low']):
-            if bias == 1 and last_low is not None and low < last_low:
-                # Bullish → Bearish reversal (CHoCH down)
-                df.at[df.index[i], 'choch'] = -1
-                bias = -1
-                df.at[df.index[i], 'bias_label'] = 'bearish'
-            elif bias == -1 and last_low is not None and low < last_low:
-                # Bearish continuation (BOS down)
-                df.at[df.index[i], 'bos'] = -1
-            last_low = low
-
-        # Track current bias in main column for use in other modules
+    for i in range(n):
+        # New swing high
+        if not np.isnan(df['swing_high'].iloc[i]):
+            if last_swing_high_idx is not None:
+                prev_high = df['swing_high'].iloc[last_swing_high_idx]
+                if bias == 0 and df['swing_high'].iloc[i] > prev_high:
+                    df.at[df.index[i], 'choch'] = '↑'
+                    bias = 1
+                    df.at[df.index[i], 'bias_label'] = 'bullish'
+                elif bias == 1 and df['swing_high'].iloc[i] > prev_high:
+                    df.at[df.index[i], 'bos'] = '↑'
+            last_swing_high_idx = i
+        # New swing low
+        if not np.isnan(df['swing_low'].iloc[i]):
+            if last_swing_low_idx is not None:
+                prev_low = df['swing_low'].iloc[last_swing_low_idx]
+                if bias == 1 and df['swing_low'].iloc[i] < prev_low:
+                    df.at[df.index[i], 'choch'] = '↓'
+                    bias = 0
+                    df.at[df.index[i], 'bias_label'] = 'bearish'
+                elif bias == 0 and df['swing_low'].iloc[i] < prev_low:
+                    df.at[df.index[i], 'bos'] = '↓'
+            last_swing_low_idx = i
         df.at[df.index[i], 'bias'] = bias
 
-    # --- Ensure all columns are correct datatype for downstream ML/RL/analysis ---
-    df['bos'] = df['bos'].astype(int)
-    df['choch'] = df['choch'].astype(int)
+    # Final cleanup for types
+    df['bos'] = df['bos'].astype(str)
+    df['choch'] = df['choch'].astype(str)
     df['bias'] = df['bias'].astype(int)
     df['bias_label'] = df['bias_label'].astype(str)
 
-    # --- Restore datetime column if previously present and missing (robust) ---
-    if datetime_series is not None and 'datetime' not in df.columns:
-        df['datetime'] = datetime_series
-
-    # --- Lowercase all output columns for perfect pipeline compatibility ---
+    # Lowercase columns for pipeline compatibility
     df.columns = [c.lower() for c in df.columns]
     return df
 
 # Usage:
-# df = detect_structure(df, swing_window=2)
+# df = detect_structure_logic(df, tf='M5')

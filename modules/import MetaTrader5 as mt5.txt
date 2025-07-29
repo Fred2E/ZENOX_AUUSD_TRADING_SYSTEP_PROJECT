@@ -1,0 +1,23 @@
+import MetaTrader5 as mt5
+import pandas as pd
+
+# Initialize MT5
+if not initialize_mt5():
+    print("MT5 initialization failed, exiting...")
+    exit()
+
+# Example: Load the prediction file for M5 timeframe
+prediction_file = r"data\live\XAUUSD\M5\XAUUSD_M5_LIVE_PRED.csv"
+df = pd.read_csv(prediction_file)
+
+# Generate trade signals
+df = generate_trade_signal(df)
+
+# Loop through predictions and execute trades based on signals
+for index, row in df.iterrows():
+    signal = row['trade_signal']
+    if signal in ['buy', 'sell']:
+        execute_trade_signal('XAUUSD', signal)
+
+# Shutdown MT5 connection
+mt5.shutdown()

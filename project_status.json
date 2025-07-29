@@ -1,0 +1,37 @@
+{
+  "current_phase": "A+_M15_walkforward_complete",
+  "last_checkpoint": {
+    "phase": "A+_M15_walkforward_complete",
+    "timestamp": "2025-07-29 00:38:44",
+    "hashes": {
+      "model": "186c2c79fd4acab880c165dccb847492ca6f5926ce47f84cfd14df66066dc90a",
+      "trade_log": "08f98022661ee27730317d27483042a1dc5c3ef71e133bc91d5daa700ece5d9e",
+      "walkforward_log": "1b93b07f6a248b2d973ae56b06c6fb626bd207226756dcca8ac6630977d01ee8",
+      "features": "ad16f72a5d899a952711ada777853b2d218d8c32acdcd75085f0e78229d8fe9a",
+      "config": "2fbe48ca734a3f06bc1cbc35f51915da1120168109361ab47a8c2636fd901a7e"
+    }
+  },
+  "M5_Bgrade": {
+    "status": "rejected",
+    "reason": "Manual audit found 0 valid signals. No live edge.",
+    "timestamp": "2025-07-29 01:58:26"
+  },
+  "B_grade_H1": {
+    "phase": "B_grade_H1_H4_blocked",
+    "timestamp": "2025-07-29 02:08:53",
+    "reason": "Insufficient sample size (<10 trades). RL and regime promotion blocked until \u226530 realistic trades. No edge demonstrated.",
+    "counts": {
+      "H1": 5,
+      "H4": 3
+    }
+  },
+  "B_grade_H4": {
+    "phase": "B_grade_H1_H4_blocked",
+    "timestamp": "2025-07-29 02:08:53",
+    "reason": "Insufficient sample size (<10 trades). RL and regime promotion blocked until \u226530 realistic trades. No edge demonstrated.",
+    "counts": {
+      "H1": 5,
+      "H4": 3
+    }
+  }
+}

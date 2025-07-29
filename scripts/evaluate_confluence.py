@@ -2,11 +2,16 @@ import numpy as np
 import pandas as pd
 import os
 
+# === Configurable params by timeframe ===
+SR_LOOKBACK = {'M5': 10, 'M15': 20, 'H1': 30, 'H4': 50, 'D1': 100}
+SR_THRESHOLD = {'M5': 0.0015, 'M15': 0.0015, 'H1': 0.001, 'H4': 0.001, 'D1': 0.001}
+PSYCH_LEVELS = [50, 100, 250]
+PSYCH_THRESH = {'M5': 1.5, 'M15': 2, 'H1': 2, 'H4': 2.5, 'D1': 3}
+
 PRIMARY_CONFS = ['conf_structure', 'conf_bos_or_choch', 'conf_candle', 'conf_sr_zone']
-SECONDARY_CONFS = ['conf_psych_level', 'conf_fib_zone', 'bias_bull']
+SECONDARY_CONFS = ['conf_psych_level', 'conf_fib_zone', 'conf_volume', 'conf_liquidity', 'conf_spread']
 
 def _sanitize_direction(col):
-    # Convert arrows to int: ↑=1, ↓=-1, else 0
     return col.fillna('').apply(lambda x: 1 if '↑' in str(x) else -1 if '↓' in str(x) else 0).astype(int)
 
 def compute_atr(df, period=14):
@@ -27,113 +32,104 @@ def evaluate_confluence(df, timeframe='M15'):
     df.columns = [c.lower() for c in df.columns]
     N = len(df)
 
-    # == Validate essential columns ==
-    required_cols = ['high', 'low', 'close']
-    missing = [col for col in required_cols if col not in df.columns]
-    if missing:
-        raise ValueError(f"Missing required columns: {missing}")
-
-    # == Structure flags ==
+    # === Structure flags (strict: only if swing + BOS/CHoCH) ===
     swing_high = df.get('swing_high', pd.Series([np.nan]*N))
     swing_low = df.get('swing_low', pd.Series([np.nan]*N))
-    structure = (~swing_high.isna()) | (~swing_low.isna())
-
     bos_flag = _sanitize_direction(df.get('bos', pd.Series(['']*N)))
     choch_flag = _sanitize_direction(df.get('choch', pd.Series(['']*N)))
-    bos_or_choch = ((bos_flag != 0) | (choch_flag != 0)).astype(int)
+    conf_bos_or_choch = ((bos_flag != 0) | (choch_flag != 0)).astype(int)
+    conf_structure = ((~swing_high.isna()) | (~swing_low.isna())) & (conf_bos_or_choch == 1)
+    conf_structure = conf_structure.astype(int)
 
-    # == Pattern code handling ==
-    if 'pattern_code' not in df.columns:
-        print("[WARN] 'pattern_code' missing, setting default 0.")
-        df['pattern_code'] = 0
-    else:
-        df['pattern_code'] = df['pattern_code'].fillna(0).astype(int)
+    # === Candle pattern ===
+    candle = df.get('pattern_code', pd.Series([0]*N)).fillna(0).astype(int)
+    conf_candle = (candle > 0).astype(int)
 
-    candle = (df['pattern_code'] > 0)
-
-    # == SR zone (5-candle window) ==
+    # === SR zone (adaptive by tf) ===
+    lookback = SR_LOOKBACK.get(timeframe, 20)
+    threshold = SR_THRESHOLD.get(timeframe, 0.0015)
     price = df['close']
-    sr_zone = pd.Series(False, index=df.index)
+    conf_sr_zone = []
     for i in range(N):
-        window = price[max(0, i-5):i+1]
-        if not window.isnull().all():
-            sr_zone.iat[i] = (window.min() < price.iat[i] < window.max())
+        idx = max(0, i - lookback)
+        window = df.iloc[idx:i+1]
+        hi = window['high'].max()
+        lo = window['low'].min()
+        p = price.iloc[i]
+        near_high = abs(p - hi) / p < threshold
+        near_low = abs(p - lo) / p < threshold
+        conf_sr_zone.append(int(near_high or near_low))
+    conf_sr_zone = pd.Series(conf_sr_zone, index=df.index)
 
-    # == Psych level (nearest to 250s) ==
-    psych_level = ((price.round() % 250 < 2) | (price.round() % 250 > 248))
+    # === Psych level (adaptive by tf, near 50/100/250s) ===
+    psych_thresh = PSYCH_THRESH.get(timeframe, 2)
+    conf_psych_level = pd.Series(0, index=df.index)
+    for lvl in PSYCH_LEVELS:
+        conf_psych_level |= ((price % lvl < psych_thresh) | (price % lvl > (lvl - psych_thresh))).astype(int)
 
-    # == Fib zone (near recent swing points) ==
-    fib_zone = pd.Series(False, index=df.index)
-    if not swing_high.dropna().empty and not swing_low.dropna().empty:
-        recent_sh = swing_high.dropna().values[-20:]
-        recent_sl = swing_low.dropna().values[-20:]
-        for i in range(N):
-            p = price.iat[i]
-            if not np.isnan(p):
-                near_sh = np.any(np.abs(p - recent_sh) / p < 0.01)
-                near_sl = np.any(np.abs(p - recent_sl) / p < 0.01)
-                fib_zone.iat[i] = near_sh or near_sl
+    # === Fib zone (approx, near 0.382, 0.5, 0.618 of recent swings) ===
+    fib_zone = []
+    for i, row in df.iterrows():
+        idx = max(0, i - lookback)
+        sw_high = swing_high.iloc[idx:i+1].dropna()
+        sw_low = swing_low.iloc[idx:i+1].dropna()
+        close = row['close']
+        found = 0
+        if not sw_high.empty and not sw_low.empty:
+            h, l = sw_high.max(), sw_low.min()
+            diff = h - l
+            fibs = [l + 0.382*diff, l + 0.5*diff, l + 0.618*diff]
+            found = int(any(abs(close-f)/close < 0.01 for f in fibs))
+        fib_zone.append(found)
+    conf_fib_zone = pd.Series(fib_zone, index=df.index)
 
-    # == Bias bull (from 'bias' string, else fallback zeros) ==
-    if 'bias' in df.columns:
-        bull_logic = df['bias'].astype(str).str.lower() == 'bullish'
-        bear_logic = df['bias'].astype(str).str.lower() == 'bearish'
-        bias_bull = np.where(bull_logic, 1, np.where(bear_logic, 0, 0))
-    else:
-        bias_bull = np.zeros(N, dtype=int)
+    # === Volume, Liquidity, Spread (already computed in pipeline or patch with 0) ===
+    conf_volume = df.get('conf_volume', pd.Series([0]*N)).astype(int)
+    conf_liquidity = df.get('conf_liquidity', pd.Series([0]*N)).astype(int)
+    conf_spread = df.get('conf_spread', pd.Series([1]*N)).astype(int)
 
-    # == Confluence flags ==
-    flags = {
-        "conf_structure": structure.astype(int),
-        "conf_bos_or_choch": bos_or_choch,
-        "conf_candle": candle.astype(int),
-        "conf_sr_zone": sr_zone.astype(int),
-        "conf_psych_level": psych_level.astype(int),
-        "conf_fib_zone": fib_zone.astype(int),
-        "bias_bull": bias_bull
-    }
-    # Drop any existing to avoid duplication bugs
-    for col in flags:
-        if col in df.columns:
-            df.drop(columns=[col], inplace=True)
-    conf_df = pd.DataFrame(flags, index=df.index)
-    df = pd.concat([df, conf_df], axis=1)
+    # === Bias bull: DO NOT overwrite if already robustly computed ===
+    if 'bias_bull' not in df.columns:
+        # Only fallback to string bias if not already computed (should never happen in final pipeline)
+        if 'bias' in df.columns:
+            bull_logic = df['bias'].astype(str).str.lower() == 'bullish'
+            bear_logic = df['bias'].astype(str).str.lower() == 'bearish'
+            bias_bull = np.where(bull_logic, 1, np.where(bear_logic, 0, 0))
+        else:
+            bias_bull = np.zeros(N, dtype=int)
+        df['bias_bull'] = bias_bull
 
-    # == Core confluence scores ==
+    # === Confluence flags assignment ===
+    df['conf_structure'] = conf_structure
+    df['conf_bos_or_choch'] = conf_bos_or_choch
+    df['conf_candle'] = conf_candle
+    df['conf_sr_zone'] = conf_sr_zone
+    df['conf_psych_level'] = conf_psych_level
+    df['conf_fib_zone'] = conf_fib_zone
+    df['conf_volume'] = conf_volume
+    df['conf_liquidity'] = conf_liquidity
+    df['conf_spread'] = conf_spread
+
+    # === Confluence scores ===
     df['primary_score'] = df[PRIMARY_CONFS].sum(axis=1)
     df['secondary_score'] = df[SECONDARY_CONFS].sum(axis=1)
     df['total_confluence'] = df['primary_score'] + df['secondary_score']
     df['score'] = df['primary_score']
     df['num_confs'] = df[PRIMARY_CONFS + SECONDARY_CONFS].sum(axis=1)
 
-    # == ATR and Time Features ==
+    # === ATR and Time Features ===
     df = compute_atr(df)
     if 'datetime' in df.columns:
         dt_series = pd.to_datetime(df['datetime'], errors='coerce')
         df['hour'] = dt_series.dt.hour
         df['dow'] = dt_series.dt.dayofweek
 
+    # === Debug print (per tf) ===
+    print(f"\n[{timeframe}] PRIMARY CONFLUENCE COUNTS:")
+    for conf in PRIMARY_CONFS:
+        print(f"{conf}: {df[conf].sum()}")
+    print(f"Total signals (3/4 primaries): {(df[PRIMARY_CONFS].sum(axis=1) >= 3).sum()}")
+
     return df
 
-# === MAIN EXECUTION ===
-if __name__ == "__main__":
-    TIMEFRAMES = ['M5', 'M15', 'H1', 'H4']  # D1 skipped until data exists
-    BASE_PATH = 'C:/Users/open/Documents/ZENO_XAUUSD/historical'
-    OUTPUT_DIR = os.path.join(BASE_PATH, 'processed')
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-
-    for tf in TIMEFRAMES:
-        try:
-            filename = f"XAUUSDm_{tf}_HIST.csv"
-            path = os.path.join(BASE_PATH, filename)
-
-            print(f"Processing {tf} signals from {path} ...")
-            df_raw = pd.read_csv(path)
-            df_processed = evaluate_confluence(df_raw, timeframe=tf)
-
-            out_path = os.path.join(OUTPUT_DIR, f"signals_{tf}.csv")
-            df_processed.to_csv(out_path, index=False)
-
-            print(f"Saved signals for {tf} to {out_path}\n")
-        except Exception as e:
-            print(f"[ERROR] Processing {tf}: {e}\n")
+# No main block—meant for import into pipeline!

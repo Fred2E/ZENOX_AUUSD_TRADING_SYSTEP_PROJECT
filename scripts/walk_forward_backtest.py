@@ -3,21 +3,39 @@ import sys
 import numpy as np
 import pandas as pd
 import json
+import hashlib
+from datetime import datetime
 from stable_baselines3 import PPO
 from stable_baselines3.common.vec_env import DummyVecEnv
 
-# Inject module path
 MODULES_PATH = 'C:/Users/open/Documents/ZENO_XAUUSD/modules'
 if MODULES_PATH not in sys.path:
     sys.path.append(MODULES_PATH)
-
 from zeno_rl_env import ZenoRLTradingEnv
+import zeno_config
 
 TIMEFRAMES = ["M5", "M15", "H1", "H4"]
-
 DATA_DIR = r"C:/Users/open/Documents/ZENO_XAUUSD/historical/processed"
 MODEL_DIR = r"C:/Users/open/Documents/ZENO_XAUUSD/models"
 LOGS_DIR = r"C:/Users/open/Documents/ZENO_XAUUSD/logs"
+
+MIN_TRADES = 30
+MIN_WINRATE = 50.0
+
+def hash_file(path):
+    h = hashlib.sha256()
+    with open(path, 'rb') as f:
+        while True:
+            chunk = f.read(8192)
+            if not chunk:
+                break
+            h.update(chunk)
+    return h.hexdigest()
+
+def hash_json(path):
+    with open(path, 'r') as f:
+        j = json.load(f)
+    return hashlib.sha256(json.dumps(j, sort_keys=True).encode()).hexdigest()
 
 def load_features_from_json(tf):
     feat_json = os.path.join(MODEL_DIR, f"rl_policy_{tf}_features.json")
@@ -30,99 +48,135 @@ def load_features_from_json(tf):
 def print_metrics(trade_log, tf):
     if trade_log.empty:
         print(f"{tf}: No trades to analyze.")
-        return
+        return {
+            "Total Reward": 0.0,
+            "Mean Reward": 0.0,
+            "Trade Count": 0,
+            "Win Rate (%)": 0.0,
+            "Sharpe": 0.0,
+            "Max Drawdown": 0.0,
+            "Status": "NO_TRADES"
+        }
     cum_rewards = trade_log['reward'].cumsum()
     max_dd = np.min(cum_rewards - np.maximum.accumulate(cum_rewards))
     sharpe = trade_log['reward'].mean() / (trade_log['reward'].std() + 1e-8)
     win_rate = (trade_log['reward'] > 0).mean() * 100
-
+    avg_reward = trade_log['reward'].mean()
+    total_reward = trade_log['reward'].sum()
+    trade_count = len(trade_log)
     print(f"\n=== Trade Metrics for {tf} ===")
-    print(f"Total pips: {trade_log['reward'].sum():.2f}")
-    print(f"Mean pips/trade: {trade_log['reward'].mean():.2f}")
+    print(f"Total pips: {total_reward:.2f}")
+    print(f"Mean pips/trade: {avg_reward:.2f}")
     print(f"Win rate: {win_rate:.2f}%")
     print(f"Sharpe: {sharpe:.2f}")
     print(f"Max Drawdown: {max_dd:.2f}")
-    print(f"Trade count: {len(trade_log)}")
-    # Print a snapshot for audit
-    cols_to_show = [c for c in ['entry_time', 'exit_time', 'side', 'reward', 'score', 'pattern_code'] if c in trade_log.columns]
-    print(trade_log[cols_to_show].head())
+    print(f"Trade count: {trade_count}")
+    return {
+        "Total Reward": total_reward,
+        "Mean Reward": avg_reward,
+        "Trade Count": trade_count,
+        "Win Rate (%)": win_rate,
+        "Sharpe": sharpe,
+        "Max Drawdown": max_dd,
+        "Status": "OK"
+    }
 
 def main():
     print("STARTING WALK-FORWARD BACKTEST...")
     os.makedirs(LOGS_DIR, exist_ok=True)
     results = []
+    blocked = []
+    passed = []
 
     for tf in TIMEFRAMES:
-        data_csv = os.path.join(DATA_DIR, f"signals_{tf}.csv")
-        model_path = os.path.join(MODEL_DIR, f"rl_policy_{tf}_latest.zip")
-        features_json = os.path.join(MODEL_DIR, f"rl_policy_{tf}_features.json")
+        try:
+            data_csv = os.path.join(DATA_DIR, f"signals_{tf}.csv")
+            model_path = os.path.join(MODEL_DIR, f"rl_policy_{tf}_latest.zip")
+            features_json = os.path.join(MODEL_DIR, f"rl_policy_{tf}_features.json")
 
-        if not os.path.exists(data_csv):
-            print(f"{tf}: Data file missing ({data_csv}), skipping")
-            continue
-        if not os.path.exists(model_path):
-            print(f"{tf}: Model file missing ({model_path}), skipping")
-            continue
-        if not os.path.exists(features_json):
-            print(f"{tf}: Features JSON missing ({features_json}), skipping")
-            continue
+            hashes = {
+                "DataCSV_Hash": hash_file(data_csv) if os.path.exists(data_csv) else "",
+                "Model_Hash": hash_file(model_path) if os.path.exists(model_path) else "",
+                "Features_Hash": hash_json(features_json) if os.path.exists(features_json) else ""
+            }
 
-        RL_FEATURES = load_features_from_json(tf)
-        print(f"\n[{tf}] RL_FEATURES used: {RL_FEATURES}")
+            # Hard check: all files must exist
+            if not all(os.path.exists(p) for p in [data_csv, model_path, features_json]):
+                print(f"{tf}: Missing required files, BLOCKED")
+                blocked.append({"Timeframe": tf, "Reason": "MISSING_FILES"})
+                results.append({"Timeframe": tf, "Status": "MISSING_FILES", **hashes})
+                continue
 
-        df = pd.read_csv(data_csv)
-        df.columns = [c.lower() for c in df.columns]
+            RL_FEATURES = load_features_from_json(tf)
+            df = pd.read_csv(data_csv)
+            df.columns = [c.lower() for c in df.columns]
+            df = df.dropna(subset=RL_FEATURES + ['close', 'datetime']).reset_index(drop=True)
 
-        # Check all RL_FEATURES exist in signals
-        missing = [col for col in RL_FEATURES + ['close', 'datetime'] if col not in df.columns]
-        if missing:
-            print(f"{tf}: Missing columns {missing}, skipping")
-            continue
+            if len(df) < MIN_TRADES:
+                print(f"{tf}: Only {len(df)} trades. BLOCKED: <{MIN_TRADES} trades.")
+                blocked.append({"Timeframe": tf, "Reason": f"TOO_FEW_TRADES ({len(df)})"})
+                results.append({"Timeframe": tf, "Status": "TOO_FEW_TRADES", **hashes})
+                continue
 
-        df = df.dropna(subset=RL_FEATURES + ['close', 'datetime']).reset_index(drop=True)
-        env = ZenoRLTradingEnv(df.copy(), timeframe=tf, features=RL_FEATURES)
-        vec_env = DummyVecEnv([lambda: env])
-        model = PPO.load(model_path, env=vec_env)
+            env = ZenoRLTradingEnv(df.copy(), timeframe=tf, features=RL_FEATURES)
+            vec_env = DummyVecEnv([lambda: env])
+            model = PPO.load(model_path, env=vec_env)
+            obs = vec_env.reset()
+            done = False
+            while not done:
+                action, _ = model.predict(obs, deterministic=True)
+                obs, reward, done, _ = vec_env.step(action)
 
-        obs = vec_env.reset()
-        done = False
+            trade_log = pd.DataFrame(env.trades) if hasattr(env, 'trades') else pd.DataFrame()
+            if not trade_log.empty:
+                trade_log['entry_time'] = trade_log['entry_step'].apply(lambda x: df['datetime'].iloc[min(int(x), len(df)-1)] if pd.notna(x) else "NA")
+                trade_log['exit_time'] = trade_log['exit_step'].apply(lambda x: df['datetime'].iloc[min(int(x), len(df)-1)] if pd.notna(x) else "NA")
+                log_path = os.path.join(LOGS_DIR, f"trade_log_{tf}.csv")
+                trade_log.to_csv(log_path, index=False)
+                print(f"{tf}: Saved trade log with {len(trade_log)} trades to {log_path}")
 
-        while not done:
-            action, _ = model.predict(obs, deterministic=True)
-            obs, reward, done, _ = vec_env.step(action)
+            metrics = print_metrics(trade_log, tf)
+            metrics.update({"Timeframe": tf, **hashes})
 
-        if not hasattr(env, 'trades') or len(env.trades) == 0:
-            print(f"{tf}: No trades detected.")
-            continue
+            # Winrate enforcement
+            if metrics["Trade Count"] < MIN_TRADES:
+                metrics["Status"] = "BLOCKED_TOO_FEW_TRADES"
+                blocked.append({"Timeframe": tf, "Reason": f"TOO_FEW_TRADES ({metrics['Trade Count']})"})
+            elif metrics["Win Rate (%)"] < MIN_WINRATE:
+                metrics["Status"] = "BLOCKED_WINRATE"
+                blocked.append({"Timeframe": tf, "Reason": f"LOW_WINRATE ({metrics['Win Rate (%)']:.2f}%)"})
+            else:
+                metrics["Status"] = "PASSED"
+                passed.append({"Timeframe": tf, "Winrate": metrics["Win Rate (%)"], "TradeCount": metrics["Trade Count"]})
 
-        trade_log = pd.DataFrame(env.trades)
+            results.append(metrics)
 
-        # Map bar indices to datetime for entry and exit
-        if 'entry_step' in trade_log.columns and 'exit_step' in trade_log.columns:
-            trade_log['entry_time'] = trade_log['entry_step'].apply(lambda x: df['datetime'].iloc[int(x)] if int(x) < len(df) else "NA")
-            trade_log['exit_time'] = trade_log['exit_step'].apply(lambda x: df['datetime'].iloc[int(x)] if int(x) < len(df) else "NA")
-        else:
-            trade_log['entry_time'] = "NA"
-            trade_log['exit_time'] = "NA"
-
-        log_path = os.path.join(LOGS_DIR, f"trade_log_{tf}.csv")
-        trade_log.to_csv(log_path, index=False)
-        print(f"{tf}: Saved trade log with {len(trade_log)} trades to {log_path}")
-
-        print_metrics(trade_log, tf)
-
-        results.append({
-            "Timeframe": tf,
-            "Total Reward": trade_log['reward'].sum(),
-            "Trade Count": len(trade_log)
-        })
+        except Exception as e:
+            print(f"{tf}: Exception - {str(e)}")
+            blocked.append({"Timeframe": tf, "Reason": f"EXCEPTION: {e}"})
+            results.append({"Timeframe": tf, "Status": f"EXCEPTION_{str(e)}", "DataCSV_Hash": "", "Model_Hash": "", "Features_Hash": ""})
 
     summary_df = pd.DataFrame(results)
-    summary_path = os.path.join(LOGS_DIR, "walkforward_results.csv")
+    now_str = datetime.now().strftime("%Y%m%d_%H%M%S")
+    summary_path = os.path.join(LOGS_DIR, f"walkforward_results_{now_str}.csv")
     summary_df.to_csv(summary_path, index=False)
     print("\nSUMMARY:")
     print(summary_df)
-    print(f"\nWalk-forward backtest complete. Results saved to {summary_path}")
+    print(f"Results saved to {summary_path}")
+
+    print("\n==== PASSED REGIMES ====")
+    if passed:
+        for r in passed:
+            print(f"✅ {r['Timeframe']}: Winrate={r['Winrate']:.2f}%, Trades={r['TradeCount']}")
+    else:
+        print("❌ NONE. No viable regime found.")
+
+    print("\n==== BLOCKED REGIMES ====")
+    for r in blocked:
+        print(f"⛔ {r['Timeframe']}: {r['Reason']}")
+
+    with open(os.path.join(LOGS_DIR, f"PHASE_WALKFORWARD_COMPLETE_{now_str}.txt"), 'w') as f:
+        f.write(f"walkforward_complete | {now_str} | summary_hash: {hash_file(summary_path)}\n")
 
 if __name__ == "__main__":
     main()

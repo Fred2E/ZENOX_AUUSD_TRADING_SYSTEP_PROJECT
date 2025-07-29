@@ -1,64 +1,32 @@
-print("STARTING RL TRAINING SCRIPT...")  # Entry log
+import pandas as pd
+import json
+from stable_baselines3 import PPO
+from stable_baselines3.common.vec_env import DummyVecEnv
+from zeno_rl_env import ZenoRLTradingEnv
 
-# --- Imports ---
-import sys
-import argparse
-from pathlib import Path
+# === CONFIG ===
+TF = "M5"  # Change to "M15", "H1", "H4" as needed
+SIGNALS_PATH = f"C:/Users/open/Documents/ZENO_XAUUSD/historical/processed/signals_{TF}.csv"
+FEATURES_PATH = f"C:/Users/open/Documents/ZENO_XAUUSD/models/rl_policy_{TF}_features.json"
+MODEL_OUT = f"C:/Users/open/Documents/ZENO_XAUUSD/models/rl_policy_{TF}_trained_on_grade.zip"
 
-# --- Custom module path ---
-sys.path.append(r'C:\Users\open\Documents\ZENO_XAUUSD\modules')
-print("Sys path set.")
+# --- Load and Filter Full Signals (example: B-grade logic, adjust as needed) ---
+signals = pd.read_csv(SIGNALS_PATH)
+signals['datetime'] = pd.to_datetime(signals['datetime'])
+with open(FEATURES_PATH, 'r') as f:
+    features = json.load(f)
 
-# --- Parse command line arguments ---
-parser = argparse.ArgumentParser()
-parser.add_argument('--timeframe', type=str, default='M15', help='Choose timeframe: M5, M15, H1, etc.')
-args = parser.parse_args()
-timeframe = args.timeframe.upper()
+def is_B_grade(row):
+    # Adjust as needed for your regime logic
+    return row['score'] >= 2 and row['num_confs'] >= 3
 
-# --- Dynamic paths ---
-DATA_CSV = fr'C:\Users\open\Documents\ZENO_XAUUSD\data\live\XAUUSD\{timeframe}\XAUUSD_{timeframe}_LIVE_FEATURES.csv'
-MODEL_PATH = fr'C:\Users\open\Documents\ZENO_XAUUSD\models\rl_policy_{timeframe}_latest.zip'
+signals_filtered = signals[signals.apply(is_B_grade, axis=1)].copy()
+signals_filtered = signals_filtered.dropna(subset=features + ['close', 'datetime']).reset_index(drop=True)
+print(f"✅ {TF}: {len(signals_filtered)} bars for RL training (grade-filtered)")
 
-# --- Print what will be loaded ---
-print(f"*** RL ENV loading file: {DATA_CSV} ***")
-
-# --- Imports ---
-try:
-    from stable_baselines3 import PPO
-    print("Imported PPO.")
-except Exception as e:
-    print(f"❌ Failed at PPO import: {e}")
-    sys.exit(1)
-
-try:
-    from zeno_env import ZenoTradingEnv
-    print("Imported ZenoTradingEnv.")
-except Exception as e:
-    print(f"❌ Failed at ZenoTradingEnv import: {e}")
-    sys.exit(1)
-
-# --- Load Environment ---
-try:
-    env = ZenoTradingEnv(DATA_CSV)
-    print("✅ Initialized environment.")
-except Exception as e:
-    print(f"❌ Failed to init environment: {e}")
-    sys.exit(1)
-
-# --- Initialize PPO ---
-try:
-    model = PPO('MlpPolicy', env, verbose=1)
-    print("✅ Initialized PPO model.")
-except Exception as e:
-    print(f"❌ Failed to init PPO model: {e}")
-    sys.exit(1)
-
-# --- Training ---
-try:
-    model.learn(total_timesteps=10000)
-    print("✅ Finished learning.")
-    model.save(MODEL_PATH)
-    print(f"✅ Trained PPO RL policy saved to: {MODEL_PATH}")
-except Exception as e:
-    print(f"❌ Training failed: {e}")
-    sys.exit(1)
+# --- RL Training ---
+env = DummyVecEnv([lambda: ZenoRLTradingEnv(signals_filtered.copy(), timeframe=TF, features=features)])
+model = PPO('MlpPolicy', env, verbose=1)
+model.learn(total_timesteps=max(1000, 10 * len(signals_filtered)))  # Adjust for sample size
+model.save(MODEL_OUT)
+print(f"✅ RL model trained and saved for {TF}: {MODEL_OUT}")

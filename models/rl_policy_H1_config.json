@@ -21,5 +21,7 @@
   "n_steps": 256,
   "batch_size": 64,
   "learning_rate": 0.0003,
-  "total_timesteps": 20000
+  "total_timesteps": 20000,
+  "feature_json_hash": "1c1cf84fac67db03cd537c581af3af1583912b811c0e95282a8fb7c93567b2dd",
+  "data_hash": "754c1816946ec027504d2223775fbe4b840a1d3712289e270b8788a905e1087d"
 }
