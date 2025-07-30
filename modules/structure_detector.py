@@ -9,10 +9,9 @@ SWING_PARAMS = {
     'D1':  {'swing_window': 10, 'min_swing_dist': 10}
 }
 
-def detect_structure_logic(df, tf='M5'):
+def inject_structure_features(df, tf='M5'):
     """
-    Adaptive institutional swing structure, bias, BOS, and CHoCH detection for XAUUSD.
-    Applies different swing/structure logic by timeframe as per institutional best practice.
+    Injects swing_high, swing_low, BOS, CHoCH, bias, bias_label into the DataFrame for the full dataset.
     """
     params = SWING_PARAMS.get(tf, {'swing_window': 5, 'min_swing_dist': 5})
     swing_window = params['swing_window']
@@ -22,7 +21,6 @@ def detect_structure_logic(df, tf='M5'):
     df.columns = [c.lower() for c in df.columns]
     n = len(df)
 
-    # Initialize structure columns
     df['swing_high'] = np.nan
     df['swing_low'] = np.nan
     df['bos'] = ''
@@ -32,7 +30,6 @@ def detect_structure_logic(df, tf='M5'):
 
     swing_highs, swing_lows = [], []
 
-    # === Find adaptive swing highs/lows ===
     for i in range(swing_window, n - swing_window):
         window = df.iloc[i - swing_window:i + swing_window + 1]
         hi = df['high'].iloc[i]
@@ -44,12 +41,10 @@ def detect_structure_logic(df, tf='M5'):
             df.at[df.index[i], 'swing_low'] = lo
             swing_lows.append(i)
 
-    # === BOS/CHoCH and rolling bias ===
-    bias = 1  # 1=bull, 0=bear
+    bias = 1  # 1 = bull, 0 = bear
     last_swing_high_idx, last_swing_low_idx = None, None
 
     for i in range(n):
-        # New swing high
         if not np.isnan(df['swing_high'].iloc[i]):
             if last_swing_high_idx is not None:
                 prev_high = df['swing_high'].iloc[last_swing_high_idx]
@@ -60,7 +55,6 @@ def detect_structure_logic(df, tf='M5'):
                 elif bias == 1 and df['swing_high'].iloc[i] > prev_high:
                     df.at[df.index[i], 'bos'] = '↑'
             last_swing_high_idx = i
-        # New swing low
         if not np.isnan(df['swing_low'].iloc[i]):
             if last_swing_low_idx is not None:
                 prev_low = df['swing_low'].iloc[last_swing_low_idx]
@@ -73,15 +67,10 @@ def detect_structure_logic(df, tf='M5'):
             last_swing_low_idx = i
         df.at[df.index[i], 'bias'] = bias
 
-    # Final cleanup for types
+    # Final types for compatibility
     df['bos'] = df['bos'].astype(str)
     df['choch'] = df['choch'].astype(str)
     df['bias'] = df['bias'].astype(int)
     df['bias_label'] = df['bias_label'].astype(str)
-
-    # Lowercase columns for pipeline compatibility
     df.columns = [c.lower() for c in df.columns]
     return df
-
-# Usage:
-# df = detect_structure_logic(df, tf='M5')

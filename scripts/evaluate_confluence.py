@@ -32,14 +32,15 @@ def evaluate_confluence(df, timeframe='M15'):
     df.columns = [c.lower() for c in df.columns]
     N = len(df)
 
-    # === Structure flags (strict: only if swing + BOS/CHoCH) ===
+    # === Structure: (Improved) ===
     swing_high = df.get('swing_high', pd.Series([np.nan]*N))
     swing_low = df.get('swing_low', pd.Series([np.nan]*N))
     bos_flag = _sanitize_direction(df.get('bos', pd.Series(['']*N)))
     choch_flag = _sanitize_direction(df.get('choch', pd.Series(['']*N)))
+
+    # Improved structure logic: just flag swing, BOS/CHoCH separately
+    conf_structure = ((~swing_high.isna()) | (~swing_low.isna())).astype(int)
     conf_bos_or_choch = ((bos_flag != 0) | (choch_flag != 0)).astype(int)
-    conf_structure = ((~swing_high.isna()) | (~swing_low.isna())) & (conf_bos_or_choch == 1)
-    conf_structure = conf_structure.astype(int)
 
     # === Candle pattern ===
     candle = df.get('pattern_code', pd.Series([0]*N)).fillna(0).astype(int)
@@ -61,13 +62,13 @@ def evaluate_confluence(df, timeframe='M15'):
         conf_sr_zone.append(int(near_high or near_low))
     conf_sr_zone = pd.Series(conf_sr_zone, index=df.index)
 
-    # === Psych level (adaptive by tf, near 50/100/250s) ===
+    # === Psych level ===
     psych_thresh = PSYCH_THRESH.get(timeframe, 2)
     conf_psych_level = pd.Series(0, index=df.index)
     for lvl in PSYCH_LEVELS:
         conf_psych_level |= ((price % lvl < psych_thresh) | (price % lvl > (lvl - psych_thresh))).astype(int)
 
-    # === Fib zone (approx, near 0.382, 0.5, 0.618 of recent swings) ===
+    # === Fib zone ===
     fib_zone = []
     for i, row in df.iterrows():
         idx = max(0, i - lookback)
@@ -83,14 +84,23 @@ def evaluate_confluence(df, timeframe='M15'):
         fib_zone.append(found)
     conf_fib_zone = pd.Series(fib_zone, index=df.index)
 
-    # === Volume, Liquidity, Spread (already computed in pipeline or patch with 0) ===
+    # === Volume, Liquidity, Spread ===
     conf_volume = df.get('conf_volume', pd.Series([0]*N)).astype(int)
+    if conf_volume.sum() == 0 and 'volume' in df.columns:
+        # Simple dynamic volume threshold
+        conf_volume = (df['volume'] > df['volume'].rolling(20, min_periods=1).mean()).astype(int)
+        print(f"[{timeframe}] conf_volume recomputed due to zero values.")
+
     conf_liquidity = df.get('conf_liquidity', pd.Series([0]*N)).astype(int)
+    if conf_liquidity.sum() == 0 and 'volume' in df.columns:
+        conf_liquidity = (df['volume'].rolling(10, min_periods=1).sum() >
+                          df['volume'].rolling(100, min_periods=1).sum().mean()).astype(int)
+        print(f"[{timeframe}] conf_liquidity recomputed due to zero values.")
+
     conf_spread = df.get('conf_spread', pd.Series([1]*N)).astype(int)
 
-    # === Bias bull: DO NOT overwrite if already robustly computed ===
+    # === Bias bull ===
     if 'bias_bull' not in df.columns:
-        # Only fallback to string bias if not already computed (should never happen in final pipeline)
         if 'bias' in df.columns:
             bull_logic = df['bias'].astype(str).str.lower() == 'bullish'
             bear_logic = df['bias'].astype(str).str.lower() == 'bearish'
@@ -99,7 +109,7 @@ def evaluate_confluence(df, timeframe='M15'):
             bias_bull = np.zeros(N, dtype=int)
         df['bias_bull'] = bias_bull
 
-    # === Confluence flags assignment ===
+    # === Confluence assignment ===
     df['conf_structure'] = conf_structure
     df['conf_bos_or_choch'] = conf_bos_or_choch
     df['conf_candle'] = conf_candle
@@ -129,7 +139,7 @@ def evaluate_confluence(df, timeframe='M15'):
     for conf in PRIMARY_CONFS:
         print(f"{conf}: {df[conf].sum()}")
     print(f"Total signals (3/4 primaries): {(df[PRIMARY_CONFS].sum(axis=1) >= 3).sum()}")
+    print(f"conf_liquidity value counts: {df['conf_liquidity'].value_counts().to_dict()}")
+    print(f"conf_volume value counts: {df['conf_volume'].value_counts().to_dict()}")
 
     return df
-
-# No main block—meant for import into pipeline!
