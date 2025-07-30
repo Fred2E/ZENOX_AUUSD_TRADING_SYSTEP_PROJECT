@@ -1,12 +1,5 @@
 {
   "RL_FEATURES": [
-    "score",
-    "num_confs",
-    "pattern_code",
-    "bias_bull",
-    "hour",
-    "dow",
-    "atr",
     "conf_structure",
     "conf_bos_or_choch",
     "conf_candle",
@@ -20,8 +13,8 @@
   "env_timeframe": "M5",
   "n_steps": 256,
   "batch_size": 64,
+  "total_timesteps": 40000,
   "learning_rate": 0.0003,
-  "total_timesteps": 20000,
-  "feature_json_hash": "1c1cf84fac67db03cd537c581af3af1583912b811c0e95282a8fb7c93567b2dd",
-  "data_hash": "6e3f5fc79310fba4a1f792b8e90010fc4bdef2f98395246d5e0e26134df975c1"
+  "feature_json_hash": "70abb4adfb9165ec7a70e3ab6cdfa552fd00a376553de4f6a672ad103eab4eca",
+  "data_hash": "1c704be8c3a5c61ad4a6a3186960d83695f68d754b721960f12c332723909d88"
 }

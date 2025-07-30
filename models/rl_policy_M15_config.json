@@ -1,0 +1,20 @@
+{
+  "RL_FEATURES": [
+    "conf_structure",
+    "conf_bos_or_choch",
+    "conf_candle",
+    "conf_sr_zone",
+    "conf_psych_level",
+    "conf_fib_zone",
+    "conf_volume",
+    "conf_liquidity",
+    "conf_spread"
+  ],
+  "env_timeframe": "M15",
+  "n_steps": 256,
+  "batch_size": 64,
+  "total_timesteps": 40000,
+  "learning_rate": 0.0003,
+  "feature_json_hash": "70abb4adfb9165ec7a70e3ab6cdfa552fd00a376553de4f6a672ad103eab4eca",
+  "data_hash": "60f83ecc8d0eb038556016e11f6a4d3e2c10e0d0ba59a094f7f64d326d99528c"
+}

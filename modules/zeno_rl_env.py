@@ -12,11 +12,17 @@ class ZenoRLTradingEnv(gym.Env):
         super().__init__()
         self.df = df.copy().reset_index(drop=True)
         self.df.columns = [c.lower() for c in self.df.columns]
+        self.timeframe = timeframe
 
-        assert features and len(features) > 0, "You must pass a list of RL_FEATURES (from feature JSON)."
+        # --- Features and tf-specific config ---
+        assert features and len(features) > 0, "Must pass list of RL_FEATURES."
         self.features = features
 
-        # --- Required columns (MUST match training features exactly) ---
+        self.tf_entry = zeno_config.ENTRY_FILTERS
+        self.tf_bias = zeno_config.TF_BIAS_PARAMS.get(self.timeframe, zeno_config.TF_BIAS_PARAMS['M15'])
+        self.tf_swing = zeno_config.SWING_PARAMS.get(self.timeframe, zeno_config.SWING_PARAMS['M15'])
+
+        # --- Required columns
         required = self.features + [
             'close', 'datetime', 'atr', 'score', 'num_confs', 'trend_state', 'bias_bull',
             'conf_structure', 'conf_bos_or_choch', 'conf_candle', 'conf_sr_zone'
@@ -27,7 +33,6 @@ class ZenoRLTradingEnv(gym.Env):
 
         self.df = self.df.dropna(subset=required).reset_index(drop=True)
 
-        self.timeframe = timeframe
         self.initial_balance = initial_balance
         self.max_steps = max_steps
         self.log_path = log_path
@@ -66,37 +71,47 @@ class ZenoRLTradingEnv(gym.Env):
         return self.df.loc[self.current_step, self.features].astype(np.float32).values
 
     def _is_trade_allowed(self, row):
+        tf = self.timeframe
+        min_score = self.tf_entry['min_score'][tf]
+        min_confs = self.tf_entry['min_confs'][tf]
+        min_primary = self.tf_entry['min_primary_confs'][tf]
+        atr_min = self.tf_entry['atr_threshold'][tf]
+        bias_required = self.tf_entry['bias_match_required'][tf]
+
+        # --- Adaptive entry checks ---
         if self.current_step - self.last_trade_step < 10:
             return False
-        if row['score'] < zeno_config.ENTRY_FILTERS['min_score']:
+        if row['score'] < min_score:
             return False
-        if row['num_confs'] < zeno_config.ENTRY_FILTERS['min_confs']:
+        if row['num_confs'] < min_confs:
             return False
         if (
             row['conf_structure'] + row['conf_bos_or_choch'] +
             row['conf_candle'] + row['conf_sr_zone']
-        ) < zeno_config.ENTRY_FILTERS.get('min_primary_confs', 3):
+        ) < min_primary:
             return False
-        if row['atr'] < zeno_config.ENTRY_FILTERS['atr_threshold'].get(self.timeframe, 1.0):
+        if row['atr'] < atr_min:
             return False
-        if row['trend_state'] not in zeno_config.ENTRY_FILTERS['trend_required']:
+        if 'trend_state' in row and self.tf_entry.get('trend_required') and row['trend_state'] not in self.tf_entry['trend_required']:
             return False
-        if zeno_config.ENTRY_FILTERS.get('bias_match_required', True) and self.timeframe != 'M15':
-            expected = 1 if row['trend_state'] == 'bull' else 0
+        if bias_required:
+            expected = 1 if row.get('trend_state', 'bull') == 'bull' else 0
             if row['bias_bull'] != expected:
                 return False
         return True
 
     def _position_size(self, sl_distance):
-        risk_amount = self.balance * 0.01
+        # --- Use MAX_LOT_RISK and pip_value from config ---
+        risk_amount = self.balance * zeno_config.MAX_LOT_RISK
         effective_sl = sl_distance + self.spread
-        raw_lot = risk_amount / (effective_sl * self.pip_value)
-        max_lot = self.balance * zeno_config.MAX_LOT_RISK / (effective_sl * self.pip_value)
-        return np.round(min(raw_lot, max_lot), 2)
+        lot = risk_amount / (effective_sl * self.pip_value)
+        return np.round(max(lot, 0.01), 2)
 
     def _sl_tp_calc(self, entry_price, atr, direction):
+        # --- Use tf-adaptive RR from config if available ---
+        rr = 2.0  # Default R:R
         sl = entry_price - atr if direction == 1 else entry_price + atr
-        tp = entry_price + 2 * (entry_price - sl) if direction == 1 else entry_price - 2 * (sl - entry_price)
+        tp = entry_price + rr * (entry_price - sl) if direction == 1 else entry_price - rr * (sl - entry_price)
         return round(sl, 2), round(tp, 2), abs(entry_price - sl)
 
     def step(self, action):
@@ -148,7 +163,7 @@ class ZenoRLTradingEnv(gym.Env):
         direction = 1 if self.position == 1 else -1
         base_pips = (price - self.entry_price) * direction
         reward = base_pips * self.lot_size * self.pip_value
-        reward -= 0.1 * self.pip_value
+        reward -= 0.1 * self.pip_value  # slippage/fee
 
         if reason == 'SL': reward -= 2.0
         if reason == 'TP': reward += 1.0
@@ -180,3 +195,4 @@ class ZenoRLTradingEnv(gym.Env):
             pd.DataFrame(self.trades).to_csv(self.log_path, index=False)
             if self.verbose:
                 print(f"✅ Trade log saved to {self.log_path}")
+

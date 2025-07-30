@@ -11,7 +11,8 @@ SWING_PARAMS = {
 
 def inject_structure_features(df, tf='M5'):
     """
-    Injects swing_high, swing_low, BOS, CHoCH, bias, bias_label into the DataFrame for the full dataset.
+    Inject swing_high, swing_low, BOS, CHoCH, bias, bias_label.
+    Forces zero/null-safety on all outputs for downstream ML/RL.
     """
     params = SWING_PARAMS.get(tf, {'swing_window': 5, 'min_swing_dist': 5})
     swing_window = params['swing_window']
@@ -67,9 +68,11 @@ def inject_structure_features(df, tf='M5'):
             last_swing_low_idx = i
         df.at[df.index[i], 'bias'] = bias
 
-    # Final types for compatibility
-    df['bos'] = df['bos'].astype(str)
-    df['choch'] = df['choch'].astype(str)
+    # === FINAL PATCH: Null/empty fix (critical for audit pass!) ===
+    df['swing_high'] = df['swing_high'].fillna(0)
+    df['swing_low'] = df['swing_low'].fillna(0)
+    df['bos'] = df['bos'].replace('', '0').fillna('0')
+    df['choch'] = df['choch'].replace('', '0').fillna('0')
     df['bias'] = df['bias'].astype(int)
     df['bias_label'] = df['bias_label'].astype(str)
     df.columns = [c.lower() for c in df.columns]

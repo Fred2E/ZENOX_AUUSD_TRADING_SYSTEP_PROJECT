@@ -12,22 +12,26 @@ if MODULES_PATH not in sys.path:
     sys.path.append(MODULES_PATH)
 
 from zeno_rl_env import ZenoRLTradingEnv
+import zeno_config
 
 DATA_PATH = 'C:/Users/open/Documents/ZENO_XAUUSD/historical/processed'
 MODEL_PATH = 'C:/Users/open/Documents/ZENO_XAUUSD/models'
 LOG_PATH = 'C:/Users/open/Documents/ZENO_XAUUSD/logs'
 TIMEFRAMES = ['M5', 'M15', 'H1', 'H4']
 
-ALL_POSSIBLE_FEATURES = [
-    'score', 'num_confs', 'pattern_code', 'bias_bull', 'hour', 'dow', 'atr',
-    'conf_structure', 'conf_bos_or_choch', 'conf_candle', 'conf_sr_zone',
-    'conf_psych_level', 'conf_fib_zone', 'conf_volume', 'conf_liquidity', 'conf_spread'
-]
+# --- TF-specific RL params (should be in zeno_config) ---
+RL_TRAIN_PARAMS = {
+    'M5':  {'n_steps': 256, 'batch_size': 64,  'total_timesteps': 40000, 'learning_rate': 3e-4},
+    'M15': {'n_steps': 256, 'batch_size': 64,  'total_timesteps': 40000, 'learning_rate': 3e-4},
+    'H1':  {'n_steps': 256, 'batch_size': 32,  'total_timesteps': 10000, 'learning_rate': 1e-4},
+    'H4':  {'n_steps': 128, 'batch_size': 16,  'total_timesteps': 5000,  'learning_rate': 1e-4},
+}
 
-# --- Special regime inputs, add any filtered log path here
-SPECIAL_TF_INPUTS = {
-    "M15": os.path.join(LOG_PATH, "trade_log_M15_Aplus.csv"),
-    # Add more like: "M5": "trade_log_M5_Aplus.csv", etc if needed
+# Features to use for RL agent per tf (should match pipeline output)
+TF_FEATURES = {
+    tf: [f for f in zeno_config.PRIMARY_CONFS + zeno_config.SECONDARY_CONFS
+         if f in pd.read_csv(os.path.join(DATA_PATH, f'signals_{tf}.csv')).columns]
+    for tf in TIMEFRAMES
 }
 
 def hash_file(path):
@@ -41,29 +45,29 @@ def hash_file(path):
     return h.hexdigest()
 
 def train_rl_agent(tf):
-    # Select raw or regime-specific log
-    signal_file = SPECIAL_TF_INPUTS.get(tf, os.path.join(DATA_PATH, f"signals_{tf}.csv"))
+    # Only proceed for M5/M15, or if enough signals
+    signal_file = os.path.join(DATA_PATH, f"signals_{tf}.csv")
     if not os.path.exists(signal_file):
         print(f"[SKIP] {tf}: Data/log missing at {signal_file}.")
         return
 
     df = pd.read_csv(signal_file)
     df.columns = [c.lower() for c in df.columns]
+    n_signals = len(df)
+    if tf in ['H1', 'H4'] and n_signals < 30:
+        print(f"[SKIP] {tf}: Not enough signals for RL training ({n_signals} rows).")
+        return
+    if n_signals < 15:
+        print(f"[SKIP] {tf}: Not enough rows to train RL agent. ({n_signals} rows)")
+        return
 
-    # Use only features present in the dataset
-    RL_FEATURES = [f for f in ALL_POSSIBLE_FEATURES if f in df.columns]
+    RL_FEATURES = [f for f in zeno_config.PRIMARY_CONFS + zeno_config.SECONDARY_CONFS if f in df.columns]
     missing_crit = [c for c in ['close', 'datetime'] if c not in df.columns]
     if missing_crit:
         print(f"[FATAL] {tf}: Missing critical columns: {missing_crit}")
         return
 
-    # Drop NaNs in selected features and critical cols
     df = df.dropna(subset=RL_FEATURES + ['close', 'datetime']).reset_index(drop=True)
-
-    # Audit/skip if dataset is too small
-    if len(df) < 15:
-        print(f"[SKIP] {tf}: Not enough rows to train RL agent. ({len(df)} rows)")
-        return
 
     # Save RL_FEATURES to JSON before training
     feature_json = os.path.join(MODEL_PATH, f"rl_policy_{tf}_features.json")
@@ -71,14 +75,12 @@ def train_rl_agent(tf):
         json.dump(RL_FEATURES, f, indent=2)
     print(f"[INFO] RL_FEATURES saved to {feature_json}")
 
-    # Save config and hash
+    # Fetch tf-specific params
+    params = RL_TRAIN_PARAMS[tf]
     config = {
         "RL_FEATURES": RL_FEATURES,
         "env_timeframe": tf,
-        "n_steps": 256,
-        "batch_size": 64,
-        "learning_rate": 3e-4,
-        "total_timesteps": 20000,
+        **params,
         "feature_json_hash": hash_file(feature_json),
         "data_hash": hash_file(signal_file)
     }
@@ -93,14 +95,14 @@ def train_rl_agent(tf):
         "MlpPolicy",
         env,
         verbose=1,
-        n_steps=256,
-        batch_size=64,
-        learning_rate=3e-4,
+        n_steps=params['n_steps'],
+        batch_size=params['batch_size'],
+        learning_rate=params['learning_rate'],
         gamma=0.99,
         ent_coef=0.01,
         tensorboard_log=os.path.join(LOG_PATH, f"tensorboard_{tf}")
     )
-    model.learn(total_timesteps=20000)
+    model.learn(total_timesteps=params['total_timesteps'])
     model_path = os.path.join(MODEL_PATH, f"rl_policy_{tf}_latest.zip")
     model.save(model_path)
     print(f"[SAVED] {model_path}")

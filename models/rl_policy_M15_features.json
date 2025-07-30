@@ -1,11 +1,4 @@
 [
-  "score",
-  "num_confs",
-  "pattern_code",
-  "bias_bull",
-  "hour",
-  "dow",
-  "atr",
   "conf_structure",
   "conf_bos_or_choch",
   "conf_candle",

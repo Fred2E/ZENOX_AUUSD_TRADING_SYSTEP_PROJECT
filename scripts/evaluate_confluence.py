@@ -1,6 +1,5 @@
 import numpy as np
 import pandas as pd
-import os
 
 # === Configurable params by timeframe ===
 SR_LOOKBACK = {'M5': 10, 'M15': 20, 'H1': 30, 'H4': 50, 'D1': 100}
@@ -10,6 +9,7 @@ PSYCH_THRESH = {'M5': 1.5, 'M15': 2, 'H1': 2, 'H4': 2.5, 'D1': 3}
 
 PRIMARY_CONFS = ['conf_structure', 'conf_bos_or_choch', 'conf_candle', 'conf_sr_zone']
 SECONDARY_CONFS = ['conf_psych_level', 'conf_fib_zone', 'conf_volume', 'conf_liquidity', 'conf_spread']
+STRUCTURE_COLS = ['swing_high', 'swing_low', 'bos', 'choch']  # Patch these aggressively
 
 def _sanitize_direction(col):
     return col.fillna('').apply(lambda x: 1 if '↑' in str(x) else -1 if '↓' in str(x) else 0).astype(int)
@@ -28,18 +28,30 @@ def compute_atr(df, period=14):
     return df
 
 def evaluate_confluence(df, timeframe='M15'):
+    """
+    Canonical confluence engineering function for ZENO XAUUSD system.
+    - Expects all structure and pattern columns already injected
+    - Null-patches all structure fields for robust downstream use
+    - Enforces no capped/windowed data by design
+    """
     df = df.copy()
     df.columns = [c.lower() for c in df.columns]
     N = len(df)
 
-    # === Structure: (Improved) ===
-    swing_high = df.get('swing_high', pd.Series([np.nan]*N))
-    swing_low = df.get('swing_low', pd.Series([np.nan]*N))
-    bos_flag = _sanitize_direction(df.get('bos', pd.Series(['']*N)))
-    choch_flag = _sanitize_direction(df.get('choch', pd.Series(['']*N)))
+    # === Null patch structure columns (NO nulls allowed!) ===
+    for col in STRUCTURE_COLS:
+        if col in df.columns:
+            if col in ['bos', 'choch']:
+                df[col] = df[col].replace('', '0')  # empty string to '0'
+            df[col] = df[col].fillna(0)
 
-    # Improved structure logic: just flag swing, BOS/CHoCH separately
-    conf_structure = ((~swing_high.isna()) | (~swing_low.isna())).astype(int)
+    # === Structure signals ===
+    swing_high = df.get('swing_high', pd.Series([0]*N))
+    swing_low = df.get('swing_low', pd.Series([0]*N))
+    bos_flag = _sanitize_direction(df.get('bos', pd.Series(['0']*N)))
+    choch_flag = _sanitize_direction(df.get('choch', pd.Series(['0']*N)))
+
+    conf_structure = ((swing_high != 0) | (swing_low != 0)).astype(int)
     conf_bos_or_choch = ((bos_flag != 0) | (choch_flag != 0)).astype(int)
 
     # === Candle pattern ===
@@ -72,8 +84,10 @@ def evaluate_confluence(df, timeframe='M15'):
     fib_zone = []
     for i, row in df.iterrows():
         idx = max(0, i - lookback)
-        sw_high = swing_high.iloc[idx:i+1].dropna()
-        sw_low = swing_low.iloc[idx:i+1].dropna()
+        sw_high = swing_high.iloc[idx:i+1]
+        sw_low = swing_low.iloc[idx:i+1]
+        sw_high = sw_high[sw_high != 0]
+        sw_low = sw_low[sw_low != 0]
         close = row['close']
         found = 0
         if not sw_high.empty and not sw_low.empty:
@@ -87,7 +101,6 @@ def evaluate_confluence(df, timeframe='M15'):
     # === Volume, Liquidity, Spread ===
     conf_volume = df.get('conf_volume', pd.Series([0]*N)).astype(int)
     if conf_volume.sum() == 0 and 'volume' in df.columns:
-        # Simple dynamic volume threshold
         conf_volume = (df['volume'] > df['volume'].rolling(20, min_periods=1).mean()).astype(int)
         print(f"[{timeframe}] conf_volume recomputed due to zero values.")
 
@@ -134,7 +147,8 @@ def evaluate_confluence(df, timeframe='M15'):
         df['hour'] = dt_series.dt.hour
         df['dow'] = dt_series.dt.dayofweek
 
-    # === Debug print (per tf) ===
+    # === Final: Lowercase columns, debug print (per tf) ===
+    df.columns = [c.lower() for c in df.columns]
     print(f"\n[{timeframe}] PRIMARY CONFLUENCE COUNTS:")
     for conf in PRIMARY_CONFS:
         print(f"{conf}: {df[conf].sum()}")

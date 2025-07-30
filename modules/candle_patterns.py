@@ -127,12 +127,16 @@ def detect_candle_patterns(df, tf='M5'):
     ).fillna(False)
     patterns[evening_star.values] = PATTERN_CODES['evening_star']
 
-    # Assign pattern labels
+    # Assign pattern labels/codes
     df['pattern_code'] = patterns.astype(int)
     df['candle_pattern'] = [
         next((k for k, v in PATTERN_CODES.items() if v == code), 'none')
         for code in patterns
     ]
+    # Final safety: fill nulls and enforce lower-case colnames
+    df['pattern_code'] = df['pattern_code'].fillna(0).astype(int)
+    df['candle_pattern'] = df['candle_pattern'].fillna('none').astype(str).str.lower()
+    df.columns = [c.lower() for c in df.columns]
 
     # === Debug output
     print(f"[{tf}] Candle patterns value counts:", pd.Series(patterns).value_counts().to_dict())

@@ -1,4 +1,4 @@
-import os
+import os 
 import sys
 import numpy as np
 import pandas as pd
@@ -18,9 +18,6 @@ TIMEFRAMES = ["M5", "M15", "H1", "H4"]
 DATA_DIR = r"C:/Users/open/Documents/ZENO_XAUUSD/historical/processed"
 MODEL_DIR = r"C:/Users/open/Documents/ZENO_XAUUSD/models"
 LOGS_DIR = r"C:/Users/open/Documents/ZENO_XAUUSD/logs"
-
-MIN_TRADES = 30
-MIN_WINRATE = 50.0
 
 def hash_file(path):
     h = hashlib.sha256()
@@ -44,6 +41,14 @@ def load_features_from_json(tf):
     with open(feat_json, 'r') as f:
         RL_FEATURES = json.load(f)
     return RL_FEATURES
+
+def get_tf_param(tf, key, default):
+    """Helper to pull tf-specific config from zeno_config or fallback."""
+    val = zeno_config.WALKFORWARD_PARAMS.get(tf, {}).get(key, None)
+    if val is not None:
+        return val
+    # fallback to global config
+    return zeno_config.WALKFORWARD_PARAMS.get("default", {}).get(key, default)
 
 def print_metrics(trade_log, tf):
     if trade_log.empty:
@@ -100,7 +105,6 @@ def main():
                 "Features_Hash": hash_json(features_json) if os.path.exists(features_json) else ""
             }
 
-            # Hard check: all files must exist
             if not all(os.path.exists(p) for p in [data_csv, model_path, features_json]):
                 print(f"{tf}: Missing required files, BLOCKED")
                 blocked.append({"Timeframe": tf, "Reason": "MISSING_FILES"})
@@ -112,8 +116,12 @@ def main():
             df.columns = [c.lower() for c in df.columns]
             df = df.dropna(subset=RL_FEATURES + ['close', 'datetime']).reset_index(drop=True)
 
-            if len(df) < MIN_TRADES:
-                print(f"{tf}: Only {len(df)} trades. BLOCKED: <{MIN_TRADES} trades.")
+            # Pull tf-specific params
+            min_trades = get_tf_param(tf, "min_trades", 30)
+            min_winrate = get_tf_param(tf, "min_winrate", 50.0)
+
+            if len(df) < min_trades:
+                print(f"{tf}: Only {len(df)} trades. BLOCKED: <{min_trades} trades.")
                 blocked.append({"Timeframe": tf, "Reason": f"TOO_FEW_TRADES ({len(df)})"})
                 results.append({"Timeframe": tf, "Status": "TOO_FEW_TRADES", **hashes})
                 continue
@@ -138,11 +146,10 @@ def main():
             metrics = print_metrics(trade_log, tf)
             metrics.update({"Timeframe": tf, **hashes})
 
-            # Winrate enforcement
-            if metrics["Trade Count"] < MIN_TRADES:
+            if metrics["Trade Count"] < min_trades:
                 metrics["Status"] = "BLOCKED_TOO_FEW_TRADES"
                 blocked.append({"Timeframe": tf, "Reason": f"TOO_FEW_TRADES ({metrics['Trade Count']})"})
-            elif metrics["Win Rate (%)"] < MIN_WINRATE:
+            elif metrics["Win Rate (%)"] < min_winrate:
                 metrics["Status"] = "BLOCKED_WINRATE"
                 blocked.append({"Timeframe": tf, "Reason": f"LOW_WINRATE ({metrics['Win Rate (%)']:.2f}%)"})
             else:
@@ -175,6 +182,7 @@ def main():
     for r in blocked:
         print(f"⛔ {r['Timeframe']}: {r['Reason']}")
 
+    # Log phase with summary hash
     with open(os.path.join(LOGS_DIR, f"PHASE_WALKFORWARD_COMPLETE_{now_str}.txt"), 'w') as f:
         f.write(f"walkforward_complete | {now_str} | summary_hash: {hash_file(summary_path)}\n")
 

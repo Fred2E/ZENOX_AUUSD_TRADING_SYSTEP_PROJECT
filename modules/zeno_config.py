@@ -1,7 +1,6 @@
 # --- INSTITUTIONAL-GRADE ZENO CONFIG ---
 
 ENTRY_FILTERS = {
-    # --- Adaptive confluence thresholds ---
     'min_primary_confs': {
         'M5': 2,
         'M15': 3,
@@ -91,6 +90,23 @@ HTF_MAP = {
 PRIMARY_CONFS = ['conf_structure', 'conf_bos_or_choch', 'conf_candle', 'conf_sr_zone']
 SECONDARY_CONFS = ['conf_psych_level', 'conf_fib_zone', 'conf_volume', 'conf_liquidity', 'conf_spread']
 
+# --- RL training params (tf-specific, use in RL agent scripts) ---
+RL_TRAIN_PARAMS = {
+    'M5':  {'n_steps': 256, 'batch_size': 64,  'total_timesteps': 40000, 'learning_rate': 3e-4},
+    'M15': {'n_steps': 256, 'batch_size': 64,  'total_timesteps': 40000, 'learning_rate': 3e-4},
+    'H1':  {'n_steps': 256, 'batch_size': 32,  'total_timesteps': 10000, 'learning_rate': 1e-4},
+    'H4':  {'n_steps': 128, 'batch_size': 16,  'total_timesteps': 5000,  'learning_rate': 1e-4},
+}
+
+# --- Walkforward thresholds per tf (for walk_forward_backtest.py) ---
+WALKFORWARD_PARAMS = {
+    'M5':  {'min_trades': 30, 'min_winrate': 50.0},
+    'M15': {'min_trades': 30, 'min_winrate': 50.0},
+    'H1':  {'min_trades': 30, 'min_winrate': 50.0},
+    'H4':  {'min_trades': 30, 'min_winrate': 50.0},
+    'default': {'min_trades': 30, 'min_winrate': 50.0}
+}
+
 # --- Usage example in other scripts ---
-# from zeno_config import ENTRY_FILTERS, TF_BIAS_PARAMS, SWING_PARAMS, SR_LOOKBACK, CANDLE_THRESH, MAX_LOT_RISK, PRIMARY_CONFS
+# from zeno_config import ENTRY_FILTERS, TF_BIAS_PARAMS, SWING_PARAMS, SR_LOOKBACK, CANDLE_THRESH, MAX_LOT_RISK, PRIMARY_CONFS, RL_TRAIN_PARAMS, WALKFORWARD_PARAMS
 
