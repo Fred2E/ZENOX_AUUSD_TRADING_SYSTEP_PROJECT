@@ -1,0 +1,27 @@
+{
+  "features": [
+    "close",
+    "score",
+    "num_confs",
+    "pattern_code",
+    "bias_bull",
+    "hour",
+    "dow",
+    "primary_score",
+    "secondary_score",
+    "total_confluence",
+    "regime_trend"
+  ],
+  "label": "is_win",
+  "train_shape": [
+    3395,
+    11
+  ],
+  "test_shape": [
+    849,
+    11
+  ],
+  "model_path": "C:\\Users\\open\\Documents\\ZENO_XAUUSD\\outputs\\ml_data\\zeno_lgbm_M5.pkl",
+  "score": 0.6065959952885748,
+  "roc_auc": 0.6149630702733513
+}
