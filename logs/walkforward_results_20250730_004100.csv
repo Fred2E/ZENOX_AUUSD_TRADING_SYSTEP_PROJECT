@@ -1,5 +1,0 @@
-Timeframe,Status,DataCSV_Hash,Model_Hash,Features_Hash
-M5,EXCEPTION_module 'zeno_config' has no attribute 'WALKFORWARD_PARAMS',,,
-M15,EXCEPTION_module 'zeno_config' has no attribute 'WALKFORWARD_PARAMS',,,
-H1,EXCEPTION_module 'zeno_config' has no attribute 'WALKFORWARD_PARAMS',,,
-H4,EXCEPTION_module 'zeno_config' has no attribute 'WALKFORWARD_PARAMS',,,

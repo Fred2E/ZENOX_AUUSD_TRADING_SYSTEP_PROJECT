@@ -14,24 +14,18 @@ if MODULES_PATH not in sys.path:
 from zeno_rl_env import ZenoRLTradingEnv
 import zeno_config
 
-DATA_PATH = 'C:/Users/open/Documents/ZENO_XAUUSD/historical/processed'
+# Canonical paths (MUST point to event-driven backtest trade logs)
+TRADELOG_PATH = 'C:/Users/open/Documents/ZENO_XAUUSD/logs/trade_logs'
 MODEL_PATH = 'C:/Users/open/Documents/ZENO_XAUUSD/models'
 LOG_PATH = 'C:/Users/open/Documents/ZENO_XAUUSD/logs'
 TIMEFRAMES = ['M5', 'M15', 'H1', 'H4']
 
-# --- TF-specific RL params (should be in zeno_config) ---
+# RL Training params (should eventually be centralized in zeno_config)
 RL_TRAIN_PARAMS = {
     'M5':  {'n_steps': 256, 'batch_size': 64,  'total_timesteps': 40000, 'learning_rate': 3e-4},
     'M15': {'n_steps': 256, 'batch_size': 64,  'total_timesteps': 40000, 'learning_rate': 3e-4},
     'H1':  {'n_steps': 256, 'batch_size': 32,  'total_timesteps': 10000, 'learning_rate': 1e-4},
     'H4':  {'n_steps': 128, 'batch_size': 16,  'total_timesteps': 5000,  'learning_rate': 1e-4},
-}
-
-# Features to use for RL agent per tf (should match pipeline output)
-TF_FEATURES = {
-    tf: [f for f in zeno_config.PRIMARY_CONFS + zeno_config.SECONDARY_CONFS
-         if f in pd.read_csv(os.path.join(DATA_PATH, f'signals_{tf}.csv')).columns]
-    for tf in TIMEFRAMES
 }
 
 def hash_file(path):
@@ -45,29 +39,33 @@ def hash_file(path):
     return h.hexdigest()
 
 def train_rl_agent(tf):
-    # Only proceed for M5/M15, or if enough signals
-    signal_file = os.path.join(DATA_PATH, f"signals_{tf}.csv")
-    if not os.path.exists(signal_file):
-        print(f"[SKIP] {tf}: Data/log missing at {signal_file}.")
+    # Only use event-driven backtest trade logs for RL training!
+    trade_log_file = os.path.join(TRADELOG_PATH, f"trade_log_{tf}.csv")
+    if not os.path.exists(trade_log_file):
+        print(f"[SKIP] {tf}: Trade log missing at {trade_log_file}.")
         return
 
-    df = pd.read_csv(signal_file)
+    df = pd.read_csv(trade_log_file)
     df.columns = [c.lower() for c in df.columns]
-    n_signals = len(df)
-    if tf in ['H1', 'H4'] and n_signals < 30:
-        print(f"[SKIP] {tf}: Not enough signals for RL training ({n_signals} rows).")
+    n_trades = len(df)
+    if tf in ['H1', 'H4'] and n_trades < 30:
+        print(f"[SKIP] {tf}: Not enough trades for RL training ({n_trades} rows).")
         return
-    if n_signals < 15:
-        print(f"[SKIP] {tf}: Not enough rows to train RL agent. ({n_signals} rows)")
+    if n_trades < 15:
+        print(f"[SKIP] {tf}: Not enough trades to train RL agent. ({n_trades} rows)")
+        return
+
+    # Enforce outcome columns exist
+    outcome_cols = ['win', 'reward', 'pnl', 'outcome']
+    missing_outcomes = [c for c in outcome_cols if c not in df.columns]
+    if missing_outcomes:
+        print(f"[FATAL] {tf}: Missing critical trade outcome columns: {missing_outcomes}")
         return
 
     RL_FEATURES = [f for f in zeno_config.PRIMARY_CONFS + zeno_config.SECONDARY_CONFS if f in df.columns]
-    missing_crit = [c for c in ['close', 'datetime'] if c not in df.columns]
-    if missing_crit:
-        print(f"[FATAL] {tf}: Missing critical columns: {missing_crit}")
-        return
-
-    df = df.dropna(subset=RL_FEATURES + ['close', 'datetime']).reset_index(drop=True)
+    # Ensure all essential features and critical columns exist
+    crit_cols = RL_FEATURES + ['close', 'datetime'] + outcome_cols
+    df = df.dropna(subset=crit_cols).reset_index(drop=True)
 
     # Save RL_FEATURES to JSON before training
     feature_json = os.path.join(MODEL_PATH, f"rl_policy_{tf}_features.json")
@@ -82,7 +80,7 @@ def train_rl_agent(tf):
         "env_timeframe": tf,
         **params,
         "feature_json_hash": hash_file(feature_json),
-        "data_hash": hash_file(signal_file)
+        "data_hash": hash_file(trade_log_file)
     }
     config_json = os.path.join(MODEL_PATH, f"rl_policy_{tf}_config.json")
     with open(config_json, 'w') as f:
@@ -111,7 +109,7 @@ def train_rl_agent(tf):
     checkpoint_log = {
         "model_hash": hash_file(model_path),
         "features_hash": hash_file(feature_json),
-        "data_hash": hash_file(signal_file),
+        "data_hash": hash_file(trade_log_file),
         "config_hash": hash_file(config_json),
         "n_rows": len(df),
         "timeframe": tf
