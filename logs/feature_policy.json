@@ -1,0 +1,59 @@
+{
+  "version": "2025-08-09T15:13:18Z",
+  "random_state": 42,
+  "n_permutations": 4,
+  "rules": {
+    "keep_if_keepvotes_at_least": 2,
+    "drop_if_dropvotes_at_least": 2
+  },
+  "votes": {
+    "keep": {
+      "close": 2,
+      "low": 2,
+      "atr": 3,
+      "pattern_code": 2,
+      "conf_sr_zone": 2,
+      "high": 1,
+      "num_confs": 1,
+      "hour": 1,
+      "conf_liquidity": 2,
+      "score": 1,
+      "bias_bull": 1,
+      "dow": 1,
+      "conf_fib_zone": 1
+    },
+    "drop": {
+      "secondary_score": 2,
+      "total_confluence": 1,
+      "conf_bos_or_choch": 3,
+      "conf_fib_zone": 2,
+      "primary_score": 1,
+      "conf_sr_zone": 1
+    }
+  },
+  "decision": {
+    "keep": [
+      "atr",
+      "bias_bull",
+      "close",
+      "conf_liquidity",
+      "conf_sr_zone",
+      "dow",
+      "high",
+      "hour",
+      "low",
+      "num_confs",
+      "pattern_code",
+      "score"
+    ],
+    "drop": [
+      "conf_bos_or_choch",
+      "secondary_score"
+    ],
+    "neutral": [
+      "conf_fib_zone",
+      "primary_score",
+      "total_confluence"
+    ]
+  }
+}

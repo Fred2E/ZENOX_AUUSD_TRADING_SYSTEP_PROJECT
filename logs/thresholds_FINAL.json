@@ -1,0 +1,194 @@
+{
+  "version": "2025-08-09T15:23:24Z",
+  "per_tf": {
+    "M15": {
+      "calibrator": "isotonic",
+      "artifacts": {
+        "signals_calibrated": "C:\\Users\\open\\Documents\\ZENO_XAUUSD\\outputs\\ml_signals\\ML_signals_M15_FINAL_calibrated.csv",
+        "tables": {
+          "global": "C:\\Users\\open\\Documents\\ZENO_XAUUSD\\logs\\calibration2_M15_FINAL_GLOBAL.csv",
+          "london": "C:\\Users\\open\\Documents\\ZENO_XAUUSD\\logs\\calibration2_M15_FINAL_London.csv",
+          "ny": "C:\\Users\\open\\Documents\\ZENO_XAUUSD\\logs\\calibration2_M15_FINAL_NY.csv"
+        }
+      },
+      "metrics": {
+        "auc_raw": 0.568223616577322,
+        "auc_cal": 0.5706797857642079,
+        "brier_raw_all": 0.24834651051503798,
+        "brier_cal_all": 0.24001115613391652,
+        "features_used": [
+          "atr",
+          "bias_bull",
+          "close",
+          "conf_liquidity",
+          "conf_sr_zone",
+          "dow",
+          "high",
+          "hour",
+          "low",
+          "num_confs",
+          "pattern_code",
+          "score"
+        ]
+      },
+      "thresholds": {
+        "GLOBAL": {
+          "tf": "M15",
+          "scope": "GLOBAL",
+          "thr": 0.63,
+          "n": 391,
+          "wins": 302,
+          "wr": 0.7723785166240409,
+          "ci_lo": 0.728285805991218,
+          "n_min": 300
+        },
+        "London": {
+          "tf": "M15",
+          "scope": "London",
+          "thr": 0.62,
+          "n": 823,
+          "wins": 583,
+          "wr": 0.7083839611178615,
+          "ci_lo": 0.6764210096504989,
+          "n_min": 300
+        },
+        "NY": {
+          "tf": "M15",
+          "scope": "NY",
+          "thr": 0.62,
+          "n": 343,
+          "wins": 222,
+          "wr": 0.6472303206997084,
+          "ci_lo": 0.5952860112067465,
+          "n_min": 300
+        }
+      }
+    },
+    "H1": {
+      "calibrator": "platt",
+      "artifacts": {
+        "signals_calibrated": "C:\\Users\\open\\Documents\\ZENO_XAUUSD\\outputs\\ml_signals\\ML_signals_H1_FINAL_calibrated.csv",
+        "tables": {
+          "global": "C:\\Users\\open\\Documents\\ZENO_XAUUSD\\logs\\calibration2_H1_FINAL_GLOBAL.csv",
+          "london": "C:\\Users\\open\\Documents\\ZENO_XAUUSD\\logs\\calibration2_H1_FINAL_London.csv",
+          "ny": "C:\\Users\\open\\Documents\\ZENO_XAUUSD\\logs\\calibration2_H1_FINAL_NY.csv"
+        }
+      },
+      "metrics": {
+        "auc_raw": 0.5549058324975041,
+        "auc_cal": 0.5549058324975041,
+        "brier_raw_all": 0.22898737011611087,
+        "brier_cal_all": 0.2114702266854292,
+        "features_used": [
+          "atr",
+          "bias_bull",
+          "close",
+          "conf_liquidity",
+          "conf_sr_zone",
+          "dow",
+          "high",
+          "hour",
+          "low",
+          "num_confs",
+          "pattern_code",
+          "score"
+        ]
+      },
+      "thresholds": {
+        "GLOBAL": {
+          "tf": "H1",
+          "scope": "GLOBAL",
+          "thr": 0.7,
+          "n": 213,
+          "wins": 162,
+          "wr": 0.7605633802816901,
+          "ci_lo": 0.6989612034440782,
+          "n_min": 150
+        },
+        "London": {
+          "tf": "H1",
+          "scope": "London",
+          "thr": 0.69,
+          "n": 153,
+          "wins": 113,
+          "wr": 0.738562091503268,
+          "ci_lo": 0.6637018673288092,
+          "n_min": 150
+        },
+        "NY": {
+          "tf": "H1",
+          "scope": "NY",
+          "thr": 0.65,
+          "n": 185,
+          "wins": 129,
+          "wr": 0.6972972972972973,
+          "ci_lo": 0.6276345934579993,
+          "n_min": 150
+        }
+      }
+    },
+    "H4": {
+      "calibrator": "isotonic",
+      "artifacts": {
+        "signals_calibrated": "C:\\Users\\open\\Documents\\ZENO_XAUUSD\\outputs\\ml_signals\\ML_signals_H4_FINAL_calibrated.csv",
+        "tables": {
+          "global": "C:\\Users\\open\\Documents\\ZENO_XAUUSD\\logs\\calibration2_H4_FINAL_GLOBAL.csv",
+          "london": "C:\\Users\\open\\Documents\\ZENO_XAUUSD\\logs\\calibration2_H4_FINAL_London.csv",
+          "ny": "C:\\Users\\open\\Documents\\ZENO_XAUUSD\\logs\\calibration2_H4_FINAL_NY.csv"
+        }
+      },
+      "metrics": {
+        "auc_raw": 0.5550734484974261,
+        "auc_cal": 0.5700216394265921,
+        "brier_raw_all": 0.19221581715927094,
+        "brier_cal_all": 0.17647716578000272,
+        "features_used": [
+          "atr",
+          "bias_bull",
+          "close",
+          "conf_liquidity",
+          "conf_sr_zone",
+          "dow",
+          "high",
+          "hour",
+          "low",
+          "num_confs",
+          "pattern_code",
+          "score"
+        ]
+      },
+      "thresholds": {
+        "GLOBAL": {
+          "tf": "H4",
+          "scope": "GLOBAL",
+          "thr": 0.77,
+          "n": 394,
+          "wins": 315,
+          "wr": 0.799492385786802,
+          "ci_lo": 0.7571515884042699,
+          "n_min": 120
+        },
+        "London": {
+          "tf": "H4",
+          "scope": "London",
+          "thr": 0.77,
+          "n": 158,
+          "wins": 130,
+          "wr": 0.8227848101265823,
+          "ci_lo": 0.7557966860904218,
+          "n_min": 120
+        },
+        "NY": {
+          "tf": "H4",
+          "scope": "NY",
+          "thr": 0.76,
+          "n": 173,
+          "wins": 127,
+          "wr": 0.7341040462427746,
+          "ci_lo": 0.6637039720652363,
+          "n_min": 120
+        }
+      }
+    }
+  }
+}

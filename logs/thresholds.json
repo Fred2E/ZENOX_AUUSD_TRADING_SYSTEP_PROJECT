@@ -1,0 +1,157 @@
+{
+  "version": "2025-08-09T15:07:43Z",
+  "target_winrate": 0.65,
+  "ci_floor": 0.6,
+  "per_tf": {
+    "M15": {
+      "calibrator": "isotonic",
+      "artifacts": {
+        "signals_calibrated": "C:\\Users\\open\\Documents\\ZENO_XAUUSD\\outputs\\ml_signals\\ML_signals_M15_calibrated.csv",
+        "signals_calibrated_sha256": "e2689172fdf4ab6e76639b3e75d4d19d5047cceada107b9f9297c217c552d1ab",
+        "tables": {
+          "global": "C:\\Users\\open\\Documents\\ZENO_XAUUSD\\logs\\calibration2_M15_GLOBAL.csv",
+          "london": "C:\\Users\\open\\Documents\\ZENO_XAUUSD\\logs\\calibration2_M15_London.csv",
+          "ny": "C:\\Users\\open\\Documents\\ZENO_XAUUSD\\logs\\calibration2_M15_NY.csv"
+        }
+      },
+      "metrics": {
+        "auc_raw": 0.576516547043163,
+        "auc_cal": 0.5799138436990816,
+        "brier_raw_all": 0.250270534670268,
+        "brier_cal_all": 0.23904762742416005
+      },
+      "thresholds": {
+        "GLOBAL": {
+          "tf": "M15",
+          "scope": "GLOBAL",
+          "thr": 0.71,
+          "n": 427,
+          "wins": 329,
+          "wr": 0.7704918032786885,
+          "ci_lo": 0.7282993831665282,
+          "n_min": 300
+        },
+        "London": {
+          "tf": "M15",
+          "scope": "London",
+          "thr": 0.7,
+          "n": 308,
+          "wins": 236,
+          "wr": 0.7662337662337663,
+          "ci_lo": 0.7158663047466732,
+          "n_min": 300
+        },
+        "NY": {
+          "tf": "M15",
+          "scope": "NY",
+          "thr": 0.61,
+          "n": 555,
+          "wins": 352,
+          "wr": 0.6342342342342342,
+          "ci_lo": 0.5933680175462138,
+          "n_min": 300
+        }
+      }
+    },
+    "H1": {
+      "calibrator": "platt",
+      "artifacts": {
+        "signals_calibrated": "C:\\Users\\open\\Documents\\ZENO_XAUUSD\\outputs\\ml_signals\\ML_signals_H1_calibrated.csv",
+        "signals_calibrated_sha256": "275894b540047f5ea1da5d25e6e7b39e445e916c5f31c8dfe1e74eff1cb5c07b",
+        "tables": {
+          "global": "C:\\Users\\open\\Documents\\ZENO_XAUUSD\\logs\\calibration2_H1_GLOBAL.csv",
+          "london": "C:\\Users\\open\\Documents\\ZENO_XAUUSD\\logs\\calibration2_H1_London.csv",
+          "ny": "C:\\Users\\open\\Documents\\ZENO_XAUUSD\\logs\\calibration2_H1_NY.csv"
+        }
+      },
+      "metrics": {
+        "auc_raw": 0.5297855778158911,
+        "auc_cal": 0.5297855778158911,
+        "brier_raw_all": 0.24151163229097142,
+        "brier_cal_all": 0.21232685567569157
+      },
+      "thresholds": {
+        "GLOBAL": {
+          "tf": "H1",
+          "scope": "GLOBAL",
+          "thr": 0.69,
+          "n": 263,
+          "wins": 194,
+          "wr": 0.7376425855513308,
+          "ci_lo": 0.6813280821705039,
+          "n_min": 150
+        },
+        "London": {
+          "tf": "H1",
+          "scope": "London",
+          "thr": 0.68,
+          "n": 198,
+          "wins": 138,
+          "wr": 0.696969696969697,
+          "ci_lo": 0.6297096980923459,
+          "n_min": 150
+        },
+        "NY": {
+          "tf": "H1",
+          "scope": "NY",
+          "thr": 0.66,
+          "n": 179,
+          "wins": 123,
+          "wr": 0.6871508379888268,
+          "ci_lo": 0.6158984947334879,
+          "n_min": 150
+        }
+      }
+    },
+    "H4": {
+      "calibrator": "platt",
+      "artifacts": {
+        "signals_calibrated": "C:\\Users\\open\\Documents\\ZENO_XAUUSD\\outputs\\ml_signals\\ML_signals_H4_calibrated.csv",
+        "signals_calibrated_sha256": "3e90ad441986be283fe3e4ff2001b9b426d12ab52aa8bea7a07928cfb8fc3636",
+        "tables": {
+          "global": "C:\\Users\\open\\Documents\\ZENO_XAUUSD\\logs\\calibration2_H4_GLOBAL.csv",
+          "london": "C:\\Users\\open\\Documents\\ZENO_XAUUSD\\logs\\calibration2_H4_London.csv",
+          "ny": "C:\\Users\\open\\Documents\\ZENO_XAUUSD\\logs\\calibration2_H4_NY.csv"
+        }
+      },
+      "metrics": {
+        "auc_raw": 0.5197450535815836,
+        "auc_cal": 0.4802549464184164,
+        "brier_raw_all": 0.2038212294933274,
+        "brier_cal_all": 0.17904693375409783
+      },
+      "thresholds": {
+        "GLOBAL": {
+          "tf": "H4",
+          "scope": "GLOBAL",
+          "thr": 0.75,
+          "n": 870,
+          "wins": 667,
+          "wr": 0.7666666666666667,
+          "ci_lo": 0.737426958253548,
+          "n_min": 120
+        },
+        "London": {
+          "tf": "H4",
+          "scope": "London",
+          "thr": 0.75,
+          "n": 375,
+          "wins": 293,
+          "wr": 0.7813333333333333,
+          "ci_lo": 0.7367604010935838,
+          "n_min": 120
+        },
+        "NY": {
+          "tf": "H4",
+          "scope": "NY",
+          "thr": 0.75,
+          "n": 225,
+          "wins": 160,
+          "wr": 0.7111111111111111,
+          "ci_lo": 0.6487365509172317,
+          "n_min": 120
+        }
+      }
+    }
+  }
+}

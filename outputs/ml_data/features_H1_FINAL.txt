@@ -1,0 +1,12 @@
+atr
+bias_bull
+close
+conf_liquidity
+conf_sr_zone
+dow
+high
+hour
+low
+num_confs
+pattern_code
+score

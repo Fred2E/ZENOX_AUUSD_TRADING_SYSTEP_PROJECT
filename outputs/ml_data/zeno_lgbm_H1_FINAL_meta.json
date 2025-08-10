@@ -1,0 +1,27 @@
+{
+  "tf": "H1",
+  "stage": "ML_FINAL",
+  "model_path": "C:\\Users\\open\\Documents\\ZENO_XAUUSD\\outputs\\ml_data\\zeno_lgbm_H1_FINAL.pkl",
+  "model_sha256": "e236fd388799d265ae8429737499d465021a943f6663a8916de4f5458a8df638",
+  "features": [
+    "atr",
+    "bias_bull",
+    "close",
+    "conf_liquidity",
+    "conf_sr_zone",
+    "dow",
+    "high",
+    "hour",
+    "low",
+    "num_confs",
+    "pattern_code",
+    "score"
+  ],
+  "cutoff": "2024-01-01T00:00:00",
+  "random_state": 42,
+  "lightgbm": "4.6.0",
+  "python": "3.10.11",
+  "created_at": "2025-08-09T15:23:26.868175Z",
+  "train_rows": 2972,
+  "test_rows": 2015
+}

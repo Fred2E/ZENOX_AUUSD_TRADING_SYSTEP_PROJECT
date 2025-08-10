@@ -1,0 +1,24 @@
+datetime,Phase,Step,Status,Date,Details
+,1,Research/Design,Complete,2025-07-19,Final system spec and architecture saved
+,2,Data Download,Complete,2025-07-21,All raw files acquired for every TF
+,2,Data Cleaning,Complete,2025-07-21,"All TFs cleaned, logs checked"
+,2,Gap Report,Complete,2025-07-22,"Gaps logged: M5=48,776; M15=46,530; H1=11,599; H4=2,403; D1=221; W1=0; MN=0"
+,2,Data Locking,Complete,2025-07-22,Cleaned files now canonical; all future work locked to these
+,3,Feature Engineering,Complete,2025-07-22,"All live features present; required columns: num_confs, pattern_code, bias_bull"
+,3,Signal Labeling,Complete,2025-07-22,Signal labeling logic validated in pipeline output
+,3,ML Prep,Complete,2025-07-22,ML features and normalization pipeline successful
+,3,Candle Pattern Encoding Fix,Complete,2025-07-22,Fixed bug causing NaNs in pattern_code
+,4,Backtesting Engine,Complete,2025-07-16,Script in place
+,4,Walk-Forward Backtest,Complete,2025-07-22,M5: MeanReward=1.90/499 trades; M15: 1.20/499; H1: 1.77/499; H4: 7.45/499; D1: 23.02/499
+,4,Validation/Stress Test,INCOMPLETE,,"Robustness, OOS, Monte Carlo, parameter sweeps"
+,5,Telegram Bot,Complete,2025-07-15,Token and chat_id set; live alerts tested
+,5,Dashboard,Complete,2025-07-16,"Streamlit dashboard running, real-time signals"
+,5,Journaling,Complete,2025-07-14,ZENO trade log outputs operational
+,5,Continuous Monitoring,INCOMPLETE,,"Circuit breaker, error handling, logging, kill switch"
+,5,Production Rollout,INCOMPLETE,,"CI/CD, code freeze, prod deployment"
+,6,Automated Scheduling,Complete,2025-07-22,"Windows Task Scheduler, every 5min + post-bar delay, tested"
+,7,Live Pipeline,Complete,2025-07-22,"E2E live pipeline: MT5 pull, feature eng, ML pred, RL action, full auto"
+,8,ML Phase Final,Complete,2025-07-30 23:39:26,"ML/RL dataset integrity, RL/ML features matched, full artifact checkpointed. Tag: ml_phase_final_20250730_233126"
+,8,ML Git Tag,Complete,2025-07-30 23:39:26,Canonical ML git tag created: ml_phase_final_20250730_233126
+,8,Risk Logic Baseline,Complete,2025-07-28,"Min 2 primary confs, pass rate checks enforced, repo pushed"
+,RL Preparation,Trade log lock & hash,Complete,2025-07-31 12:43:42,"Hashes: {""trade_log_M5.csv"": ""652f2e91b4c03cfad688aeb4118d9161beeca3eda83f75e8a8271b5f30bd4589"", ""trade_log_M15.csv"": ""c36b83f303b145d053f9144a7321792e32897c86df38a0d4d5f7eb01620b2dc4"", ""trade_log_H1.csv"": ""0b736fac062c0ed3a477708aa53b78f8f5e08459d65068672f2fde3dba8dc8d1"", ""trade_log_H4.csv"": ""a9af739d8bb09ac05c9ed6aec556e8be4e5a75930f34ee2750595fc6d509bbd4""} | Config hash: dc19b22d4c404ac47c493b6df8eb168bb679983d9f6bf8ca5476b5f6a00e8dfc"
