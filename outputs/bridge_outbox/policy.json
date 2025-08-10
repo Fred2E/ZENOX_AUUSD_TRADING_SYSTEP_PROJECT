@@ -1,0 +1,9 @@
+{
+  "version": "20250810T1416Z",
+  "source": "C:\\Users\\open\\Documents\\ZENO_XAUUSD\\logs\\walkforward_COMPARE_20250810T1404Z.csv",
+  "policy": {
+    "M15": "RL",
+    "H1": "RL",
+    "H4": "RL"
+  }
+}
